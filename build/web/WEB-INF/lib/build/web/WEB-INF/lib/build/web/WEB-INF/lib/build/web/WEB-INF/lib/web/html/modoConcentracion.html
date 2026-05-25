@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modo Concentración</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estilos_general.css">
+<link rel="stylesheet" href="../css/modoConcentracion.css">
+
+</head>
+<body>
+
+
+<header>
+  <div class="logo">
+    <a href="inicio.jsp">
+        <img src="logo.png" alt="logo">
+    </a>
+</div>
+
+
+  <nav class="navs">
+    
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
+      <div class="submenu" id="menuEstudia">
+        <a href="../html/cuestionarios.html">Cuestionarios</a>
+        <a href="#">Matemáticas interactivas</a>
+        <a href="../html/modoConcentracion.html"> Modo concentración</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
+      <div class="submenu" id="menuRecursos">
+        <a href="#">Contenido de apoyo</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
+      <div class="submenu" id="menuComunidad">
+        <a href="#">Apoyo entre estudiantes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Proyectos estudiantiles</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
+      <div class="submenu" id="menuProgreso">
+        
+        <a href="../CalendarioGeneral.jsp">Calendario</a>
+        <a href="#">Panel de progreso</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <div class="cuenta">
+    <div class="icono-cuenta" onclick="abrirMenu('menuCuenta')">U</div>
+    <div class="submenu-cuenta" id="menuCuenta">
+      <a href="#">Mi cuenta</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<main style="display:flex; padding:20px; gap:20px;">
+
+
+  <aside class="menu-lateral">
+    <a href="#pomodoro">Técnica Pomodoro</a><br><br>
+    <a href="#intervalos">Estudio en intervalos activos</a><br><br>
+    <a href="#timeblocking">Técnica Time Blocking</a><br><br>
+    <a href="#sprint">Técnica Sprint</a><br><br>
+    <a href="#revision">Técnica 10-2-5</a><br><br>
+    <a href="#focustimer">Focus Timer</a><br><br>
+  </aside>
+
+  
+  <section class="contenido">
+
+    <h2 id="pomodoro">Técnica Pomodoro</h2>
+    <p>La Técnica Pomodoro divide tu estudio en intervalos de trabajo y descanso...</p>
+    <br>
+    <a href="tecnicaPomodoro.html"><button>Usar esta técnica</button></a>
+
+    <h2 id="intervalos">Estudio en Intervalos Activos</h2>
+    <p>Sistema basado en práctica activa y recuperación de memoria...</p>
+     <br>
+    <a href="intarvalosActivos.html"><button>Usar esta técnica</button></a>
+
+    <h2 id="timeblocking">Técnica Time Blocking</h2>
+    <p>Divide tu tiempo en bloques organizados para evitar distracciones...</p>
+     <br>
+    <a href="Tecnica blocking.html"><button>Usar esta técnica</button></a>
+
+    <h2 id="sprint">Técnica Sprint</h2>
+    <p>Estudio rápido e intenso con descansos cortos...</p>
+     <br>
+    <a href="Tecnica sprint.html"><button>Usar esta técnica</button></a>
+
+    <h2 id="revision">Técnica 10-2-5</h2>
+    <p>Revisiones espaciadas para consolidar memoria...</p>
+     <br>
+    <a href="Tecnica revision.html"><button>Usar esta técnica</button></a>
+
+    <h2 id="focustimer">Focus Timer</h2>
+    <p>Sesiones enfocadas con temporizador fijo...</p>
+     <br>
+    <a href="Tecnica focustimer.html"><button>Usar esta técnica</button></a>
+
+  </section>
+
+</main>
+
+
+<script>
+function abrirMenu(id){
+  var menu = document.getElementById(id);
+  if(menu.style.display==='block'){
+    menu.style.display='none';
+  } else {
+    menu.style.display='block';
+  }
+}
+</script>
+
+</body>
+</html>

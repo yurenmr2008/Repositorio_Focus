@@ -1,0 +1,119 @@
+:root{
+  --verde-oscuro:#5E7153;
+  --verde-pastel:#A9B489;
+  --blanco-crema:#FCFCE4;
+  --fondo-claro:#F9ECC9;
+  --marron-suave:#BA9470;
+  --terracota:#C66828;
+  --background-color:var(--fondo-claro);
+  --card-color:var(--blanco-crema);
+  --primary-color:var(--verde-oscuro);
+  --secondary-color:var(--verde-pastel);
+  --accent-color:var(--terracota);
+  --text-color:#21302A;
+  --muted-color:var(--marron-suave);
+  --shadow-color:rgba(0,0,0,0.06);
+  --radius:10px;
+  --gap:16px;
+  --control-height:44px;
+  --control-padding:10px 14px;
+  --max-width:1200px;
+  --transition-fast:120ms;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--background-color);font-family:"Inter","Poppins";color:var(--text-color)}
+img{max-width:100%}
+a{text-decoration:none}
+
+header{
+  background:linear-gradient(90deg,var(--primary-color),rgba(94,113,83,.9));
+  padding:18px 0;
+  color:#fff;
+  box-shadow:0 2px 6px var(--shadow-color)
+}
+
+.header-content{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px
+}
+
+.logo-img{
+  height:45px;
+  width:auto
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:14px;
+  padding:0;
+  margin:0
+}
+
+.nav-links a{
+  color:#fff;
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:600;
+  transition:.15s
+}
+
+.nav-links a:hover{
+  background:rgba(255,255,255,.14)
+}
+
+.header-actions{
+  display:flex;
+  gap:12px
+}
+
+.btn{
+  background:var(--primary-color);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  transition:.15s
+}
+
+.btn.small{
+  padding:8px 12px;
+  font-size:13px
+}
+
+.btn.secondary{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.2)
+}
+
+.btn:hover{
+  transform:translateY(-2px)
+}
+
+.seccion{
+  max-width:var(--max-width);
+  margin:60px auto;
+  padding:20px;
+  background:var(--card-color);
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px var(--shadow-color)
+}
+
+.fade-in{
+  animation:fadeIn .25s ease both
+}
+/*
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+*/

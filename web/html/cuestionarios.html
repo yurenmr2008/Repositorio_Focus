@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semestres</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estilos_general.css">
+<link rel="stylesheet" href="../css/semestres.css">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+    <a href="../jsp/inicio.jsp">
+        <img src="logo.png" alt="logo">
+    </a>
+</div>
+
+  <nav class="navs">
+    
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
+      <div class="submenu" id="menuEstudia">
+        <a href="../html/cuestionarios.html">Cuestionarios</a>
+        <a href="#">Matemáticas interactivas</a>
+        <a href="../html/modoConcentracion.html"> Modo concentración</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
+      <div class="submenu" id="menuRecursos">
+        <a href="#">Contenido de apoyo</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
+      <div class="submenu" id="menuComunidad">
+        <a href="#">Apoyo entre estudiantes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Proyectos estudiantiles</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
+      <div class="submenu" id="menuProgreso">
+        
+        <a href="#">Calendario</a>
+        <a href="#">Panel de progreso</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <div class="cuenta">
+    <div class="icono-cuenta" onclick="abrirMenu('menuCuenta')">U</div>
+    <div class="submenu-cuenta" id="menuCuenta">
+      <a href="#">Mi cuenta</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+
+<div class="contenedor-semestres">
+
+    <aside class="sidebar">
+
+       
+        <div class="semestre disabled">
+            <h3>I Semestre</h3>
+        </div>
+        <div class="sub-opciones disabled"></div>
+
+        <div class="semestre disabled">
+            <h3>II Semestre</h3>
+        </div>
+        <div class="sub-opciones disabled"></div>
+
+        <div class="semestre disabled">
+            <h3>III Semestre</h3>
+        </div>
+        <div class="sub-opciones disabled"></div>
+        
+ <div class="semestre disabled">
+            <h3> IV Semestre</h3>
+        </div>
+        <div class="sub-opciones disabled"></div>
+        <!-- 
+        <div class="semestre" onclick="toggle(this,'s4')">
+            <h3>IV Semestre</h3>
+            <span class="flecha">▾</span>
+        </div>
+        <div class="sub-opciones" id="s4">
+            <a href="calculoDiferencial.html">Calculo Diferencial</a>
+            <a href="#">Fisica III</a>
+            <a href="#">Quimica III</a>
+            <a href="#">Dibujo Tecnico II</a>
+             <a href="#">Ingles IV </a>
+        </div>
+-->
+        <div class="semestre" onclick="toggle(this,'s5')">
+            <h3>V Semestre</h3>
+            <span class="flecha">▾</span>
+        </div>
+        <div class="sub-opciones" id="s5">
+            <a href="../jsp/seleccionar.jsp">Calculo Integral</a>
+            <a href="#">Fisica IV</a>
+            <a href="#">Quimica IV</a>
+            <a href="#">Orientacion III</a>
+             <a href="#">Ingles V</a>
+        </div>
+
+        
+        <div class="semestre disabled">
+            <h3>VI Semestre</h3>
+        </div>
+        <div class="sub-opciones disabled"></div>
+
+    </aside>
+
+    <main class="contenido">
+        <h1>Selecciona un semestre o parcial</h1>
+    </main>
+
+</div>
+
+<script>
+function toggle(btn,id){
+    let menu=document.getElementById(id);
+    let flecha=btn.querySelector('.flecha');
+
+    if(!menu) return; 
+
+    document.querySelectorAll('.sub-opciones').forEach(m=>{
+        if(m.id!==id) m.style.maxHeight=null;
+    });
+
+    document.querySelectorAll('.semestre .flecha').forEach(f=>{
+        if(f!==flecha) f.classList.remove('girar');
+    });
+
+    if(menu.style.maxHeight){
+        menu.style.maxHeight=null;
+        flecha.classList.remove('girar');
+    } else {
+        menu.style.maxHeight=menu.scrollHeight+'px';
+        flecha.classList.add('girar');
+    }
+}
+
+function abrirMenu(id){
+  let menu = document.getElementById(id);
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

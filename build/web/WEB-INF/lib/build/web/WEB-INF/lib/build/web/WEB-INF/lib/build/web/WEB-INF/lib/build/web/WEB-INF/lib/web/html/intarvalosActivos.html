@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matemáticas Interactivas — Cálculo Diferencial</title>
+  <link rel="stylesheet" href="../css/estilos_general.css" />
+  <link rel="stylesheet" href="../css/cronometro.css" />
+  <link rel="stylesheet" href="../css/tecnicaPomodoro.css" />
+   <link rel="stylesheet" href="../css/modoConcentracion.css" />
+  <link rel="stylesheet" href="../css/tecnicaPomodoro.css" />
+   <link rel="stylesheet" href="../css/estilos_general.css" />
+  <script src="../js/cronometro_intervalos.js" defer></script>
+</head>
+<script>
+function abrirMenu(id){
+  var menu = document.getElementById(id);
+  if(menu.style.display==='block'){
+    menu.style.display='none';
+  } else {
+    menu.style.display='block';
+  }
+}
+</script>
+<body>
+  <header>
+    <div class="logo">
+    <a href="../jsp/inicio.jsp">
+        <img src="logo.png" alt="logo">
+    </a>
+</div>
+
+  <nav class="navs">
+    
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
+      <div class="submenu" id="menuEstudia">
+        <a href="../html/cuestionarios.html">Cuestionarios</a>
+        <a href="#">Matemáticas interactivas</a>
+        <a href="../html/modoConcentracion.html"> Modo concentración</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
+      <div class="submenu" id="menuRecursos">
+        <a href="#">Contenido de apoyo</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
+      <div class="submenu" id="menuComunidad">
+        <a href="#">Apoyo entre estudiantes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Proyectos estudiantiles</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
+      <div class="submenu" id="menuProgreso">
+        
+        <a href="#">Calendario</a>
+        <a href="#">Panel de progreso</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <div class="cuenta">
+    <div class="icono-cuenta" onclick="abrirMenu('menuCuenta')">U</div>
+    <div class="submenu-cuenta" id="menuCuenta">
+      <a href="#">Mi cuenta</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+  
+<main>
+
+
+<div id="floating-stopwatch">
+
+	<div class="circle">
+		<div id="stopwatch" class="stopwatch">00:00</div>
+		<div class="buttons">
+			<div class="stop" onclick="stop()"></div>
+			<div id="play-pause" class="paused" onclick="playPause()"></div>
+		</div>
+	</div>
+    <div id="seconds-sphere" class="seconds-sphere"></div>
+</div>
+
+	</main>
+	<h2>Active el cronometro para que la pagina lleve un control de esta tecnica</h2>
+	
+    <section class="contenido">
+      <h2>Pasos a seguir para aplicar esta tecnica efectivamente</h2>
+		<h4>1. Elige un objetivo claro: p. ej., “comprender el tema X” o “memorizar 20 definiciones”.
+		<br><br>
+			2. Prepara el material: notas, tarjetas (flashcards) o preguntas candelares.
+		<br><br>
+			3. Cronometra 15 minutos de estudio activo:
+		
+		<p>		-Lee un subtema, toma notas breves (no transcribir).</p>
+		
+		<p>		-Marca dudas y puntos a recordar.</p>
+		
+			4. Cronometra 5 minutos de mini-test:
+		
+		<p>		-Sin apuntes, responde 3–5 preguntas sobre lo estudiado o explica el contenido en voz alta durante 2 minutos.</p>
+		
+		<p>		-Si usas flashcards, haz tantas como puedas en 5 min.</p>
+		
+			5. Revisa errores 3 minutos (opcional): comprueba respuestas y anota lo que fallaste.
+		<br><br>
+			6. Repite: vuelve a otro subtema o repite el mismo hasta completar una hora o el objetivo marcado.
+		<br><br>
+			7. Cierre: escribe 2–3 frases que resuman lo aprendido (autoevaluación rápida).
+			<br><br><br><br>
+      <a href="modoConcentracion.html">
+		<center><button type="submit"> Salir del modo concentracion</button></center>
+	</a>
+	  
+  
+</body>
+</html>

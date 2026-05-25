@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matemáticas Interactivas — Cálculo Diferencial</title>
+  <link rel="stylesheet" href="../css/modoConcentracion.css" />
+  <link rel="stylesheet" href="../css/tecnicaPomodoro.css" />
+   <link rel="stylesheet" href="../css/estilos_general.css" />
+  <script src="../js/cronometro_pomodoro.js" defer></script>
+</head>
+<script>
+function abrirMenu(id){
+  var menu = document.getElementById(id);
+  if(menu.style.display==='block'){
+    menu.style.display='none';
+  } else {
+    menu.style.display='block';
+  }
+}
+
+var nombre = 'Usuario';
+document.getElementById('nombreUsuario').textContent = nombre;
+</script>
+<body>
+ <header>
+    <div class="logo">
+    <a href="../jsp/inicio.jsp">
+        <img src="logo.png" alt="logo">
+    </a>
+</div>
+
+  <nav class="navs">
+    
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
+      <div class="submenu" id="menuEstudia">
+        <a href="../html/cuestionarios.html">Cuestionarios</a>
+        <a href="#">Matemáticas interactivas</a>
+        <a href="../html/modoConcentracion.html"> Modo concentración</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
+      <div class="submenu" id="menuRecursos">
+        <a href="#">Contenido de apoyo</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
+      <div class="submenu" id="menuComunidad">
+        <a href="#">Apoyo entre estudiantes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Proyectos estudiantiles</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
+      <div class="submenu" id="menuProgreso">
+        
+        <a href="#">Calendario</a>
+        <a href="#">Panel de progreso</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <div class="cuenta">
+    <div class="icono-cuenta" onclick="abrirMenu('menuCuenta')">U</div>
+    <div class="submenu-cuenta" id="menuCuenta">
+      <a href="#">Mi cuenta</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+  
+<main>
+
+<div id="floating-stopwatch">
+
+	<div class="circle">
+		<div id="stopwatch" class="stopwatch">00:00</div>
+		<div class="buttons">
+			<div class="stop" onclick="stop()"></div>
+			<div id="play-pause" class="paused" onclick="playPause()"></div>
+		</div>
+	</div>
+    <div id="seconds-sphere" class="seconds-sphere"></div>
+</div>
+	</main>
+	
+	
+    <section class="contenido">
+       <center> <h1>Active el cronometro para que la pagina lleve un control de esta tecnica</h1></center>
+      <h2>Pasos a seguir para aplicar esta tecnica efectivamente</h2>
+		<h4>1. Elige tu Tarea: Decide qué tarea específica vas a realizar. Puede ser grande o pequeña, pero debe ser tu único foco.
+			<br><br>
+			2.Configura el Temporizador (el "Pomodoro"): Ajusta un temporizador a 25 minutos. Este es tu primer "pomodoro".
+			<br><br>
+			3.Trabaja Intensamente: Trabaja en la tarea elegida sin interrupciones hasta que suene el temporizador.(Si te distraes, te surge una idea o recibes alguna notificacion, anótala rápidamente en un papel y vuelve de inmediato a tu tarea. Los 25 minutos son sagrados.)
+			<br><br>
+			4.Suena la Alarma: Marca tu Progreso: Cuando suenen los 25 minutos, detente inmediatamente. Haz una marca en un papel para registrar que has completado un pomodoro.
+			<br><br>
+			5.Toma un Descanso Corto: Tómate un descanso de 5 minutos. Es crucial que este descanso sea real: levántate, estira las piernas, toma agua, mira por la ventana. No uses este tiempo para revisar redes sociales o emails relacionados con el trabajo, ya que eso no permite que tu cerebro descanse.
+			<br><br>
+			6.Repite y Toma un Descanso Largo: Repite el ciclo. Después de completar cuatro pomodoros (2 horas de trabajo), toma un descanso más largo, generalmente de 15 a 30 minutos. Este descanso largo permite a tu cerebro asimilar la información y recuperarse antes de la siguiente sesión.
+
+	<br><br><br><br>
+    <a href="modoConcentracion.html">
+		<center><button type="submit"> Salir del modo concentracion</button></center>
+	</a>
+  
+</body>
+</html>
