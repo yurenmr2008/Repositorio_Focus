@@ -9,26 +9,31 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
+<%@ page import="clasesModuloEvento.*" %>
+
+
+<%@ include file="/jsp/seguridad.jsp" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="infoCuestionarioEvento.css">
+        <link rel="stylesheet" href="infoCuestionarioEventos.css">
     </head>
     <body>
         
         
         
         <% 
-            
+        metodosEvento metodoEvento = new metodosEvento();
                    
         String materiaEvento = request.getParameter("materiaEvento");
         int parcialEvento = Integer.parseInt(request.getParameter("parcialEvento"));
         int idEstudiante = Integer.parseInt(request.getParameter("idEstudiante"));
         int posicionPregunta = Integer.parseInt(request.getParameter("posicionPregunta"));
 
-
+        System.out.println("parcialEvento = " + parcialEvento);
         int puntajeActualEst = 0;
         int tiempoActualEst = 0;
 
@@ -126,6 +131,8 @@
         
         
         <form action="seccionEventos.jsp" method="POST">
+            
+            <input type="hidden" name="idEstudiante" value="<%=idEstudiante%>">
             <input type="submit" name="Atras" value="Atras">
                        
         </form>
@@ -149,13 +156,11 @@
                     preparedStatement = conecta.prepareStatement(                    
                     "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante "+
                     "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
-                    "WHERE Clasificacion.pun_cla > ? OR (pun_cla = ? AND tie_cla < ?) " +
-                    "ORDER BY Clasificacion.pun_cla DESC, Clasificacion.tie_cla ASC LIMIT 3");
-                    
+                    "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+                    "WHERE Evento.id_eve = ? " +
+                    "ORDER BY Clasificacion.pun_cla DESC, Clasificacion.tie_cla ASC LIMIT 3; "); 
+                    preparedStatement.setInt(1, idEvento);
 
-                    preparedStatement.setInt(1, puntajeActualEst);//modificar
-                    preparedStatement.setInt(2, puntajeActualEst); // modificar
-                    preparedStatement.setInt(3, tiempoActualEst);
 
                     ResultSet rs = preparedStatement.executeQuery();
 
@@ -163,10 +168,6 @@
                     int puntajeParticipante;
                     int tiempoParticipante;
                     int posicionParticipante = 0;
-
-                    PreparedStatement preparedStatement2;
-                    ResultSet rs2;
-
                     
                     
                     while(rs.next()){
@@ -233,6 +234,8 @@
                     
             //######## TABLA DE CLASIFICACIÓN ########
             int lugaresTabla = 10;
+
+            
             
             if(eventoRealizado == true){
 
@@ -249,14 +252,17 @@
                     
                     "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante "+
                     "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
-                    "WHERE Clasificacion.pun_cla > ? OR (pun_cla = ? AND tie_cla < ?) " +
+                    "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+                    "WHERE (Clasificacion.pun_cla > ? OR (pun_cla = ? AND tie_cla < ?)) AND " +
+                    "Evento.id_eve = ? " +
                     "ORDER BY Clasificacion.pun_cla ASC, Clasificacion.tie_cla DESC LIMIT 5 " +
                     
                     ") AS subconsulta ORDER BY subconsulta.pun_cla DESC, subconsulta.tie_cla ASC;");
-
                     preparedStatement.setInt(1, puntajeActualEst);//modificar
                     preparedStatement.setInt(2, puntajeActualEst); // modificar
                     preparedStatement.setInt(3, tiempoActualEst);
+                    preparedStatement.setInt(4, idEvento);
+
 
                     ResultSet rs = preparedStatement.executeQuery();
 
@@ -310,7 +316,7 @@
                         out.println("</td>");
 
                         out.println("<td>");
-                        out.println(tiempoParticipante);
+                        out.println(metodoEvento.obtenerFormatoTiempo(tiempoParticipante));
                         out.println("</td>");
 
                         out.println("</tr>");
@@ -366,10 +372,14 @@
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
 
-                    preparedStatement = conecta.prepareStatement("SELECT COUNT(*) lugar_cla FROM Clasificacion WHERE pun_cla > ? OR (pun_cla = ? AND tie_cla < ?)");
+                    preparedStatement = conecta.prepareStatement("SELECT COUNT(*) lugar_cla FROM Clasificacion "+
+                    "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+                    "WHERE (Clasificacion.pun_cla > ? OR (Clasificacion.pun_cla = ? AND Clasificacion.tie_cla < ?)) AND "+
+                    "Evento.id_eve = ? ;");
                     preparedStatement.setInt(1, puntajeActualEst);
                     preparedStatement.setInt(2, puntajeActualEst);
                     preparedStatement.setInt(3, tiempoActualEst);
+                    preparedStatement.setInt(4, idEvento);
 
                     rs = preparedStatement.executeQuery();
 
@@ -384,7 +394,8 @@
                 }catch (Exception e){
                     out.println("Error. " + e.getMessage());
                 }
-
+                
+                out.println("<tr class='filaClasificacionAlumno'>");  //se le agrega una clase para ponerle estilos mediante css
                 out.println("<td>");
                 out.println(posicionActual);
                 out.println("</td>");
@@ -398,11 +409,14 @@
                 out.println("</td>");
 
                 out.println("<td>");
-                out.println(tiempoActualEst);
+                out.println(metodoEvento.obtenerFormatoTiempo(tiempoActualEst));
                 out.println("</td>");
+                out.println("</tr>");
 
                 
                 //Despliege de los 5 estudiantes con un lugar más bajo al del usuario y más próximos a este mismo en la clasificación
+                
+                
                 
                 System.out.println("Lugares restantes en la tabla:" + lugaresTabla);
                 try{
@@ -416,14 +430,17 @@
                     preparedStatement = conecta.prepareStatement(
                     "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante " +
                     "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
-                    "WHERE Clasificacion.pun_cla < ? OR (pun_cla = ? AND tie_cla > ?) " +
+                    "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+                    "WHERE (Clasificacion.pun_cla < ? OR (pun_cla = ? AND tie_cla > ?)) AND " +
+                    "Evento.id_eve = ? " +
                     "ORDER BY Clasificacion.pun_cla DESC, Clasificacion.tie_cla ASC LIMIT ?;");
                     // LIMIT 5
 
                     preparedStatement.setInt(1, puntajeActualEst);
                     preparedStatement.setInt(2, puntajeActualEst);
                     preparedStatement.setInt(3, tiempoActualEst);
-                    preparedStatement.setInt(4, lugaresTabla);
+                    preparedStatement.setInt(4, idEvento);
+                    preparedStatement.setInt(5, lugaresTabla);
 
                     ResultSet rs = preparedStatement.executeQuery();
 
@@ -474,7 +491,7 @@
                         out.println("</td>");
 
                         out.println("<td>");
-                        out.println(tiempoParticipante);
+                        out.println(metodoEvento.obtenerFormatoTiempo(tiempoParticipante));
                         out.println("</td>");
 
                         out.println("</tr>");
@@ -504,8 +521,11 @@
                         preparedStatement = conecta.prepareStatement(
                         "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante " +
                         "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
+                        "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+                        "WHERE Evento.id_eve = ? "+
                         "ORDER BY Clasificacion.pun_cla DESC, Clasificacion.tie_cla ASC LIMIT 10;");
                         // LIMIT 10
+                        preparedStatement.setInt(1, idEvento);
 
                         ResultSet rs = preparedStatement.executeQuery();
 
@@ -556,7 +576,8 @@
                             out.println("</td>");
 
                             out.println("<td>");
-                            out.println(tiempoParticipante);
+                            out.println(metodoEvento.obtenerFormatoTiempo(tiempoParticipante));
+
                             out.println("</td>");
 
                             out.println("</tr>");
@@ -580,15 +601,128 @@
             
        
             <div class="seccionDerecha">
+                
+                
+                <h3>Respuestas del Evento</h3>
+                <br>
                 <%
                     
                 //######## INFORMACIÓN O RESULTADOS ########
             
                 if(eventoRealizado == true){
-                    
-                    
-                    
                 
+                
+                    
+                    try{
+                        Connection conecta;
+                        PreparedStatement preparedStatement;
+
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+
+                        preparedStatement = conecta.prepareStatement(                    
+                        "SELECT Pregunta.id_pre, Pregunta.tex_pre, Pregunta.pun_pre, Pregunta.tem_pre, Respuesta.tex_res, Respuesta.val_res, RespuestaAlumno.tie_RA FROM RespuestaAlumno "+
+                        "INNER JOIN Respuesta ON RespuestaAlumno.id_res = Respuesta.id_res " +
+                        "INNER JOIN Pregunta ON Respuesta.id_pre = Pregunta.id_pre " +
+                        "INNER JOIN Evento ON Pregunta.id_eve = Evento.id_eve " +
+                        "WHERE Evento.id_eve = ? AND RespuestaAlumno.id_est = ? ");
+
+
+                        preparedStatement.setInt(1, idEvento);
+                        preparedStatement.setInt(2, idEstudiante); 
+
+                        ResultSet rs = preparedStatement.executeQuery();
+
+                        int idPregunta;
+                        String textoPregunta;
+                        String temaPregunta;
+                        String textoRespuestaAlumno;
+                        int tiempoRespuestaAlumno;
+                        String valorRespuestaAlumno;
+                        
+                        indice = 0;
+                        PreparedStatement preparedStatement2;
+                        ResultSet rs2;
+                        
+                        while(rs.next()){
+                            idPregunta = rs.getInt("id_pre");
+                            textoPregunta = rs.getString("tex_pre");
+                            temaPregunta = rs.getString("tem_pre");
+                            textoRespuestaAlumno = rs.getString("tex_res");
+                            tiempoRespuestaAlumno = rs.getInt("tie_RA");
+                            valorRespuestaAlumno = rs.getString("val_res");
+
+                            
+                            
+                            
+                            indice = indice + 1;
+
+                            
+                            
+                            out.println("<b>Reactivo "+indice+": </b> " +textoPregunta);
+                            out.println("<br>");
+                            
+
+                            out.println("Tema: " + temaPregunta );
+                            out.println("<br>");
+
+                            out.println("Respuesta seleccionada: "+ textoRespuestaAlumno +"     "+valorRespuestaAlumno);
+                            out.println("<br>");
+                            out.println("Tiempo usado:" + metodoEvento.obtenerFormatoTiempo(tiempoRespuestaAlumno));
+
+                            out.println("<br>");
+                            out.println("<br>");
+                            
+                            if(valorRespuestaAlumno.equals( "Incorrecto")){
+                            out.println("Opciones:");
+                            
+                            String textoRespuestas = "";
+                            String valorRespuestas = "";
+                            try{
+                                preparedStatement2 = conecta.prepareStatement("SELECT tex_res, val_res FROM Respuesta WHERE id_pre = ?");
+                                preparedStatement2.setInt(1, idPregunta);
+
+
+                                rs2 = preparedStatement2.executeQuery();
+
+                                out.println("<ul>");
+                                
+                                while(rs2.next()){
+                                    textoRespuestas = rs2.getString("tex_res");
+                                    valorRespuestas = rs2.getString("val_res");
+                                    
+                                    out.println("<il> "+textoRespuestas+" -> "+valorRespuestas+"</il> <br>");
+
+                                }
+                                out.println("</ul>");
+
+                                rs2.close();
+                                preparedStatement2.close();
+
+                            }catch (Exception e2){
+                                out.println("Error. " + e2.getMessage());
+                            }
+                            }
+                            
+                            
+                            
+                            
+
+                            out.println("<br>");
+                            out.println("<br>");
+
+                            
+                        }
+
+                        rs.close();
+                        preparedStatement.close();
+                        conecta.close();
+
+                    }catch (Exception e){
+                        out.println("Error. " + e.getMessage());
+                    } 
+        
+                    
                 }
                 else{
             
@@ -598,6 +732,7 @@
                         
                         out.println(" Evento: " + materiaEvento);
                         out.println("<br>");
+                       
 
                         out.println("<br> Parcial: " + parcialEvento);
                         out.println("<br>");
@@ -628,6 +763,13 @@
 
                     }
                 }
+                
+
+
+
+
+
+
                 %>                
                 
                 

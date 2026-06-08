@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2.2 Integración de Funciones Trigonométricas</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <link rel="stylesheet" href="../css/cajas.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 1 • Integración de Funciones Trigonométricas
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            1.2.2 Integración de Funciones Trigonométricas
+        </h1>
+
+        <p class="subtitulo">
+            Integración de funciones trigonométricas elementales y reconocimiento de patrones
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                Las funciones trigonométricas aparecen constantemente en matemáticas, física,
+                ingeniería y fenómenos periódicos. La integración de estas funciones permite
+                calcular áreas, desplazamientos, ondas y múltiples aplicaciones científicas.
+            </p>
+
+            <p>
+                Para resolver integrales trigonométricas es fundamental reconocer patrones,
+                conocer identidades trigonométricas y memorizar las fórmulas básicas de integración.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Funciones trigonométricas básicas</h2>
+
+            <p>
+                Las principales funciones trigonométricas son:
+            </p>
+
+            <ul>
+
+                <li>Seno</li>
+
+                <li>Coseno</li>
+
+                <li>Tangente</li>
+
+                <li>Cotangente</li>
+
+                <li>Secante</li>
+
+                <li>Cosecante</li>
+
+            </ul>
+
+            <p>
+                Cada una posee una regla específica de integración.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales fundamentales</h2>
+
+            <h3>Integral del seno</h3>
+
+            <div class="formula">
+                \[
+                \int \sin(x)\,dx
+                =
+                -\cos(x)+C
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int 5\sin(x)\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    -5\cos(x)+C
+                    \]
+                </div>
+
+            </div>
+
+            <h3>Integral del coseno</h3>
+
+            <div class="formula">
+                \[
+                \int \cos(x)\,dx
+                =
+                \sin(x)+C
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <div class="formula">
+                    \[
+                    \int 3\cos(x)\,dx
+                    =
+                    3\sin(x)+C
+                    \]
+                </div>
+
+            </div>
+
+            <h3>Integral de la secante cuadrada</h3>
+
+            <div class="formula">
+                \[
+                \int \sec^2(x)\,dx
+                =
+                \tan(x)+C
+                \]
+            </div>
+
+            <h3>Integral de la cosecante cuadrada</h3>
+
+            <div class="formula">
+                \[
+                \int \csc^2(x)\,dx
+                =
+                -\cot(x)+C
+                \]
+            </div>
+
+            <h3>Integral de secante por tangente</h3>
+
+            <div class="formula">
+                \[
+                \int \sec(x)\tan(x)\,dx
+                =
+                \sec(x)+C
+                \]
+            </div>
+
+            <h3>Integral de cosecante por cotangente</h3>
+
+            <div class="formula">
+                \[
+                \int \csc(x)\cot(x)\,dx
+                =
+                -\csc(x)+C
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Reconocimiento de patrones</h2>
+
+            <p>
+                Resolver integrales trigonométricas depende principalmente de reconocer rápidamente
+                qué fórmula o identidad debe utilizarse.
+            </p>
+
+            <h3>Patrón 1 • Derivada interna presente</h3>
+
+            <div class="formula">
+                \[
+                \int \cos(3x)(3)\,dx
+                \]
+            </div>
+
+            <p>
+                La derivada interna aparece multiplicando, por lo que puede integrarse directamente.
+            </p>
+
+            <div class="formula">
+                \[
+                =
+                \sin(3x)+C
+                \]
+            </div>
+
+            <h3>Patrón 2 • Secante cuadrada</h3>
+
+            <div class="formula">
+                \[
+                \sec^2(x)
+                \]
+            </div>
+
+            <p>
+                Siempre produce una tangente.
+            </p>
+
+            <h3>Patrón 3 • Secante por tangente</h3>
+
+            <div class="formula">
+                \[
+                \sec(x)\tan(x)
+                \]
+            </div>
+
+            <p>
+                Produce una secante.
+            </p>
+
+            <h3>Patrón 4 • Cosecante cuadrada</h3>
+
+            <div class="formula">
+                \[
+                \csc^2(x)
+                \]
+            </div>
+
+            <p>
+                Produce una cotangente negativa.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Uso de identidades trigonométricas</h2>
+
+            <p>
+                Algunas integrales requieren transformar la función usando identidades trigonométricas.
+            </p>
+
+            <h3>Identidad pitagórica</h3>
+
+            <div class="formula">
+                \[
+                \sin^2(x)+\cos^2(x)=1
+                \]
+            </div>
+
+            <h3>Identidad de tangente</h3>
+
+            <div class="formula">
+                \[
+                1+\tan^2(x)=\sec^2(x)
+                \]
+            </div>
+
+            <h3>Identidad de cotangente</h3>
+
+            <div class="formula">
+                \[
+                1+\cot^2(x)=\csc^2(x)
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integración de potencias trigonométricas simples</h2>
+
+            <h3>Ejemplo con seno cuadrado</h3>
+
+            <div class="formula">
+                \[
+                \int \sin^2(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Se utiliza la identidad de ángulo medio:
+            </p>
+
+            <div class="formula">
+                \[
+                \sin^2(x)=\frac{1-\cos(2x)}{2}
+                \]
+            </div>
+
+            <p>
+                Sustituyendo:
+            </p>
+
+            <div class="formula">
+                \[
+                \int \frac{1-\cos(2x)}{2}dx
+                \]
+            </div>
+
+            <p>
+                Integrando:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{x}{2}-\frac{\sin(2x)}{4}+C
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cambio de variable sencillo</h2>
+
+            <p>
+                Muchas integrales trigonométricas pueden resolverse mediante sustitución simple.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int \cos(5x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Se realiza el cambio:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=5x
+                    \]
+                </div>
+
+                <p>
+                    Derivando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    du=5dx
+                    \]
+                </div>
+
+                <p>
+                    Despejando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    dx=\frac{du}{5}
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{5}\int \cos(u)\,du
+                    \]
+                </div>
+
+                <p>
+                    Integrando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{5}\sin(u)+C
+                    \]
+                </div>
+
+                <p>
+                    Regresando a la variable original:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{5}\sin(5x)+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <ul>
+
+                <li>Olvidar signos negativos</li>
+
+                <li>Confundir derivadas e integrales trigonométricas</li>
+
+                <li>No reconocer identidades trigonométricas</li>
+
+                <li>No aplicar correctamente el cambio de variable</li>
+
+                <li>Olvidar la constante de integración</li>
+
+            </ul>
+
+            <div class="importante">
+
+                <h3>Error frecuente</h3>
+
+                <div class="formula">
+                    \[
+                    \int \sin(x)\,dx
+                    \neq
+                    \cos(x)
+                    \]
+                </div>
+
+                <p>
+                    La integral correcta es:
+                </p>
+
+                <div class="formula">
+                    \[
+                    -\cos(x)+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Consejos para resolver integrales trigonométricas</h2>
+
+            <ul>
+
+                <li>Memoriza las integrales fundamentales</li>
+
+                <li>Aprende las identidades trigonométricas principales</li>
+
+                <li>Busca derivadas internas dentro de la integral</li>
+
+                <li>Practica reconocimiento visual de patrones</li>
+
+                <li>Verifica derivando el resultado obtenido</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones</h2>
+
+            <p>
+                Las integrales trigonométricas tienen aplicaciones en:
+            </p>
+
+            <ul>
+
+                <li>Movimiento armónico</li>
+
+                <li>Ondas y vibraciones</li>
+
+                <li>Electricidad y magnetismo</li>
+
+                <li>Análisis de señales</li>
+
+                <li>Ingeniería mecánica</li>
+
+                <li>Física matemática</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración de funciones trigonométricas constituye una parte fundamental del
+                cálculo integral. El reconocimiento de patrones, el dominio de identidades y la
+                práctica constante permiten resolver una gran variedad de problemas matemáticos.
+            </p>
+
+            <p>
+                Estas técnicas servirán posteriormente para métodos más avanzados como integración
+                por sustitución trigonométrica y aplicaciones físicas complejas.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

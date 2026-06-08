@@ -1,83 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matemáticas Interactivas — Cálculo Diferencial</title>
-  <link rel="stylesheet" href="../css/modoConcentracion.css" />
-  <link rel="stylesheet" href="../css/tecnicaPomodoro.css" />
-   <link rel="stylesheet" href="../css/estilos_general.css" />
-  <script src="../js/cronometro_pomodoro.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matemáticas Interactivas — Cálculo Diferencial</title>
+    <link rel="stylesheet" href="../css/modoConcentracion.css" />
+    <link rel="stylesheet" href="../css/tecnicaPomodoro.css" />
+     <link rel="stylesheet" href="../css/estilos_general.css" />
+    <script src="../js/cronometro_pomodoro.js" defer></script>
+
+
+    <script>
+    var nombre = 'Usuario';
+    document.getElementById('nombreUsuario').textContent = nombre;
+    </script>
 </head>
-<script>
-function abrirMenu(id){
-  var menu = document.getElementById(id);
-  if(menu.style.display==='block'){
-    menu.style.display='none';
-  } else {
-    menu.style.display='block';
-  }
-}
 
-var nombre = 'Usuario';
-document.getElementById('nombreUsuario').textContent = nombre;
-</script>
+
+
+
 <body>
- <header>
-    <div class="logo">
-    <a href="../jsp/inicio.jsp">
-        <img src="logo.png" alt="logo">
-    </a>
-</div>
 
-  <nav class="navs">
-    
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
-      <div class="submenu" id="menuEstudia">
-        <a href="../html/cuestionarios.html">Cuestionarios</a>
-        <a href="#">Matemáticas interactivas</a>
-        <a href="../html/modoConcentracion.html"> Modo concentración</a>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
-      <div class="submenu" id="menuRecursos">
-        <a href="#">Contenido de apoyo</a>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
-      <div class="submenu" id="menuComunidad">
-        <a href="#">Apoyo entre estudiantes</a>
-        <a href="#">Eventos</a>
-        <a href="#">Proyectos estudiantiles</a>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
-      <div class="submenu" id="menuProgreso">
-        
-        <a href="#">Calendario</a>
-        <a href="#">Panel de progreso</a>
-      </div>
-    </div>
-
-  </nav>
-
-  <div class="cuenta">
-    <div class="icono-cuenta" onclick="abrirMenu('menuCuenta')">U</div>
-    <div class="submenu-cuenta" id="menuCuenta">
-      <a href="#">Mi cuenta</a>
-      <a href="#">Ayuda</a>
-      <a href="#">Cerrar sesión</a>
-    </div>
-  </div>
-</header>
-  
 <main>
 
 <div id="floating-stopwatch">

@@ -158,6 +158,19 @@ table td input[type="submit"] {
     cursor: pointer;
 }
 
+/*Aqui va el button del día actual*/
+table td input[type="submit"].diaActual{
+    width: 100%;
+    padding: 8px 0;
+    background: #FAC541;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+
 table td input[type="submit"]:hover {
     background-color: #5c6a48;
 }

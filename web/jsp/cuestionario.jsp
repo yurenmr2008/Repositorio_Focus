@@ -45,62 +45,6 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <a href="inicio.jsp">
-        <img src="logo.png" alt="logo">
-    </a>
-</div>
-
-
-  <nav class="navs">
-    
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
-      <div class="submenu" id="menuEstudia">
-        <a href="../html/cuestionarios.html">Cuestionarios</a>
-        <a href="#">Matemáticas interactivas</a>
-        <a href="../html/modoConcentracion.html"> Modo concentración</a>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
-      <div class="submenu" id="menuRecursos">
-        <a href="#">Contenido de apoyo</a>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
-      <div class="submenu" id="menuComunidad">
-        <a href="#">Apoyo entre estudiantes</a>
-        <a href="#">Eventos</a>
-        <a href="#">Proyectos estudiantiles</a>
-      </div>
-    </div>
-
-    <div class="nav-item">
-      <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
-      <div class="submenu" id="menuProgreso">
-        
-        <a href="../CalendarioGeneral.jsp">Calendario</a>
-        <a href="#">Panel de progreso</a>
-      </div>
-    </div>
-
-  </nav>
-
-  <div class="cuenta">
-    <div class="icono-cuenta" onclick="abrirMenu('menuCuenta')">U</div>
-    <div class="submenu-cuenta" id="menuCuenta">
-      <a href="#">Mi cuenta</a>
-      <a href="#">Ayuda</a>
-      <a href="#">Cerrar sesión</a>
-    </div>
-  </div>
-</header>
-
     <center>
         <div class="container">
             <div class="card">
@@ -291,10 +235,7 @@
 
         console.log('Cuestionario cargado:', { materia, unidad, tema, dificultad, modo, totalPreguntas: conjunto.length });
 
-        function abrirMenu(id){
-            let menu = document.getElementById(id);
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        }
+
     </script>
 </body>
 </html>

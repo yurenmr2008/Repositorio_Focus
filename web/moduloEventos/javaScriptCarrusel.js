@@ -1,12 +1,6 @@
 const grande = document.querySelector('.grande');
 const punto = document.querySelectorAll('.punto');
 
-// Cuando CLICK en punto
-    // Saber la posición de ese punto
-    // Aplicar un transform translateX al grande
-    // QUITAR la clase activo de TODOS puntos
-    // AÑADIR la clase activo al punto que hemos hecho CLICK
-
 // Recorrer TODOS los punto
 punto.forEach( ( cadaPunto , i )=> {
     // Asignamos un CLICK a cadaPunto

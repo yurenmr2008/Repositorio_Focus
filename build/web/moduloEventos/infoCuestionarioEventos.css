@@ -1,0 +1,305 @@
+:root{
+    --verde-oscuro:#5E7153;
+    --verde-pastel:#A9B489;
+    --blanco-crema:#FCFCE4;
+    --fondo-claro:#F9ECC9;
+    --marron-suave:#BA9470;
+    --terracota:#C66828;
+
+    --texto:#21302A;
+    --sombra:rgba(0,0,0,.08);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:30px;
+
+    background:var(--fondo-claro);
+
+    color:var(--texto);
+
+    font-family:"Inter","Poppins",sans-serif;
+}
+
+/* =========================
+   PODIO
+========================= */
+.seccionSuperior{
+
+    background:linear-gradient(
+        135deg,
+        var(--verde-oscuro),
+        #728668
+    );
+
+    color:white;
+
+    width:90%;
+
+    margin:0 auto 30px auto;
+
+    padding:20px 30px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.seccionSuperior h1{
+
+    text-align:center;
+
+    margin-top:0;
+
+    margin-bottom:20px;
+
+    font-size:2.2rem;
+}
+
+.Podio{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:20px;
+}
+
+.PrimerLugar,
+.SegundoLugar,
+.TercerLugar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+    padding:15px;
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.15);
+}
+
+.PrimerLugar{
+
+    background:linear-gradient(
+        180deg,
+        #F6D365,
+        #DAA520
+    );
+
+    color:white;
+
+    width:170px;
+
+    height:130px;
+
+    font-size:1.1rem;
+}
+
+.SegundoLugar{
+
+    background:linear-gradient(
+        180deg,
+        #ECECEC,
+        #C9C9C9
+    );
+
+    color:#333;
+
+    width:150px;
+
+    height:100px;
+}
+
+.TercerLugar{
+
+    background:linear-gradient(
+        180deg,
+        #E3A56A,
+        #CD7F32
+    );
+
+    color:white;
+
+    width:150px;
+
+    height:75px;
+}
+
+/* =========================
+   SECCIÓN INFERIOR
+========================= */
+
+.seccionInferior{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:flex-start;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.seccionIzquierda,
+.seccionDerecha{
+
+    background:var(--blanco-crema);
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.06);
+
+}
+
+.seccionIzquierda{
+
+    flex:1.2;
+}
+
+.seccionDerecha{
+
+    flex:1;
+}
+
+/* =========================
+   TABLA
+========================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th{
+
+    background:var(--verde-oscuro);
+
+    color:white;
+
+    padding:14px;
+
+    text-align:left;
+}
+
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+tr:hover{
+
+    background:rgba(169,180,137,.18);
+}
+
+/* fila del estudiante */
+
+.filaClasificacionAlumno{
+
+    background:rgba(198,104,40,.15);
+
+    font-weight:bold;
+}
+
+/* =========================
+   PANEL DERECHO
+========================= */
+
+.seccionDerecha h2,
+.seccionDerecha h3{
+
+    color:var(--verde-oscuro);
+
+    margin-top:0;
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+input[type="submit"]{
+
+    background:var(--verde-oscuro);
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 20px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+input[type="submit"]:hover{
+
+    background:var(--terracota);
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BOTÓN ATRÁS
+========================= */
+
+form:first-of-type{
+
+    width:90%;
+
+    margin:0 auto 20px auto;
+}
+
+/* =========================
+   LISTAS
+========================= */
+
+ul{
+
+    padding-left:20px;
+}
+
+li{
+
+    margin-bottom:8px;
+}
+

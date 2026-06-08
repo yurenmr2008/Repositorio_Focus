@@ -1,0 +1,311 @@
+/* theme.css — estética cute / aesthetic (botones sólidos, cursiva en títulos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Quicksand:wght@500;700&family=Dancing+Script:wght@400;700&display=swap');
+
+:root{
+  --verde-oscuro: #5E7153;
+  --verde-pastel: #A9B489;
+  --blanco-crema: #FCFCE4;
+  --fondo-claro: #F9ECC9;
+  --marron-suave: #BA9470;
+  --terracota: #C66828;
+
+  /* acentos añadidos */
+  --lavanda: #C9B8E3;
+  --melocoton: #FFD6B5;
+  --mint: #DFF3E0;
+
+  --bg: var(--fondo-claro);
+  --card: var(--blanco-crema);
+  --primary: var(--verde-oscuro);
+  --secondary: var(--verde-pastel);
+  --accent: var(--terracota);
+  --text: #21302A;
+  --muted: var(--marron-suave);
+  --shadow: rgba(33,48,42,0.08);
+
+  --radius: 12px;
+  --gap: 16px;
+  --control-h: 46px;
+  --pad: 12px 14px;
+  --max-w: 1200px;
+  --fast: 160ms;
+}
+
+/* Reset y base tipográfica */
+*{box-sizing:border-box}
+html,body{
+  height:100%; margin:0;
+  background:
+    radial-gradient(800px 400px at 10% 10%, rgba(169,180,137,0.03), transparent 6%),
+    linear-gradient(180deg,var(--bg), #F6EFC0);
+  color:var(--text);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Arial;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* Layout principal */
+.header-content,.container{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+header{
+  background: var(--primary);
+  color:#fff;
+  padding:14px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  position:relative;
+}
+.logo h1{margin:0;font-family:"Quicksand",sans-serif;font-weight:700;font-size:20px}
+.header-actions{display:flex;gap:10px;align-items:center}
+
+/* Decorative subtle shapes */
+.hero-shape{position:absolute;right:-80px;top:-40px;width:220px;height:220px;border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, var(--lavanda), transparent 30%),
+              radial-gradient(circle at 70% 70%, var(--melocoton), transparent 30%);
+  opacity:0.12;filter:blur(18px);pointer-events:none;}
+
+/* Grid */
+.container{padding:22px 0}
+.dashboard{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+
+/* Sidebar */
+.sidebar{
+  background: var(--card);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow:0 10px 26px var(--shadow);
+  border:1px solid rgba(0,0,0,0.03);
+}
+.sidebar h2{margin:0 0 10px 0;color:var(--primary);font-weight:700}
+.sidebar-menu{list-style:none;padding:0;margin:0}
+.sidebar-menu li{margin-bottom:10px}
+.sidebar-menu a, .sidebar-menu li{display:block;padding:10px 12px;border-radius:10px;color:var(--text);font-weight:700;transition:transform var(--fast),background var(--fast)}
+.sidebar-menu li:hover{transform:translateX(6px);background:rgba(169,180,137,0.06)}
+.sidebar-menu li.active-item{background:var(--secondary);color:#fff}
+
+/* Cards */
+.card{background:var(--card);border-radius:12px;overflow:visible;border:1px solid rgba(0,0,0,0.03);box-shadow:0 12px 30px var(--shadow);transition:transform .18s}
+.card:hover{transform:translateY(-4px)}
+.card-header{padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.03);display:flex;justify-content:space-between;align-items:center}
+.card-header h2{margin:0;color:var(--primary);font-weight:700}
+.card-body{padding:16px}
+
+/* Hero (simplificado) */
+.hero{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:var(--card);box-shadow:0 14px 36px var(--shadow)}
+.hero-left{flex:1;min-width:0}
+.hero-title{font-family:"Dancing Script",cursive;font-size:28px;margin:0 0 6px 0;color:var(--primary);font-weight:700}
+.hero-sub{font-family:"Quicksand",sans-serif;font-size:14px;margin:0 0 12px 0;color:rgba(33,48,42,0.75)}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-illustration{width:260px;height:160px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(201,184,227,0.06)}
+
+/* Forms y controles */
+label{display:block;margin-bottom:8px;font-weight:700;color:var(--primary)}
+input[type="text"],textarea,select,button{font-family:inherit;font-size:15px;color:var(--text);background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:10px;padding:10px;height:var(--control-h);transition:box-shadow var(--fast),border-color var(--fast)}
+textarea{min-height:120px;resize:vertical;padding:12px}
+input:focus,textarea:focus,select:focus,button:focus{outline:none;box-shadow:0 10px 30px rgba(94,113,83,0.08);border-color:rgba(47,107,94,0.18)}
+
+/* Botones — colores sólidos (sin degradado) */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  background-color:var(--secondary);
+  color:#fff;border:none;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);transition:transform .14s,filter .14s;
+}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.03)}
+.btn.primary-solid{background-color:var(--primary); color:#fff}
+.btn.secondary-solid{background-color:var(--secondary); color:#fff}
+.btn-accent{background-color:var(--accent); color:#fff}
+.btn-lavanda{background-color:var(--lavanda); color:var(--primary); font-weight:800}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(0,0,0,0.04)}
+.btn.small{padding:8px 12px;font-size:0.95rem}
+.btn.positioned{position:relative;overflow:hidden}
+
+/* Badges y chips */
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--melocoton);color:var(--primary);font-weight:700;font-size:13px}
+
+/* Topic list */
+.topic-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.topic-list li{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));cursor:pointer;border:1px solid rgba(0,0,0,0.03);transition:transform .12s}
+.topic-list li:hover{transform:translateY(-8px);box-shadow:0 18px 40px var(--shadow)}
+
+/* Ejercicio y feedback */
+.exercise-area .problem{white-space:pre-wrap;font-family:"Courier New",monospace;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));padding:14px;border-radius:10px;margin-bottom:12px;border:1px dashed rgba(0,0,0,0.04)}
+.opciones-wrap label{display:block;margin-bottom:10px;padding:12px;border-radius:10px;transition:background .12s,transform .08s;cursor:pointer;border:1px solid rgba(0,0,0,0.03)}
+.opciones-wrap input[type="radio"]{margin-right:10px}
+.opciones-wrap label:hover{background:rgba(111,140,104,0.04);transform:translateX(4px)}
+
+/* Progreso */
+.progress-bar{height:10px;background:rgba(33,48,42,0.06);border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:var(--secondary);transition:width .28s ease}
+
+/* Resultado */
+.score-bubble{font-weight:900;padding:12px 16px;border-radius:12px;background:var(--lavanda);color:var(--primary);box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+
+/* Animaciones */
+.fade-in{animation:fadeIn .22s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%{box-shadow:0 8px 18px rgba(94,113,83,0.06);transform:translateY(0)}50%{box-shadow:0 14px 28px rgba(94,113,83,0.08);transform:translateY(-3px)}100%{box-shadow:0 8px 18px rgba(94,113,83,0.06);transform:translateY(0)}}
+
+/* Blobs decorativos */
+.blob{position:fixed;border-radius:50%;filter: blur(28px);opacity:0.08;pointer-events:none;z-index:0}
+.blob.b1{width:420px;height:420px;left:-120px;top:60vh;background:linear-gradient(135deg,var(--lavanda),var(--secondary))}
+.blob.b2{width:320px;height:320px;right:-80px;top:10vh;background:linear-gradient(135deg,var(--melocoton),var(--terracota))}
+
+/* Focus accesible */
+:focus{outline:3px solid rgba(94,113,83,0.12);outline-offset:3px}
+
+/* Responsive */
+@media (max-width:1000px){.dashboard{grid-template-columns:1fr}.sidebar{order:2}.main-content{order:1}.topic-list{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+@media (max-width:480px){.header-content,.container{padding:0 12px}.logo h1{font-size:18px}select,input[type="text"],button{height:44px;font-size:14px}}
+
+/* ------------------ CORRECCIONES SOLICITADAS (al final) ------------------ */
+/* 1) Solo los botones de la barra superior deben tener fondo crema y texto blanco.
+   2) Todos los botones en general mantienen sus colores originales, pero su texto será blanco.
+   No se sobrescriben los fondos originales de las variantes (.btn.primary-solid, .btn.lavanda, etc.). */
+
+/* A) Barra superior: los botones dentro de la barra tendrán fondo crema y texto blanco */
+.app-topbar {
+  background: linear-gradient(90deg, var(--verde-oscuro), var(--verde-pastel));
+  color: #fff;
+  padding: 12px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  box-shadow: 0 8px 26px var(--shadow);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index:40;
+}
+.app-topbar .brand { display:flex; align-items:center; gap:12px; font-family: "Inter", sans-serif; }
+.logo-badge { width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff; }
+
+/* Solo los botones dentro de la barra superior: fondo crema y texto blanco */
+.app-topbar .btn {
+  background-color: var(--blanco-crema);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight:700;
+}
+
+/* Mantener variante ghost en la barra: transparente con borde sutil blanco */
+.app-topbar .btn.ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Hover para botones de la barra (ligero) */
+.app-topbar .btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.98);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.08);
+}
+
+/* B) Texto blanco para todos los botones en general, sin cambiar sus fondos originales.
+   Esto asegura que los botones mantengan su color de fondo (peach, lavanda, mint, primary, etc.)
+   pero la tipografía será blanca para consistencia visual. */
+.btn {
+  /* No cambiamos background-color aquí para no sobrescribir variantes */
+  color: #ffffff !important;
+}
+
+/* Asegurar que las variantes sigan usando sus fondos definidos previamente */
+.btn.primary-solid{ background-color:var(--primary); color:#ffffff; }
+.btn.secondary-solid{ background-color:var(--secondary); color:#ffffff; }
+.btn-accent{ background-color:var(--accent); color:#ffffff; }
+.btn-lavanda{ background-color:var(--lavanda); color:#ffffff; font-weight:800; }
+.btn.peach{ background-color:var(--melocoton); color:#ffffff; font-weight:800; }
+.btn.mint{ background-color:var(--mint); color:#ffffff; font-weight:800; }
+
+/* Ghost fuera de la barra: mantener su estilo original (texto blanco, borde sutil oscuro) */
+.btn.ghost {
+  background: transparent;
+  color: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Hover/active global (mantener sensación estética) */
+.btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.btn:active { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,0.06); }
+
+/* Asegurar iconos dentro de botones también blancos */
+.btn svg, .btn i { color: #ffffff !important; }
+
+/* Mantener accesibilidad de foco */
+.btn:focus { outline: 3px solid rgba(94,113,83,0.12); outline-offset: 3px; }
+
+/* Fin de correcciones */
+/* Reducir tamaño de la primera ilustración (hero-study) para que coincida con la segunda */
+.hero-right img,
+.hero-compact .right img {
+  width: 220px;        /* tamaño objetivo: igual que la segunda imagen */
+  max-width: 40vw;     /* responsivo: no exceder ancho de pantalla */
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Si la segunda imagen usa .center-img img, igualamos exactamente */
+.center-img img {
+  width: 220px;
+  max-width: 40vw;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+/* Botón crema específico (para el botón lateral "Marcar completado") */
+.btn.crema {
+  background-color: var(--blanco-crema);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  font-weight:700;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+/* Botón crema específico (solo para el botón lateral "Marcar completado") */
+.topic-card .btn.crema {
+  background-color: var(--blanco-crema) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06) !important;
+  font-weight:700 !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+}
+/* ---------- FORZAR botón crema en tarjetas de temas (solo el detalle pedido) ---------- */
+/* Mantener estética original; esta regla solo asegura que el botón lateral sea crema */
+.topic-card .btn.crema,
+.topic-card .actions .btn.crema,
+.container .topic-card .btn.crema {
+  background-color: var(--blanco-crema) !important; /* #FCFCE4 */
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06) !important;
+  font-weight: 700 !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+}
+
+/* Asegurar que cualquier icono o texto interno también sea blanco */
+.topic-card .btn.crema svg,
+.topic-card .btn.crema i,
+.topic-card .btn.crema * {
+  color: #ffffff !important;
+}
+
+/* Nota: no tocamos otras variantes (.btn.peach, .btn.lavanda, .btn.mint, .btn.primary-solid)
+   para mantener la paleta y la estética que ya tenías. */

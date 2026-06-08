@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2.3 Integración de Funciones Exponenciales y Logarítmicas</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="../css/cajas.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 1 • Integración de Funciones Exponenciales y Logarítmicas
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            1.2.3 Integración de Funciones Exponenciales y Logarítmicas
+        </h1>
+
+        <p class="subtitulo">
+            Integrales exponenciales, logarítmicas, reconocimiento de patrones y cambio de variable
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                Las funciones exponenciales y logarítmicas aparecen constantemente en cálculo,
+                física, ingeniería, economía y ciencias naturales. Estas funciones modelan
+                crecimiento poblacional, interés compuesto, desintegración radiactiva,
+                circuitos eléctricos y fenómenos de crecimiento o decrecimiento.
+            </p>
+
+            <p>
+                La integración de estas funciones requiere reconocer patrones,
+                aplicar propiedades algebraicas y utilizar cambios de variable.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Funciones exponenciales</h2>
+
+            <p>
+                Una función exponencial es aquella donde la variable se encuentra en el exponente.
+            </p>
+
+            <div class="formula">
+                \[
+                f(x)=a^x
+                \]
+            </div>
+
+            <p>
+                La función exponencial más importante es:
+            </p>
+
+            <div class="formula">
+                \[
+                e^x
+                \]
+            </div>
+
+            <p>
+                debido a que su derivada y su integral son iguales a ella misma.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integral básica de la función exponencial</h2>
+
+            <div class="formula">
+                \[
+                \int e^x\,dx=e^x+C
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int 4e^x\,dx
+                    \]
+                </div>
+
+                <p>
+                    La constante puede salir de la integral:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =4\int e^x\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =4e^x+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integral de funciones exponenciales con base diferente de e</h2>
+
+            <div class="formula">
+                \[
+                \int a^x\,dx=
+                \frac{a^x}{\ln(a)}+C
+                \]
+            </div>
+
+            <p>
+                Esta fórmula se utiliza cuando la base es distinta de e.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int 2^x\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{2^x}{\ln(2)}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales exponenciales con cambio de variable</h2>
+
+            <p>
+                Cuando el exponente contiene una expresión algebraica,
+                normalmente se utiliza sustitución.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int e^{3x}\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=3x
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=3dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dx=\frac{du}{3}
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{3}\int e^u\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{1}{3}e^u+C
+                    \]
+                </div>
+
+                <p>
+                    Regresando a x:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{1}{3}e^{3x}+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int 5e^{2x+1}\,dx
+                    \]
+                </div>
+
+                <p>
+                    Cambio:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=2x+1
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=2dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dx=\frac{du}{2}
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{5}{2}\int e^u\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{5}{2}e^u+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{5}{2}e^{2x+1}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Funciones logarítmicas</h2>
+
+            <p>
+                El logaritmo natural se representa mediante:
+            </p>
+
+            <div class="formula">
+                \[
+                \ln(x)
+                \]
+            </div>
+
+            <p>
+                La derivada del logaritmo natural es:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}\ln(x)=\frac{1}{x}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integral básica logarítmica</h2>
+
+            <div class="formula">
+                \[
+                \int \frac{1}{x}\,dx=\ln|x|+C
+                \]
+            </div>
+
+            <p>
+                El valor absoluto es obligatorio porque el logaritmo natural
+                solamente existe para números positivos.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{5}{x}\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =5\ln|x|+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales logarítmicas con sustitución</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{2x}{x^2+1}\,dx
+                    \]
+                </div>
+
+                <p>
+                    El denominador tiene derivada parecida al numerador.
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x^2+1
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=2xdx
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{u}\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\ln|u|+C
+                    \]
+                </div>
+
+                <p>
+                    Regresando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =\ln(x^2+1)+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{3}{3x+2}\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    u=3x+2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=3dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{u}\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\ln|u|+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\ln|3x+2|+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales combinadas exponenciales y logarítmicas</h2>
+
+            <p>
+                En muchos ejercicios aparecen funciones mezcladas.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{e^x}{1+e^x}\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=1+e^x
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=e^xdx
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{u}\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\ln|u|+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\ln(1+e^x)+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int xe^{x^2}\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    u=x^2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=2xdx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{2}\int e^u\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{1}{2}e^u+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{1}{2}e^{x^2}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Reconocimiento de patrones</h2>
+
+            <ul>
+
+                <li>Si aparece \(e^{f(x)}\), busca la derivada de \(f(x)\)</li>
+
+                <li>Si aparece una fracción con denominador algebraico, revisa si el numerador es su derivada</li>
+
+                <li>Las expresiones tipo \(\frac{f'(x)}{f(x)}\) producen logaritmos</li>
+
+                <li>Las expresiones tipo \(e^{f(x)}f'(x)\) producen exponenciales</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{x}dx \neq \frac{1}{2}x^2
+                    \]
+                </div>
+
+                <p>
+                    La integral correcta es:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \ln|x|+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Olvidar dividir entre la derivada interna en integrales exponenciales.
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int e^{5x}dx
+                    \neq
+                    e^{5x}
+                    \]
+                </div>
+
+                <p>
+                    La correcta es:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{5}e^{5x}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Consejos prácticos</h2>
+
+            <ul>
+
+                <li>Memoriza las integrales básicas exponenciales y logarítmicas</li>
+
+                <li>Busca derivadas internas dentro de la integral</li>
+
+                <li>Utiliza sustitución cuando aparezcan expresiones compuestas</li>
+
+                <li>Verifica derivando el resultado</li>
+
+                <li>No olvides la constante de integración</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones</h2>
+
+            <p>
+                Estas integrales tienen aplicaciones en:
+            </p>
+
+            <ul>
+
+                <li>Crecimiento poblacional</li>
+
+                <li>Interés compuesto</li>
+
+                <li>Desintegración radiactiva</li>
+
+                <li>Procesos biológicos</li>
+
+                <li>Modelos económicos</li>
+
+                <li>Fenómenos físicos exponenciales</li>
+
+                <li>Electrónica y circuitos</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración de funciones exponenciales y logarítmicas es una de las
+                herramientas más importantes del cálculo integral. El reconocimiento de
+                patrones y el uso correcto del cambio de variable permiten resolver una gran
+                variedad de problemas matemáticos y científicos.
+            </p>
+
+            <p>
+                Estas técnicas serán fundamentales en temas posteriores como integración
+                avanzada, ecuaciones diferenciales y aplicaciones físicas.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

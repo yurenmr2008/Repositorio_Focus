@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Integración por Partes</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 2 • Integración por Partes
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            2.1 Integración por Partes
+        </h1>
+
+        <p class="subtitulo">
+            Método avanzado de integración para productos de funciones
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                La integración por partes es uno de los métodos más importantes y utilizados
+                en cálculo integral. Este procedimiento permite resolver integrales donde
+                aparecen productos de funciones que no pueden integrarse directamente con
+                fórmulas inmediatas.
+            </p>
+
+            <p>
+                Muchas integrales complicadas se transforman en integrales más simples mediante
+                este método. Es especialmente útil cuando intervienen:
+            </p>
+
+            <ul>
+
+                <li>Funciones algebraicas multiplicadas por exponenciales</li>
+
+                <li>Funciones algebraicas multiplicadas por trigonométricas</li>
+
+                <li>Logaritmos</li>
+
+                <li>Funciones inversas trigonométricas</li>
+
+                <li>Productos entre distintas funciones</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Origen de la fórmula</h2>
+
+            <p>
+                La integración por partes proviene directamente de la regla del producto
+                para derivadas.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(uv)=u\frac{dv}{dx}+v\frac{du}{dx}
+                \]
+            </div>
+
+            <p>
+                Reordenando:
+            </p>
+
+            <div class="formula">
+                \[
+                u\,dv=d(uv)-v\,du
+                \]
+            </div>
+
+            <p>
+                Integrando ambos lados:
+            </p>
+
+            <div class="formula">
+                \[
+                \int u\,dv=\int d(uv)-\int v\,du
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \int u\,dv=uv-\int v\,du
+                \]
+            </div>
+
+            <p>
+                Esta es la fórmula fundamental de integración por partes.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Fórmula principal</h2>
+
+            <div class="formula">
+                \[
+                \int u\,dv=uv-\int v\,du
+                \]
+            </div>
+
+            <p>
+                Donde:
+            </p>
+
+            <ul>
+
+                <li>\(u\) es la función que se deriva</li>
+
+                <li>\(dv\) es la función que se integra</li>
+
+                <li>\(du\) es la derivada de \(u\)</li>
+
+                <li>\(v\) es la integral de \(dv\)</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Cómo elegir u y dv?</h2>
+
+            <p>
+                La parte más importante del método es decidir correctamente qué función será
+                \(u\) y cuál será \(dv\).
+            </p>
+
+            <p>
+                Para esto existe una regla muy conocida:
+            </p>
+
+            <h3>Regla LIATE</h3>
+
+            <table>
+
+                <tr>
+                    <th>Prioridad</th>
+                    <th>Tipo de función</th>
+                </tr>
+
+                <tr>
+                    <td>L</td>
+                    <td>Logarítmica</td>
+                </tr>
+
+                <tr>
+                    <td>I</td>
+                    <td>Trigonométrica inversa</td>
+                </tr>
+
+                <tr>
+                    <td>A</td>
+                    <td>Algebraica</td>
+                </tr>
+
+                <tr>
+                    <td>T</td>
+                    <td>Trigonométrica</td>
+                </tr>
+
+                <tr>
+                    <td>E</td>
+                    <td>Exponencial</td>
+                </tr>
+
+            </table>
+
+            <p>
+                La función con mayor prioridad normalmente se elige como \(u\).
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo básico</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int x e^x\,dx
+                    \]
+                </div>
+
+                <p>
+                    Elegimos:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dv=e^xdx
+                    \]
+                </div>
+
+                <p>
+                    Derivamos e integramos:
+                </p>
+
+                <div class="formula">
+                    \[
+                    du=dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    v=e^x
+                    \]
+                </div>
+
+                <p>
+                    Aplicando la fórmula:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int u\,dv=uv-\int v\,du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \int xe^xdx=xe^x-\int e^xdx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =xe^x-e^x+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =e^x(x-1)+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Caso con logaritmos</h2>
+
+            <p>
+                Cuando aparece un logaritmo, normalmente se toma como \(u\).
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int \ln(x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Aunque parece una sola función, realmente:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \ln(x)\cdot1
+                    \]
+                </div>
+
+                <p>
+                    Elegimos:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=\ln(x)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dv=dx
+                    \]
+                </div>
+
+                <p>
+                    Entonces:
+                </p>
+
+                <div class="formula">
+                    \[
+                    du=\frac{1}{x}dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    v=x
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int \ln(x)\,dx=x\ln(x)-\int x\left(\frac{1}{x}\right)dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =x\ln(x)-\int1dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =x\ln(x)-x+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Caso con funciones trigonométricas</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 3</h3>
+
+                <div class="formula">
+                    \[
+                    \int x\sin(x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Elegimos:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dv=\sin(x)dx
+                    \]
+                </div>
+
+                <p>
+                    Entonces:
+                </p>
+
+                <div class="formula">
+                    \[
+                    du=dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    v=-\cos(x)
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x\sin(x)dx=-x\cos(x)+\int\cos(x)dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =-x\cos(x)+\sin(x)+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integración por partes repetida</h2>
+
+            <p>
+                Algunas integrales requieren aplicar el método varias veces.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 4</h3>
+
+                <div class="formula">
+                    \[
+                    \int x^2e^x\,dx
+                    \]
+                </div>
+
+                <p>
+                    Primera aplicación:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x^2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dv=e^xdx
+                    \]
+                </div>
+
+                <p>
+                    Resultado:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =x^2e^x-\int2xe^xdx
+                    \]
+                </div>
+
+                <p>
+                    Ahora la nueva integral también requiere partes:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int2xe^xdx
+                    \]
+                </div>
+
+                <p>
+                    Finalmente:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^2e^xdx=e^x(x^2-2x+2)+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Método tabular</h2>
+
+            <p>
+                Cuando una función algebraica se deriva repetidamente hasta desaparecer,
+                puede utilizarse el método tabular.
+            </p>
+
+            <p>
+                Este método acelera cálculos largos.
+            </p>
+
+            <h3>Pasos</h3>
+
+            <ul>
+
+                <li>Derivar sucesivamente la función algebraica</li>
+
+                <li>Integrar sucesivamente la otra función</li>
+
+                <li>Alternar signos positivos y negativos</li>
+
+                <li>Multiplicar diagonalmente</li>
+
+            </ul>
+
+            <div class="tip">
+
+                <h3>Cuándo usarlo</h3>
+
+                <p>
+                    Es muy útil en integrales como:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^3e^x\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \int x^4\sin(x)\,dx
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Casos especiales</h2>
+
+            <h3>1. Funciones exponenciales y trigonométricas juntas</h3>
+
+            <div class="formula">
+                \[
+                \int e^x\cos(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Este tipo de integrales normalmente requieren aplicar integración
+                por partes dos veces.
+            </p>
+
+            <h3>2. Integrales cíclicas</h3>
+
+            <p>
+                Algunas integrales vuelven a aparecer después de aplicar partes.
+            </p>
+
+            <p>
+                En estos casos se despeja algebraicamente la integral.
+            </p>
+
+            <div class="formula">
+                \[
+                I=\int e^x\cos(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Después de dos aplicaciones puede aparecer nuevamente \(I\),
+                entonces se despeja.
+            </p>
+
+            <h3>3. Logaritmos e inversas trigonométricas</h3>
+
+            <p>
+                Casi siempre estas funciones deben elegirse como \(u\).
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Patrones importantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Integral</th>
+                    <th>Método recomendado</th>
+                </tr>
+
+                <tr>
+                    <td>\(x e^x\)</td>
+                    <td>Por partes</td>
+                </tr>
+
+                <tr>
+                    <td>\(x\sin(x)\)</td>
+                    <td>Por partes</td>
+                </tr>
+
+                <tr>
+                    <td>\(\ln(x)\)</td>
+                    <td>Por partes</td>
+                </tr>
+
+                <tr>
+                    <td>\(x^n e^x\)</td>
+                    <td>Partes repetidas</td>
+                </tr>
+
+                <tr>
+                    <td>\(x^n\sin(x)\)</td>
+                    <td>Partes repetidas</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    Elegir incorrectamente \(u\) y \(dv\).
+                </p>
+
+                <p>
+                    Esto puede volver más complicada la integral.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Olvidar el signo negativo de la fórmula.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    Integrar incorrectamente \(dv\).
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    No agregar la constante de integración.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Consejos y tips</h2>
+
+            <ul>
+
+                <li>Busca productos de funciones</li>
+
+                <li>Usa LIATE para elegir \(u\)</li>
+
+                <li>Verifica derivando el resultado</li>
+
+                <li>Si la integral se complica más, cambia la elección de \(u\)</li>
+
+                <li>Utiliza el método tabular para polinomios</li>
+
+                <li>Observa si la integral vuelve a aparecer</li>
+
+                <li>Practica reconocimiento de patrones</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración por partes es una herramienta fundamental del cálculo integral.
+                Permite transformar integrales difíciles en otras más simples mediante una
+                estrategia basada en derivar una función e integrar otra.
+            </p>
+
+            <p>
+                Dominar este método requiere práctica, reconocimiento de patrones y una correcta
+                elección de las funciones \(u\) y \(dv\).
+            </p>
+
+            <p>
+                Es uno de los métodos más utilizados en física, ingeniería, matemáticas avanzadas,
+                ecuaciones diferenciales y análisis científico.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

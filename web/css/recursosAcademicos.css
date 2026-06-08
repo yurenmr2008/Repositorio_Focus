@@ -1,0 +1,276 @@
+:root{
+    --azul: #5E7153;
+    --azul-claro: #A9B489;
+    --menta: #F9ECC9;
+    --arena: #FCFCE4;
+    --coral: #C66828;
+    --blanco: #FCFCE4;
+    --texto: #21302A;
+
+    --sombra: 0 8px 20px rgba(0,0,0,0.06);
+    --radio: 18px;
+
+    --btn-bg: #A9B489;
+    --btn-text: #21302A;
+    --btn-hover: #5E7153;
+    --btn-radius: 14px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',system-ui;
+    transition:.25s ease;
+}
+
+body{
+    min-height:100vh;
+    background:var(--menta);
+    color:var(--texto);
+    padding:40px;
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+    max-width:1400px;
+    margin:auto;
+}
+
+/* TITULOS */
+
+h1{
+    text-align:center;
+    font-size:56px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:var(--texto);
+}
+
+.subtitulo{
+    text-align:center;
+    font-size:18px;
+    color:#4d5f56;
+    margin-bottom:40px;
+}
+
+/* BUSCADOR */
+
+.buscador-contenedor{
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+}
+
+#buscador{
+    width:700px;
+    max-width:100%;
+    padding:18px 22px;
+    border:none;
+    border-radius:18px;
+    background:var(--blanco);
+    box-shadow:var(--sombra);
+    font-size:18px;
+    outline:none;
+    color:var(--texto);
+}
+
+#buscador:focus{
+    transform:scale(1.01);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* FILTROS */
+
+.filtros{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+}
+
+.filtro-box{
+    background:var(--blanco);
+    border-radius:var(--radio);
+    padding:25px;
+    min-width:300px;
+    box-shadow:var(--sombra);
+    border:1px solid rgba(0,0,0,0.05);
+}
+
+.filtro-box h2{
+    margin-bottom:20px;
+    font-size:26px;
+    color:var(--azul);
+}
+
+/* CHECKBOX */
+
+.filtro-box label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+    font-size:16px;
+    cursor:pointer;
+    color:var(--texto);
+}
+
+input[type="checkbox"]{
+    accent-color:var(--azul);
+    width:16px;
+    height:16px;
+}
+
+/* SEMESTRES */
+
+.semestres-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+/* MATERIAS */
+
+.materias{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:30px;
+}
+
+/* TARJETA */
+
+.materia-card{
+    background:var(--blanco);
+    border-radius:22px;
+    padding:25px;
+    box-shadow:var(--sombra);
+    border:1px solid rgba(0,0,0,0.05);
+}
+
+.materia-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.10);
+}
+
+/* MATERIA BLOQUEADA */
+
+.bloqueada{
+    opacity:.6;
+    background:#f3e5df;
+    border:1px solid rgba(198,104,40,0.25);
+    pointer-events:none;
+}
+
+.bloqueada .materia-titulo{
+    color:var(--coral);
+}
+
+.bloqueada::after{
+    content:"NO DISPONIBLE";
+    display:block;
+    margin-top:18px;
+    color:var(--coral);
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* TEXTOS */
+
+.materia-titulo{
+    font-size:30px;
+    font-weight:800;
+    margin-bottom:14px;
+    color:var(--texto);
+}
+
+.info{
+    color:#51635b;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+/* UNIDADES */
+
+.unidad{
+    margin-top:14px;
+}
+
+/* BOTONES */
+
+.boton-unidad{
+    width:100%;
+    background:var(--btn-bg);
+    color:var(--btn-text);
+    border:none;
+    padding:16px 18px;
+    border-radius:14px;
+    text-align:left;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--sombra);
+}
+
+.boton-unidad:hover{
+    background:var(--btn-hover);
+    color:white;
+    transform:translateY(-2px);
+}
+
+/* TEMAS */
+
+.temas{
+    display:none;
+    margin-top:10px;
+    background:var(--arena);
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,0.05);
+}
+
+.tema{
+    padding:14px 18px;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    cursor:pointer;
+    font-size:15px;
+    color:var(--texto);
+}
+
+.tema:last-child{
+    border-bottom:none;
+}
+
+.tema:hover{
+    background:var(--azul-claro);
+    padding-left:24px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    body{
+        padding:20px;
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    .filtros{
+        flex-direction:column;
+    }
+
+    .filtro-box{
+        width:100%;
+    }
+
+    .materias{
+        grid-template-columns:1fr;
+    }
+
+}

@@ -57,8 +57,8 @@ public class SVModificarActividades extends HttpServlet {
         String year = request.getParameter("year");
         String numMes =  request.getParameter("numMes");
         
-        if(boton.equals("Modificar")){
-            System.out.println("Modificar");
+        if(boton.equals("Guardar")){
+            System.out.println("Guardar");
             try{
 
                 String nombreAct = request.getParameter("nombreAct"); 
@@ -80,7 +80,8 @@ public class SVModificarActividades extends HttpServlet {
 
                 st.executeUpdate();
                 System.out.println("Todo se ha modificado correctamente");
-
+                conecta.close();
+                st.close();
             }           
             catch(Exception e){
                 System.out.println("Error." + e.getMessage());
@@ -99,7 +100,8 @@ public class SVModificarActividades extends HttpServlet {
 
                 st.executeUpdate();
                 System.out.println("Todo se ha modificado correctamente");
-
+                conecta.close();
+                st.close();
             }           
             catch(Exception e){
                 System.out.println("Error." + e.getMessage());

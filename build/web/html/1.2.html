@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2 Integrales Inmediatas</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 1 • Integrales Inmediatas
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            1.2 Integrales Inmediatas
+        </h1>
+
+        <p class="subtitulo">
+            Reconocimiento de patrones y aplicación de formas elementales de integración
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                Las integrales inmediatas son aquellas que pueden resolverse de manera directa
+                aplicando fórmulas básicas de integración sin necesidad de métodos avanzados.
+            </p>
+
+            <p>
+                El objetivo principal es reconocer patrones algebraicos y relacionarlos con las
+                formas elementales de integración.
+            </p>
+
+            <p>
+                Estas integrales representan la base de todo el cálculo integral, ya que permiten
+                desarrollar posteriormente técnicas más complejas como integración por partes,
+                sustitución trigonométrica y fracciones parciales.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Concepto de integral inmediata</h2>
+
+            <p>
+                Una integral inmediata es aquella cuya solución puede identificarse directamente
+                mediante una fórmula conocida.
+            </p>
+
+            <p>
+                El proceso consiste en observar la función integrando y compararla con patrones
+                elementales previamente establecidos.
+            </p>
+
+            <div class="formula">
+                \[
+                \int f(x)\,dx = F(x)+C
+                \]
+            </div>
+
+            <p>
+                Donde:
+            </p>
+
+            <ul>
+
+                <li>\(f(x)\) es la función a integrar</li>
+
+                <li>\(F(x)\) es la antiderivada</li>
+
+                <li>\(C\) es la constante de integración</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Reglas fundamentales de integración</h2>
+
+            <h3>1. Integral de una constante</h3>
+
+            <div class="formula">
+                \[
+                \int k\,dx = kx + C
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int 7\,dx = 7x + C
+                    \]
+                </div>
+
+            </div>
+
+            <h3>2. Regla de la potencia</h3>
+
+            <div class="formula">
+                \[
+                \int x^n\,dx =
+                \frac{x^{n+1}}{n+1}+C
+                \]
+            </div>
+
+            <p>
+                Esta regla es válida siempre que:
+            </p>
+
+            <div class="formula">
+                \[
+                n \neq -1
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int x^3\,dx
+                    =
+                    \frac{x^4}{4}+C
+                    \]
+                </div>
+
+            </div>
+
+            <h3>3. Integral de suma y resta</h3>
+
+            <div class="formula">
+                \[
+                \int [f(x)\pm g(x)]dx
+                =
+                \int f(x)dx
+                \pm
+                \int g(x)dx
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <div class="formula">
+                    \[
+                    \int (x^2+3x)\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =
+                    \frac{x^3}{3}
+                    +
+                    \frac{3x^2}{2}
+                    +C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Reconocimiento de patrones</h2>
+
+            <p>
+                Resolver integrales inmediatas requiere identificar rápidamente la forma de la
+                función y relacionarla con una fórmula conocida.
+            </p>
+
+            <h3>Patrones más comunes</h3>
+
+            <ul>
+
+                <li>Potencias de \(x\)</li>
+
+                <li>Constantes multiplicando funciones</li>
+
+                <li>Polinomios</li>
+
+                <li>Funciones exponenciales</li>
+
+                <li>Funciones trigonométricas básicas</li>
+
+                <li>Expresiones que requieren cambio de variable simple</li>
+
+            </ul>
+
+            <div class="nota">
+
+                <p>
+                    El reconocimiento de patrones es una habilidad fundamental en cálculo
+                    integral. Mientras más ejercicios se practiquen, más rápido será identificar
+                    la técnica adecuada.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales de funciones exponenciales</h2>
+
+            <h3>Exponencial natural</h3>
+
+            <div class="formula">
+                \[
+                \int e^x\,dx = e^x + C
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <div class="formula">
+                    \[
+                    \int 5e^x\,dx
+                    =
+                    5e^x+C
+                    \]
+                </div>
+
+            </div>
+
+            <h3>Exponencial con base a</h3>
+
+            <div class="formula">
+                \[
+                \int a^x\,dx
+                =
+                \frac{a^x}{\ln(a)}+C
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales trigonométricas básicas</h2>
+
+            <div class="formula">
+                \[
+                \int \sin(x)\,dx
+                =
+                -\cos(x)+C
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \int \cos(x)\,dx
+                =
+                \sin(x)+C
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \int \sec^2(x)\,dx
+                =
+                \tan(x)+C
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int 4\cos(x)\,dx
+                    =
+                    4\sin(x)+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cambio de variable sencillo</h2>
+
+            <p>
+                Algunas integrales inmediatas requieren realizar una sustitución simple para
+                convertir la expresión en una forma elemental.
+            </p>
+
+            <p>
+                Este procedimiento también se conoce como sustitución algebraica.
+            </p>
+
+            <h3>Procedimiento</h3>
+
+            <ul>
+
+                <li>Se identifica una expresión interna</li>
+
+                <li>Se sustituye por una nueva variable</li>
+
+                <li>Se transforma la integral</li>
+
+                <li>Se integra normalmente</li>
+
+            </ul>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int (2x)(x^2+1)^3 dx
+                    \]
+                </div>
+
+                <p>
+                    Se realiza el cambio:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x^2+1
+                    \]
+                </div>
+
+                <p>
+                    Entonces:
+                </p>
+
+                <div class="formula">
+                    \[
+                    du=2x\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int u^3\,du
+                    \]
+                </div>
+
+                <p>
+                    Aplicando la regla de potencia:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{u^4}{4}+C
+                    \]
+                </div>
+
+                <p>
+                    Regresando a la variable original:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{(x^2+1)^4}{4}+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int 3e^{3x}\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=3x
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=3dx
+                    \]
+                </div>
+
+                <p>
+                    La integral queda:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int e^u\,du
+                    =
+                    e^u+C
+                    \]
+                </div>
+
+                <p>
+                    Resultado final:
+                </p>
+
+                <div class="formula">
+                    \[
+                    e^{3x}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <ul>
+
+                <li>Olvidar la constante de integración</li>
+
+                <li>Aplicar incorrectamente la regla de potencia</li>
+
+                <li>No identificar correctamente el patrón</li>
+
+                <li>Realizar mal el cambio de variable</li>
+
+                <li>No regresar a la variable original después de integrar</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                Las integrales inmediatas constituyen la base de todos los métodos de integración.
+                El reconocimiento de patrones permite identificar rápidamente qué fórmula utilizar
+                y resolver problemas de manera eficiente.
+            </p>
+
+            <p>
+                Además, los cambios de variable sencillos introducen al estudiante a técnicas más
+                avanzadas de integración, desarrollando habilidades fundamentales para cursos
+                posteriores de cálculo.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

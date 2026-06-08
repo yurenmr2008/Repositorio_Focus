@@ -8,15 +8,36 @@
 <link rel="stylesheet" href="../css/registro_css.css">
 <script>
 function validar() {
-    let c1 = document.getElementById("c1").value
-    let c2 = document.getElementById("c2").value
-    if (c1 !== c2) {
-        alert("Las contraseÃ±as no coinciden")
-        return false
+    let c1 = document.getElementById("c1").value;
+    let c2 = document.getElementById("c2").value;
+
+    if (c1.length < 8) {
+        alert("La contraseña debe tener al menos 8 caracteres");
+        return false;
     }
-    return true
+    if (!/[A-Za-z]/.test(c1)) {
+        alert("La contraseña debe incluir al menos una letra");
+        return false;
+    }
+    if (!/\d/.test(c1)) {
+        alert("La contraseña debe incluir al menos un número");
+        return false;
+    }
+    if (!/[@$!%*?&]/.test(c1)) {
+        alert("La contraseña debe incluir al menos un carácter especial (@$!%*?&)");
+        return false;
+    }
+
+    if (c1 !== c2) {
+        alert("Las contraseñas no coinciden");
+        return false;
+    }
+
+    return true;
 }
 </script>
+
+
 </head>
 
 <body>

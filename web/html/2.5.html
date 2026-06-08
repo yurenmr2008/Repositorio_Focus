@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5 Integración por Racionalización</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 2 • Integración por Racionalización
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            2.5 Integración por Racionalización
+        </h1>
+
+        <p class="subtitulo">
+            Método algebraico para simplificar integrales con raíces mediante racionalización
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                La integración por racionalización es una técnica utilizada para transformar integrales con raíces complicadas en expresiones algebraicas más simples.
+            </p>
+
+            <p>
+                Muchas veces las raíces impiden aplicar métodos básicos de integración. Mediante racionalización se eliminan esas raíces utilizando operaciones algebraicas especiales.
+            </p>
+
+            <p>
+                El objetivo principal es convertir una integral difícil en una forma racional más sencilla de integrar.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Qué significa racionalizar?</h2>
+
+            <p>
+                Racionalizar significa eliminar raíces del numerador o denominador utilizando identidades algebraicas.
+            </p>
+
+            <p>
+                Generalmente se multiplica por el conjugado.
+            </p>
+
+            <h3>Ejemplo básico</h3>
+
+            <div class="formula">
+                \[
+                \frac{1}{\sqrt{x}+1}
+                \]
+            </div>
+
+            <p>
+                Se racionaliza multiplicando por:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{\sqrt{x}-1}{\sqrt{x}-1}
+                \]
+            </div>
+
+            <p>
+                Aplicando productos notables:
+            </p>
+
+            <div class="formula">
+                \[
+                (\sqrt{x}+1)(\sqrt{x}-1)=x-1
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Por qué se utiliza en integración?</h2>
+
+            <p>
+                Existen integrales que no pueden resolverse fácilmente debido a raíces complejas.
+            </p>
+
+            <p>
+                Al racionalizar:
+            </p>
+
+            <ul>
+
+                <li>Se simplifican expresiones</li>
+
+                <li>Se eliminan radicales</li>
+
+                <li>Se facilita el cambio de variable</li>
+
+                <li>La integral puede transformarse en racional</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Casos donde aparece</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tipo de integral</th>
+                    <th>Posible método</th>
+                </tr>
+
+                <tr>
+                    <td>\(\frac{1}{\sqrt{x}+a}\)</td>
+                    <td>Conjugado</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{ax+b}\)</td>
+                    <td>Cambio de variable</td>
+                </tr>
+
+                <tr>
+                    <td>\(\frac{\sqrt{x}}{x+1}\)</td>
+                    <td>Sustitución y racionalización</td>
+                </tr>
+
+                <tr>
+                    <td>Raíces múltiples</td>
+                    <td>Transformación algebraica</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>El conjugado</h2>
+
+            <p>
+                El conjugado es una herramienta fundamental en racionalización.
+            </p>
+
+            <p>
+                Si tenemos:
+            </p>
+
+            <div class="formula">
+                \[
+                a+b
+                \]
+            </div>
+
+            <p>
+                Su conjugado es:
+            </p>
+
+            <div class="formula">
+                \[
+                a-b
+                \]
+            </div>
+
+            <p>
+                Porque:
+            </p>
+
+            <div class="formula">
+                \[
+                (a+b)(a-b)=a^2-b^2
+                \]
+            </div>
+
+            <p>
+                Esto elimina raíces fácilmente.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Primer ejemplo completo</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{\sqrt{x}+1}dx
+                    \]
+                </div>
+
+                <h3>Paso 1 • Multiplicar por el conjugado</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{\sqrt{x}+1}
+                    \cdot
+                    \frac{\sqrt{x}-1}{\sqrt{x}-1}
+                    \]
+                </div>
+
+                <h3>Paso 2 • Simplificar</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{\sqrt{x}-1}{x-1}
+                    \]
+                </div>
+
+                <p>
+                    Ahora la expresión es más manejable.
+                </p>
+
+                <h3>Paso 3 • Sustitución</h3>
+
+                <div class="formula">
+                    \[
+                    u=\sqrt{x}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    x=u^2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dx=2u\,du
+                    \]
+                </div>
+
+                <p>
+                    La integral se transforma completamente en una expresión racional.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Racionalización con raíces dobles</h2>
+
+            <p>
+                Algunas integrales contienen varias raíces:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{x+1}-\sqrt{x-1}
+                \]
+            </div>
+
+            <p>
+                Se racionaliza usando el conjugado:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{x+1}+\sqrt{x-1}
+                \]
+            </div>
+
+            <p>
+                Entonces:
+            </p>
+
+            <div class="formula">
+                \[
+                (\sqrt{x+1}-\sqrt{x-1})
+                (\sqrt{x+1}+\sqrt{x-1})
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =(x+1)-(x-1)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =2
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Combinación con cambio de variable</h2>
+
+            <p>
+                Muchas veces racionalizar no es suficiente.
+            </p>
+
+            <p>
+                También se requiere sustitución.
+            </p>
+
+            <h3>Ejemplo</h3>
+
+            <div class="formula">
+                \[
+                \int \frac{\sqrt{x}}{x+1}dx
+                \]
+            </div>
+
+            <p>
+                Se utiliza:
+            </p>
+
+            <div class="formula">
+                \[
+                x=u^2
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                dx=2u\,du
+                \]
+            </div>
+
+            <p>
+                Entonces:
+            </p>
+
+            <div class="formula">
+                \[
+                \int \frac{u}{u^2+1}(2u)\,du
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                2\int \frac{u^2}{u^2+1}du
+                \]
+            </div>
+
+            <p>
+                La integral ya es racional.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Racionalización trigonométrica</h2>
+
+            <p>
+                Algunas raíces aparecen junto con funciones trigonométricas.
+            </p>
+
+            <p>
+                Ejemplo:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{1-\sin(x)}
+                \]
+            </div>
+
+            <p>
+                Puede racionalizarse multiplicando por:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{1+\sin(x)}
+                \]
+            </div>
+
+            <p>
+                Porque:
+            </p>
+
+            <div class="formula">
+                \[
+                (1-\sin(x))(1+\sin(x))
+                =
+                1-\sin^2(x)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =\cos^2(x)
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cómo reconocer cuándo usar racionalización</h2>
+
+            <p>
+                Este método suele utilizarse cuando:
+            </p>
+
+            <ul>
+
+                <li>Existen raíces en denominadores</li>
+
+                <li>Las raíces dificultan integrar</li>
+
+                <li>Aparecen sumas o restas con radicales</li>
+
+                <li>El conjugado puede simplificar la expresión</li>
+
+                <li>El cambio de variable genera integrales racionales</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Patrones importantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Expresión</th>
+                    <th>Conjugado</th>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{x}+1\)</td>
+                    <td>\(\sqrt{x}-1\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{x}-2\)</td>
+                    <td>\(\sqrt{x}+2\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{a}+\sqrt{b}\)</td>
+                    <td>\(\sqrt{a}-\sqrt{b}\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores más comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    Multiplicar incorrectamente el conjugado.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    No aplicar productos notables correctamente.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    Olvidar transformar completamente el diferencial.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    Hacer sustituciones innecesarias.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tips importantes</h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Busca siempre el conjugado de una raíz complicada</li>
+
+                    <li>Recuerda el producto notable diferencia de cuadrados</li>
+
+                    <li>Combina racionalización con sustitución</li>
+
+                    <li>Verifica si la raíz realmente desaparece</li>
+
+                    <li>Simplifica completamente antes de integrar</li>
+
+                    <li>Practica reconocer patrones rápidamente</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones</h2>
+
+            <p>
+                La racionalización aparece en:
+            </p>
+
+            <ul>
+
+                <li>Cálculo avanzado</li>
+
+                <li>Ingeniería</li>
+
+                <li>Física matemática</li>
+
+                <li>Electromagnetismo</li>
+
+                <li>Problemas geométricos</li>
+
+                <li>Ecuaciones diferenciales</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Relación con otros métodos</h2>
+
+            <p>
+                La racionalización normalmente no trabaja sola.
+            </p>
+
+            <p>
+                Muchas veces se combina con:
+            </p>
+
+            <ul>
+
+                <li>Cambio de variable</li>
+
+                <li>Fracciones parciales</li>
+
+                <li>Sustitución trigonométrica</li>
+
+                <li>Integración algebraica</li>
+
+            </ul>
+
+            <p>
+                Esto la convierte en una herramienta complementaria muy poderosa.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración por racionalización es una técnica algebraica fundamental para simplificar integrales con radicales.
+            </p>
+
+            <p>
+                Aunque muchas veces parece complicada al inicio, realmente sigue una idea simple: eliminar raíces para transformar la integral en una expresión más fácil.
+            </p>
+
+            <p>
+                Dominar este método requiere práctica con productos notables, conjugados y sustituciones.
+            </p>
+
+            <p>
+                Una vez comprendido, permite resolver integrales que de otra forma serían extremadamente difíciles.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recursos Académicos</title>
+
+    <link rel="stylesheet" href="../css/recursosAcademicos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+
+   
+    <main class="principal">
+
+        <div class="contenedor">
+
+            
+            <div class="encabezado">
+
+                <h1>Recursos Académicos</h1>
+
+                <p class="subtitulo">
+                    Plataforma de recursos y materiales académicos
+                </p>
+
+            </div>
+
+            <div class="buscador-contenedor">
+
+                <input
+                    type="text"
+                    id="buscador"
+                    placeholder="Buscar materia..."
+                >
+
+            </div>
+
+            <div class="filtros">
+
+                <div class="filtro-box">
+
+                    <h2>Carreras</h2>
+
+                    <label>
+                        <input type="checkbox"
+                               class="carrera"
+                               value="Tronco Común">
+
+                        Tronco Común
+                    </label>
+
+                    <label>
+                        <input type="checkbox"
+                               class="carrera"
+                               value="Programación">
+
+                        Programación
+                    </label>
+
+                    <label>
+                        <input type="checkbox"
+                               class="carrera"
+                               value="Sistemas Digitales">
+
+                        Sistemas Digitales
+                    </label>
+
+                    <label>
+                        <input type="checkbox"
+                               class="carrera"
+                               value="Mecatrónica">
+
+                        Mecatrónica
+                    </label>
+
+                </div>
+
+                <div class="filtro-box">
+
+                    <h2>Semestres</h2>
+
+                    <div class="semestres-grid">
+
+                        <label>
+                            <input type="checkbox"
+                                   class="semestre"
+                                   value="1">
+                            I
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                   class="semestre"
+                                   value="2">
+                            II
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                   class="semestre"
+                                   value="3">
+                            III
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                   class="semestre"
+                                   value="4">
+                            IV
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                   class="semestre"
+                                   value="5">
+                            V
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                   class="semestre"
+                                   value="6">
+                            VI
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="contenedorMaterias" class="materias"></div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/recursosAcademicos.js"></script>
+
+</body>
+</html>

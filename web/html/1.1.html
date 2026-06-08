@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1 La antiderivada y el concepto de integral indefinida</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ <link rel="stylesheet" href="../css/cajas.css">
+</head>
+<body>
+
+    <header>
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+        <div class="titulo-header">
+            Unidad 1 • Antiderivada e Integral Indefinida
+        </div>
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            1.1 La Antiderivada y el Concepto de Integral Indefinida
+        </h1>
+
+        <p class="subtitulo">
+            Introducción a los fundamentos del cálculo integral
+        </p>
+
+        <div class="seccion">
+            <h2>Introducción</h2>
+            <p>
+                El cálculo integral es una de las ramas más importantes de las matemáticas,
+                ya que permite estudiar procesos de acumulación, áreas, volúmenes, cambios
+                continuos y fenómenos físicos. Dentro del cálculo integral, uno de los conceptos
+                fundamentales es la antiderivada.
+            </p>
+            <p>
+                La antiderivada representa el proceso inverso de la derivación. Si la derivada
+                permite encontrar la razón de cambio de una función, entonces la antiderivada
+                busca recuperar la función original a partir de dicha razón de cambio.
+            </p>
+            <p>
+                Este concepto es la base de las integrales indefinidas y posteriormente de las
+                integrales definidas y del Teorema Fundamental del Cálculo.
+            </p>
+        </div>
+
+        <div class="seccion">
+            <h2>¿Qué es una antiderivada?</h2>
+            <p>
+                Una antiderivada de una función f(x) es otra función F(x) cuya derivada es igual
+                to la función original.
+            </p>
+            <div class="formula">
+                Si \(F'(x) = f(x)\)
+            </div>
+            <p>
+                Entonces se dice que:
+            </p>
+            <div class="formula">
+                \(F(x)\) es una antiderivada de \(f(x)\)
+            </div>
+            <p>
+                Esto significa que al derivar F(x) obtenemos exactamente la función f(x).
+                El proceso de encontrar antiderivadas se conoce como integración.
+            </p>
+
+            <div class="ejemplo">
+                <h3>Ejemplo básico</h3>
+                <p>Sea la función:</p>
+                <div class="formula">
+                    \(f(x) = 2x\)
+                </div>
+                <p>Sabemos que:</p>
+                <div class="formula">
+                    \(\frac{d}{dx}(x^2) = 2x\)
+                </div>
+                <p>Entonces una antiderivada de 2x es:</p>
+                <div class="formula">
+                    \(x^2\)
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>Concepto de integral indefinida</h2>
+            <p>
+                La integral indefinida es la representación matemática de todas las posibles
+                antiderivadas de una función.
+            </p>
+            <div class="formula">
+                \(\int f(x)dx = F(x) + C\)
+            </div>
+            <p>Donde:</p>
+            <ul>
+                <li><strong>\(\int\)</strong> es el símbolo de integración</li>
+                <li><strong>\(f(x)\)</strong> es la función que se integrará</li>
+                <li><strong>\(dx\)</strong> indica la variable respecto a la cual se integra</li>
+                <li><strong>\(F(x)\)</strong> es la antiderivada obtenida</li>
+                <li><strong>\(C\)</strong> es la constante de integración</li>
+            </ul>
+            <p>
+                La integral indefinida no produce un valor numérico, sino una familia completa
+                de funciones.
+            </p>
+        </div>
+
+        <div class="seccion">
+            <h2>La constante de integración</h2>
+            <p>
+                Cuando se deriva una constante, el resultado siempre es cero.
+            </p>
+            <div class="formula">
+                \(\frac{d}{dx}(5) = 0\)
+            </div>
+            <p>
+                Due to this, cualquier constante sumada a una función desaparece al derivar.
+                Por ello, todas las antiderivadas deben incluir una constante de integración.
+            </p>
+
+            <div class="ejemplo">
+                <h3>Ejemplo</h3>
+                <div class="formula">
+                    \(\frac{d}{dx}(x^2 + 7) = 2x\)
+                </div>
+                <div class="formula">
+                    \(\frac{d}{dx}(x^2 - 3) = 2x\)
+                </div>
+                <div class="formula">
+                    \(\frac{d}{dx}(x^2 + 100) = 2x\)
+                </div>
+                <p>
+                    Todas tienen la misma derivada, por eso la integral debe expresarse con +C.
+                </p>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>Relación entre derivada e integración</h2>
+            <p>
+                La derivación y la integración son operaciones inversas.
+            </p>
+            <p>
+                La derivada analiza cómo cambia una función, mientras que la integral reconstruye
+                la función original a partir de esa información.
+            </p>
+            <div class="formula">
+                Derivar → Encontrar cambios
+            </div>
+            <div class="formula">
+                Integrar → Recuperar la función original
+            </div>
+            <div class="nota">
+                <p>
+                    Esta relación es uno de los pilares más importantes del cálculo y tiene
+                    aplicaciones en física, química, ingeniería, economía y muchas otras áreas.
+                </p>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>Propiedades básicas de las integrales indefinidas</h2>
+            <h3>1. Linealidad</h3>
+            <div class="formula">
+                \(\int [f(x) + g(x)]dx = \int f(x)dx + \int g(x)dx\)
+            </div>
+            <h3>2. Multiplicación por constante</h3>
+            <div class="formula">
+                \(\int k \cdot f(x)dx = k \int f(x)dx\)
+            </div>
+            <h3>3. Integral de una constante</h3>
+            <div class="formula">
+                \(\int k \, dx = kx + C\)
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>Ejercicios resueltos</h2>
+
+            <div class="ejemplo">
+                <h3>Ejercicio 1</h3>
+                <p>Resolver:</p>
+                <div class="formula">
+                    \(\int 3x^2 \, dx\)
+                </div>
+                <p>Aplicamos la regla de potencia \(\int x^n dx = \frac{x^{n+1}}{n+1}\):</p>
+                <div class="formula">
+                    \(\int 3x^2 \, dx = x^3 + C\)
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejercicio 2</h3>
+                <p>Resolver:</p>
+                <div class="formula">
+                    \(\int 5 \, dx\)
+                </div>
+                <p>La integral de una constante es:</p>
+                <div class="formula">
+                    \(5x + C\)
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Ejercicio 3</h3>
+                <p>Resolver:</p>
+                <div class="formula">
+                    \(\int (4x + 2)dx\)
+                </div>
+                <p>Se integra término por término:</p>
+                <div class="formula">
+                    \(\int 4x \, dx + \int 2 \, dx\)
+                </div>
+                <div class="formula">
+                    \(2x^2 + 2x + C\)
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>Aplicaciones de las antiderivadas</h2>
+            <p>
+                Las antiderivadas y las integrales indefinidas tienen aplicaciones importantes
+                en distintas áreas:
+            </p>
+            <ul>
+                <li>Cálculo de desplazamientos a partir de velocidad</li>
+                <li>Obtención de funciones originales</li>
+                <li>Resolución de problemas físicos</li>
+                <li>Modelado matemático</li>
+                <li>Análisis de crecimiento y acumulación</li>
+                <li>Ingeniería y ciencias aplicadas</li>
+            </ul>
+        </div>
+
+        <div class="seccion">
+            <h2>Conclusión</h2>
+            <p>
+                La antiderivada constituye la base del cálculo integral y permite recuperar
+                funciones originales a partir de sus derivadas. La integral indefinida representa
+                todas las posibles antiderivadas de una función y siempre incluye una constante
+                de integración.
+            </p>
+            <p>
+                Comprender este tema es esencial para avanzar hacia métodos de integración,
+                integrales definidas y aplicaciones avanzadas del cálculo.
+            </p>
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

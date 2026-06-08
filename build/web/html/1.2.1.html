@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2.1 Integración de Funciones Algebraicas</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 1 • Integración de Funciones Algebraicas
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            1.2.1 Integración de Funciones Algebraicas
+        </h1>
+
+        <p class="subtitulo">
+            Reconocimiento de patrones y aplicación de reglas elementales de integración algebraica
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                La integración de funciones algebraicas consiste en encontrar la antiderivada de
+                expresiones formadas por polinomios, potencias, raíces y combinaciones algebraicas.
+            </p>
+
+            <p>
+                Este tipo de integrales son las más frecuentes dentro del cálculo integral y
+                representan la base para resolver problemas más avanzados.
+            </p>
+
+            <p>
+                El objetivo principal es reconocer patrones algebraicos y aplicar correctamente
+                las reglas fundamentales de integración.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Qué es una función algebraica?</h2>
+
+            <p>
+                Una función algebraica es aquella formada mediante operaciones algebraicas como:
+            </p>
+
+            <ul>
+
+                <li>Suma</li>
+
+                <li>Resta</li>
+
+                <li>Multiplicación</li>
+
+                <li>División</li>
+
+                <li>Potencias</li>
+
+                <li>Raíces</li>
+
+            </ul>
+
+            <p>
+                Algunos ejemplos son:
+            </p>
+
+            <div class="formula">
+                \[
+                x^2 + 3x -5
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \sqrt{x}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \frac{1}{x^3}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Regla fundamental de potencia</h2>
+
+            <p>
+                La regla de potencia es la herramienta principal para integrar funciones algebraicas.
+            </p>
+
+            <div class="formula">
+                \[
+                \int x^n dx
+                =
+                \frac{x^{n+1}}{n+1}+C
+                \]
+            </div>
+
+            <p>
+                Esta fórmula se utiliza siempre que:
+            </p>
+
+            <div class="formula">
+                \[
+                n \neq -1
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int x^4 dx
+                    \]
+                </div>
+
+                <p>
+                    Se aumenta el exponente en una unidad:
+                </p>
+
+                <div class="formula">
+                    \[
+                    4+1=5
+                    \]
+                </div>
+
+                <p>
+                    Después se divide entre el nuevo exponente:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{x^5}{5}+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="tip">
+
+                <h3>Tip importante</h3>
+
+                <p>
+                    En integración el exponente aumenta en uno, mientras que en derivación el
+                    exponente disminuye en uno.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integración de polinomios</h2>
+
+            <p>
+                Un polinomio se integra término por término.
+            </p>
+
+            <div class="formula">
+                \[
+                \int (x^3+2x^2-5x+4)dx
+                \]
+            </div>
+
+            <p>
+                Se separa la integral:
+            </p>
+
+            <div class="formula">
+                \[
+                \int x^3dx
+                +
+                \int 2x^2dx
+                -
+                \int 5xdx
+                +
+                \int 4dx
+                \]
+            </div>
+
+            <p>
+                Aplicando la regla de potencia:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{x^4}{4}
+                +
+                \frac{2x^3}{3}
+                -
+                \frac{5x^2}{2}
+                +
+                4x
+                +C
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integración de raíces</h2>
+
+            <p>
+                Las raíces deben transformarse primero a potencias.
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{x}=x^{1/2}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \sqrt[3]{x}=x^{1/3}
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int \sqrt{x}dx
+                    \]
+                </div>
+
+                <p>
+                    Primero se transforma:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^{1/2}dx
+                    \]
+                </div>
+
+                <p>
+                    Aplicando la regla:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{x^{3/2}}{3/2}+C
+                    \]
+                </div>
+
+                <p>
+                    Simplificando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{2x^{3/2}}{3}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integración de fracciones algebraicas</h2>
+
+            <p>
+                Las fracciones deben escribirse usando exponentes negativos.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{1}{x^2}=x^{-2}
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{x^2}dx
+                    \]
+                </div>
+
+                <p>
+                    Reescribiendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^{-2}dx
+                    \]
+                </div>
+
+                <p>
+                    Aplicando la fórmula:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{x^{-1}}{-1}+C
+                    \]
+                </div>
+
+                <p>
+                    Resultado final:
+                </p>
+
+                <div class="formula">
+                    \[
+                    -\frac{1}{x}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Reconocimiento de patrones</h2>
+
+            <p>
+                Reconocer patrones es fundamental para resolver integrales rápidamente.
+            </p>
+
+            <h3>Patrón 1 • Potencias</h3>
+
+            <div class="formula">
+                \[
+                x^n
+                \]
+            </div>
+
+            <p>
+                Se aplica directamente la regla de potencia.
+            </p>
+
+            <h3>Patrón 2 • Raíces</h3>
+
+            <div class="formula">
+                \[
+                \sqrt{x}
+                \]
+            </div>
+
+            <p>
+                Deben convertirse a exponentes racionales.
+            </p>
+
+            <h3>Patrón 3 • Fracciones</h3>
+
+            <div class="formula">
+                \[
+                \frac{1}{x^n}
+                \]
+            </div>
+
+            <p>
+                Se convierten a exponentes negativos.
+            </p>
+
+            <h3>Patrón 4 • Polinomios</h3>
+
+            <div class="formula">
+                \[
+                ax^n+bx^m+c
+                \]
+            </div>
+
+            <p>
+                Se integran término por término.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cambio de variable sencillo</h2>
+
+            <p>
+                Algunas funciones algebraicas requieren sustituciones simples.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int (2x)(x^2+1)^3dx
+                    \]
+                </div>
+
+                <p>
+                    Se identifica la función interna:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x^2+1
+                    \]
+                </div>
+
+                <p>
+                    Derivando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    du=2xdx
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int u^3du
+                    \]
+                </div>
+
+                <p>
+                    Integrando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{u^4}{4}+C
+                    \]
+                </div>
+
+                <p>
+                    Regresando a la variable original:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{(x^2+1)^4}{4}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <ul>
+
+                <li>Olvidar sumar uno al exponente</li>
+
+                <li>Olvidar dividir entre el nuevo exponente</li>
+
+                <li>No agregar la constante de integración</li>
+
+                <li>No convertir raíces a exponentes</li>
+
+                <li>No convertir fracciones a exponentes negativos</li>
+
+                <li>Confundir derivación con integración</li>
+
+            </ul>
+
+            <div class="importante">
+
+                <h3>Error muy frecuente</h3>
+
+                <div class="formula">
+                    \[
+                    \int x^2dx \neq x^3+C
+                    \]
+                </div>
+
+                <p>
+                    Falta dividir entre el nuevo exponente.
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^2dx
+                    =
+                    \frac{x^3}{3}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Consejos para resolver integrales algebraicas</h2>
+
+            <ul>
+
+                <li>Identifica primero si es potencia, raíz o fracción</li>
+
+                <li>Transforma raíces y fracciones antes de integrar</li>
+
+                <li>Integra término por término</li>
+
+                <li>Verifica siempre los exponentes</li>
+
+                <li>Comprueba derivando el resultado</li>
+
+                <li>Practica reconocimiento visual de patrones</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración de funciones algebraicas representa uno de los pilares más importantes
+                del cálculo integral.
+            </p>
+
+            <p>
+                El dominio de las reglas fundamentales y el reconocimiento de patrones permiten
+                resolver una gran variedad de problemas matemáticos de forma eficiente.
+            </p>
+
+            <p>
+                Además, estas técnicas sirven como base para métodos de integración más avanzados
+                que se estudiarán posteriormente.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

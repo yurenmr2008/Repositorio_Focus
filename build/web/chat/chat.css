@@ -1,0 +1,71 @@
+/* Fondo general */
+body {
+  background-color: #fdf6ec; /* beige claro */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal del chat */
+.chat-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffffcc;
+  border: 2px solid #2e5d3f; /* verde oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(46, 93, 63, 0.2);
+}
+
+/* Título */
+.chat-container h2 {
+  text-align: center;
+  color: #2e5d3f;
+  margin-bottom: 20px;
+}
+
+/* Lista de mensajes */
+.mensaje {
+  background: #e8f5e9; /* verde muy claro */
+  border-left: 5px solid #2e5d3f;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Formulario de envío */
+.formulario {
+  margin-top: 20px;
+}
+
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Botón de enviar */
+.formulario button {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #2e5d3f; /* verde oscuro */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario button:hover {
+  background-color: #3f7a55; /* verde más claro */
+  transform: scale(1.02);
+}

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.2 Integración por Potencias Trigonométricas</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 2 • Integración por Potencias Trigonométricas
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            2.2 Integración por Potencias Trigonométricas
+        </h1>
+
+        <p class="subtitulo">
+            Métodos de integración aplicados a funciones trigonométricas elevadas a potencias
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                La integración por potencias trigonométricas es un conjunto de técnicas utilizadas
+                para resolver integrales donde aparecen funciones trigonométricas elevadas a exponentes.
+            </p>
+
+            <p>
+                Este tema es fundamental porque muchas integrales en física, ingeniería y matemáticas
+                avanzadas contienen expresiones como:
+            </p>
+
+            <div class="formula">
+                \[
+                \sin^n(x)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \cos^n(x)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \tan^n(x)
+                \]
+            </div>
+
+            <p>
+                Dependiendo de si las potencias son pares o impares, se utilizan distintos métodos
+                y estrategias.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Objetivo principal</h2>
+
+            <p>
+                El objetivo de este método es transformar las potencias trigonométricas en expresiones
+                más simples que puedan integrarse fácilmente.
+            </p>
+
+            <p>
+                Para lograrlo se utilizan:
+            </p>
+
+            <ul>
+
+                <li>Identidades trigonométricas</li>
+
+                <li>Sustituciones</li>
+
+                <li>Separación de factores</li>
+
+                <li>Fórmulas de reducción</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Identidades trigonométricas fundamentales</h2>
+
+            <p>
+                Antes de resolver integrales trigonométricas es indispensable conocer las identidades
+                más importantes.
+            </p>
+
+            <div class="formula">
+                \[
+                \sin^2(x)+\cos^2(x)=1
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                1+\tan^2(x)=\sec^2(x)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                1+\cot^2(x)=\csc^2(x)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \sin^2(x)=\frac{1-\cos(2x)}{2}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \cos^2(x)=\frac{1+\cos(2x)}{2}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Casos principales</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tipo de integral</th>
+                    <th>Método recomendado</th>
+                </tr>
+
+                <tr>
+                    <td>\(\sin^m(x)\cos^n(x)\) con potencia impar</td>
+                    <td>Separar un factor y usar identidad</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sin^m(x)\cos^n(x)\) con potencias pares</td>
+                    <td>Usar ángulo doble</td>
+                </tr>
+
+                <tr>
+                    <td>\(\tan^m(x)\sec^n(x)\)</td>
+                    <td>Usar identidades y sustitución</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales con seno impar</h2>
+
+            <p>
+                Cuando la potencia del seno es impar, normalmente se separa un factor
+                \(\sin(x)\) y el resto se transforma usando:
+            </p>
+
+            <div class="formula">
+                \[
+                \sin^2(x)=1-\cos^2(x)
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \sin^3(x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Separando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \sin^3(x)=\sin^2(x)\sin(x)
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo identidad:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =(1-\cos^2(x))\sin(x)
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=\cos(x)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=-\sin(x)dx
+                    \]
+                </div>
+
+                <p>
+                    Resultado:
+                </p>
+
+                <div class="formula">
+                    \[
+                    -\int(1-u^2)du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =-u+\frac{u^3}{3}+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =-\cos(x)+\frac{\cos^3(x)}{3}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales con coseno impar</h2>
+
+            <p>
+                Cuando la potencia del coseno es impar, se separa un factor
+                \(\cos(x)\) y se utiliza:
+            </p>
+
+            <div class="formula">
+                \[
+                \cos^2(x)=1-\sin^2(x)
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int \cos^5(x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Separando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \cos^5(x)=\cos^4(x)\cos(x)
+                    \]
+                </div>
+
+                <p>
+                    Aplicando identidad:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =(1-\sin^2(x))^2\cos(x)
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=\sin(x)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=\cos(x)dx
+                    \]
+                </div>
+
+                <p>
+                    Resultado:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int(1-u^2)^2du
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Potencias pares de seno y coseno</h2>
+
+            <p>
+                Cuando ambas potencias son pares, se utilizan fórmulas de ángulo doble.
+            </p>
+
+            <div class="formula">
+                \[
+                \sin^2(x)=\frac{1-\cos(2x)}{2}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \cos^2(x)=\frac{1+\cos(2x)}{2}
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 3</h3>
+
+                <div class="formula">
+                    \[
+                    \int \sin^2(x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =\int \frac{1-\cos(2x)}{2}dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\frac{1}{2}\int1dx-\frac{1}{2}\int\cos(2x)dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\frac{x}{2}-\frac{\sin(2x)}{4}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales con tangente y secante</h2>
+
+            <p>
+                Las integrales con tangente y secante siguen patrones especiales.
+            </p>
+
+            <h3>Cuando la potencia de secante es par</h3>
+
+            <p>
+                Se separa un factor \(\sec^2(x)\) porque:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(\tan(x))=\sec^2(x)
+                \]
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 4</h3>
+
+                <div class="formula">
+                    \[
+                    \int \tan^3(x)\sec^2(x)\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=\tan(x)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=\sec^2(x)dx
+                    \]
+                </div>
+
+                <p>
+                    Resultado:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int u^3du
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\frac{u^4}{4}+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\frac{\tan^4(x)}{4}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Integrales con cotangente y cosecante</h2>
+
+            <p>
+                Funcionan de manera similar a tangente y secante.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(\cot(x))=-\csc^2(x)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                1+\cot^2(x)=\csc^2(x)
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Patrones importantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Integral</th>
+                    <th>Estrategia</th>
+                </tr>
+
+                <tr>
+                    <td>\(\sin^{impar}(x)\)</td>
+                    <td>Separar un seno</td>
+                </tr>
+
+                <tr>
+                    <td>\(\cos^{impar}(x)\)</td>
+                    <td>Separar un coseno</td>
+                </tr>
+
+                <tr>
+                    <td>Potencias pares</td>
+                    <td>Ángulo doble</td>
+                </tr>
+
+                <tr>
+                    <td>\(\tan^n(x)\sec^m(x)\)</td>
+                    <td>Separar \(\sec^2(x)\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Casos especiales</h2>
+
+            <h3>1. Potencias muy altas</h3>
+
+            <p>
+                En ocasiones se deben aplicar identidades repetidamente.
+            </p>
+
+            <h3>2. Productos mezclados</h3>
+
+            <div class="formula">
+                \[
+                \sin^4(x)\cos^3(x)
+                \]
+            </div>
+
+            <p>
+                Aquí se usa el hecho de que el coseno tiene potencia impar.
+            </p>
+
+            <h3>3. Integrales con múltiples identidades</h3>
+
+            <p>
+                Algunas integrales requieren combinar:
+            </p>
+
+            <ul>
+
+                <li>Ángulo doble</li>
+
+                <li>Sustitución</li>
+
+                <li>Expansión algebraica</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    No identificar correctamente si la potencia es par o impar.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Aplicar identidades incorrectas.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    Olvidar cambiar completamente la variable en la sustitución.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    No simplificar antes de integrar.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tips y recomendaciones</h2>
+
+            <ul>
+
+                <li>Siempre identifica si la potencia es par o impar</li>
+
+                <li>Memoriza las identidades trigonométricas básicas</li>
+
+                <li>Busca factores útiles para sustitución</li>
+
+                <li>Utiliza ángulo doble cuando aparezcan potencias pares</li>
+
+                <li>Practica reconocimiento de patrones</li>
+
+                <li>Verifica derivando el resultado final</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones</h2>
+
+            <p>
+                Las integrales trigonométricas aparecen constantemente en:
+            </p>
+
+            <ul>
+
+                <li>Movimiento armónico</li>
+
+                <li>Ondas</li>
+
+                <li>Electricidad y magnetismo</li>
+
+                <li>Ingeniería mecánica</li>
+
+                <li>Procesamiento de señales</li>
+
+                <li>Física avanzada</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración por potencias trigonométricas es uno de los temas más importantes
+                del cálculo integral porque combina identidades trigonométricas, álgebra y técnicas
+                avanzadas de integración.
+            </p>
+
+            <p>
+                El dominio de este método requiere identificar patrones y seleccionar correctamente
+                las identidades adecuadas dependiendo del tipo de potencias presentes.
+            </p>
+
+            <p>
+                Con suficiente práctica, este procedimiento se vuelve mucho más intuitivo y permite
+                resolver integrales complejas de manera sistemática.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

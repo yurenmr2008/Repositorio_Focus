@@ -77,7 +77,8 @@ public class SvGuardarActividades extends HttpServlet {
 
             st.executeUpdate();
             System.out.println("Todo se ha registrado correctamente");
-            
+            conecta.close();
+            st.close();
         }           
         catch(Exception e){
             System.out.println("Error." + e.getMessage());

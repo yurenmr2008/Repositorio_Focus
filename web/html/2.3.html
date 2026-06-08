@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3 Integración por Sustitución Trigonométrica</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 2 • Integración por Sustitución Trigonométrica
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            2.3 Integración por Sustitución Trigonométrica
+        </h1>
+
+        <p class="subtitulo">
+            Método avanzado de integración utilizando identidades trigonométricas y triángulos auxiliares
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                La integración por sustitución trigonométrica es una técnica utilizada para resolver
+                integrales algebraicas que contienen raíces cuadradas complejas.
+            </p>
+
+            <p>
+                Este método transforma expresiones algebraicas difíciles en expresiones trigonométricas
+                más sencillas usando identidades fundamentales de trigonometría.
+            </p>
+
+            <p>
+                Generalmente se aplica cuando aparecen raíces como:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{a^2-x^2}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \sqrt{a^2+x^2}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \sqrt{x^2-a^2}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Idea principal del método</h2>
+
+            <p>
+                La sustitución trigonométrica aprovecha identidades trigonométricas conocidas para
+                simplificar raíces cuadradas.
+            </p>
+
+            <p>
+                Por ejemplo:
+            </p>
+
+            <div class="formula">
+                \[
+                1-\sin^2(\theta)=\cos^2(\theta)
+                \]
+            </div>
+
+            <p>
+                Esto permite eliminar raíces complicadas.
+            </p>
+
+            <p>
+                El objetivo es convertir una integral algebraica complicada en una integral trigonométrica
+                más fácil de resolver.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Casos fundamentales</h2>
+
+            <table>
+
+                <tr>
+                    <th>Expresión</th>
+                    <th>Sustitución</th>
+                    <th>Identidad utilizada</th>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{a^2-x^2}\)</td>
+                    <td>\(x=a\sin(\theta)\)</td>
+                    <td>\(1-\sin^2(\theta)=\cos^2(\theta)\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{a^2+x^2}\)</td>
+                    <td>\(x=a\tan(\theta)\)</td>
+                    <td>\(1+\tan^2(\theta)=\sec^2(\theta)\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{x^2-a^2}\)</td>
+                    <td>\(x=a\sec(\theta)\)</td>
+                    <td>\(\sec^2(\theta)-1=\tan^2(\theta)\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Primer caso: \(\sqrt{a^2-x^2}\)</h2>
+
+            <p>
+                Cuando aparece:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{a^2-x^2}
+                \]
+            </div>
+
+            <p>
+                se utiliza:
+            </p>
+
+            <div class="formula">
+                \[
+                x=a\sin(\theta)
+                \]
+            </div>
+
+            <p>
+                Derivando:
+            </p>
+
+            <div class="formula">
+                \[
+                dx=a\cos(\theta)d\theta
+                \]
+            </div>
+
+            <p>
+                Sustituyendo en la raíz:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{a^2-a^2\sin^2(\theta)}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =a\sqrt{1-\sin^2(\theta)}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =a\cos(\theta)
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo completo</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \sqrt{9-x^2}\,dx
+                    \]
+                </div>
+
+                <p>
+                    Como la raíz tiene la forma:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \sqrt{a^2-x^2}
+                    \]
+                </div>
+
+                <p>
+                    entonces:
+                </p>
+
+                <div class="formula">
+                    \[
+                    x=3\sin(\theta)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dx=3\cos(\theta)d\theta
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \sqrt{9-9\sin^2(\theta)}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =3\cos(\theta)
+                    \]
+                </div>
+
+                <p>
+                    La integral queda:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int 3\cos(\theta)\cdot3\cos(\theta)d\theta
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =9\int\cos^2(\theta)d\theta
+                    \]
+                </div>
+
+                <p>
+                    Aplicando identidad de ángulo doble:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \cos^2(\theta)=\frac{1+\cos(2\theta)}{2}
+                    \]
+                </div>
+
+                <p>
+                    Finalmente se integra y se regresa a la variable original.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Segundo caso: \(\sqrt{a^2+x^2}\)</h2>
+
+            <p>
+                Cuando aparece:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{a^2+x^2}
+                \]
+            </div>
+
+            <p>
+                se utiliza:
+            </p>
+
+            <div class="formula">
+                \[
+                x=a\tan(\theta)
+                \]
+            </div>
+
+            <p>
+                Porque:
+            </p>
+
+            <div class="formula">
+                \[
+                1+\tan^2(\theta)=\sec^2(\theta)
+                \]
+            </div>
+
+            <p>
+                Entonces:
+            </p>
+
+            <div class="formula">
+                \[
+                dx=a\sec^2(\theta)d\theta
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo completo</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int \sqrt{16+x^2}\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    x=4\tan(\theta)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    dx=4\sec^2(\theta)d\theta
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo en la raíz:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \sqrt{16+16\tan^2(\theta)}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =4\sqrt{1+\tan^2(\theta)}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =4\sec(\theta)
+                    \]
+                </div>
+
+                <p>
+                    La integral se transforma en:
+                </p>
+
+                <div class="formula">
+                    \[
+                    16\int\sec^3(\theta)d\theta
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tercer caso: \(\sqrt{x^2-a^2}\)</h2>
+
+            <p>
+                Cuando aparece:
+            </p>
+
+            <div class="formula">
+                \[
+                \sqrt{x^2-a^2}
+                \]
+            </div>
+
+            <p>
+                se utiliza:
+            </p>
+
+            <div class="formula">
+                \[
+                x=a\sec(\theta)
+                \]
+            </div>
+
+            <p>
+                Porque:
+            </p>
+
+            <div class="formula">
+                \[
+                \sec^2(\theta)-1=\tan^2(\theta)
+                \]
+            </div>
+
+            <p>
+                Derivando:
+            </p>
+
+            <div class="formula">
+                \[
+                dx=a\sec(\theta)\tan(\theta)d\theta
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Triángulos de referencia</h2>
+
+            <p>
+                Después de integrar, normalmente es necesario regresar a la variable original.
+            </p>
+
+            <p>
+                Para ello se utilizan triángulos rectángulos auxiliares.
+            </p>
+
+            <h3>Ejemplo</h3>
+
+            <div class="formula">
+                \[
+                x=3\sin(\theta)
+                \]
+            </div>
+
+            <p>
+                Entonces:
+            </p>
+
+            <div class="formula">
+                \[
+                \sin(\theta)=\frac{x}{3}
+                \]
+            </div>
+
+            <p>
+                En el triángulo:
+            </p>
+
+            <ul>
+
+                <li>Cateto opuesto = \(x\)</li>
+
+                <li>Hipotenusa = \(3\)</li>
+
+                <li>Cateto adyacente = \(\sqrt{9-x^2}\)</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Patrones importantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Raíz</th>
+                    <th>Sustitución rápida</th>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{a^2-x^2}\)</td>
+                    <td>\(x=a\sin(\theta)\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{a^2+x^2}\)</td>
+                    <td>\(x=a\tan(\theta)\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(\sqrt{x^2-a^2}\)</td>
+                    <td>\(x=a\sec(\theta)\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Cómo reconocer cuándo usar este método?</h2>
+
+            <p>
+                La sustitución trigonométrica se utiliza principalmente cuando:
+            </p>
+
+            <ul>
+
+                <li>Existen raíces cuadradas difíciles</li>
+
+                <li>Las expresiones cuadráticas no pueden factorizarse fácilmente</li>
+
+                <li>El cambio de variable normal no simplifica la integral</li>
+
+                <li>Aparecen expresiones del tipo \(a^2 \pm x^2\)</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    Elegir una sustitución incorrecta para la raíz.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Olvidar derivar correctamente \(dx\).
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    No usar correctamente las identidades trigonométricas.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    No regresar a la variable original al final.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tips importantes</h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Primero identifica la forma exacta de la raíz</li>
+
+                    <li>Memoriza las tres sustituciones principales</li>
+
+                    <li>Dibuja triángulos para regresar a la variable original</li>
+
+                    <li>Simplifica antes de integrar</li>
+
+                    <li>Usa identidades trigonométricas constantemente</li>
+
+                    <li>Comprueba derivando el resultado final</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones</h2>
+
+            <p>
+                La sustitución trigonométrica aparece en:
+            </p>
+
+            <ul>
+
+                <li>Física avanzada</li>
+
+                <li>Ingeniería eléctrica</li>
+
+                <li>Mecánica clásica</li>
+
+                <li>Cálculo de trayectorias</li>
+
+                <li>Geometría analítica</li>
+
+                <li>Problemas con circunferencias y elipses</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración por sustitución trigonométrica es una de las técnicas más poderosas
+                del cálculo integral porque permite resolver integrales algebraicas complejas mediante
+                herramientas trigonométricas.
+            </p>
+
+            <p>
+                Aunque al principio puede parecer complicada, el reconocimiento de patrones y la práctica
+                hacen que el proceso sea mucho más sencillo.
+            </p>
+
+            <p>
+                Dominar este método es fundamental para cursos avanzados de cálculo, física e ingeniería.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

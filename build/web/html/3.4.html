@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        3.4 Longitud de Arco
+    </title>
+
+  <link rel="stylesheet" href="../css/cajas.css">
+
+    <script>
+
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(','\\)']],
+                displayMath: [['\\[','\\]']]
+            }
+        };
+
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html" class="volver">
+            ←
+        </a>
+
+        <div class="titulo">
+            3.4 Longitud de Arco
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <div class="seccion">
+
+            <h2>
+                Introducción
+            </h2>
+
+            <p>
+                La longitud de arco es uno de los temas más importantes y visuales del cálculo integral.
+            </p>
+
+            <p>
+                Su objetivo principal es calcular la distancia real recorrida sobre una curva.
+            </p>
+
+            <p>
+                En geometría básica estamos acostumbrados a calcular distancias rectas utilizando fórmulas simples.
+            </p>
+
+            <p>
+                Sin embargo, cuando una trayectoria es curva, las fórmulas tradicionales ya no funcionan.
+            </p>
+
+            <p>
+                Aquí es donde aparece el cálculo integral.
+            </p>
+
+            <p>
+                Gracias a las integrales podemos medir con precisión la longitud exacta de curvas complejas.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                ¿Qué es la longitud de arco?
+            </h2>
+
+            <p>
+                La longitud de arco representa la distancia total recorrida a lo largo de una curva.
+            </p>
+
+            <p>
+                Es decir:
+            </p>
+
+            <div class="formula">
+
+                \[
+                \text{Longitud real de la curva}
+                \]
+
+            </div>
+
+            <p>
+                No mide la distancia horizontal ni vertical.
+            </p>
+
+            <p>
+                Mide la longitud completa siguiendo exactamente la forma de la curva.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Idea fundamental del método
+            </h2>
+
+            <p>
+                El cálculo integral aproxima la curva mediante pequeños segmentos rectos.
+            </p>
+
+            <p>
+                Mientras esos segmentos se vuelven infinitamente pequeños, la aproximación mejora.
+            </p>
+
+            <p>
+                Finalmente:
+            </p>
+
+            <div class="formula">
+
+                \[
+                \text{Suma infinita de segmentos}
+                \rightarrow
+                \text{Longitud exacta}
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Cómo surge la fórmula
+            </h2>
+
+            <p>
+                La fórmula de longitud de arco proviene directamente del Teorema de Pitágoras.
+            </p>
+
+            <p>
+                Si tomamos un segmento muy pequeño de la curva:
+            </p>
+
+            <div class="formula">
+
+                \[
+                ds
+                \]
+
+            </div>
+
+            <p>
+                podemos formar un triángulo rectángulo muy pequeño.
+            </p>
+
+            <p>
+                Sus lados serán:
+            </p>
+
+            <div class="formula">
+
+                \[
+                dx
+                \]
+
+            </div>
+
+            <div class="formula">
+
+                \[
+                dy
+                \]
+
+            </div>
+
+            <p>
+                Aplicando Pitágoras:
+            </p>
+
+            <div class="formula">
+
+                \[
+                ds^2 = dx^2 + dy^2
+                \]
+
+            </div>
+
+            <p>
+                Despejando:
+            </p>
+
+            <div class="formula">
+
+                \[
+                ds=\sqrt{dx^2+dy^2}
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Fórmula principal de longitud de arco
+            </h2>
+
+            <p>
+                Si la curva está definida como:
+            </p>
+
+            <div class="formula">
+
+                \[
+                y=f(x)
+                \]
+
+            </div>
+
+            <p>
+                entonces la fórmula es:
+            </p>
+
+            <div class="formula">
+
+                \[
+                L=
+                \int_a^b
+                \sqrt{
+                1+
+                \left(
+                \frac{dy}{dx}
+                \right)^2
+                }
+                dx
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Significado de cada parte
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Símbolo</th>
+                    <th>Significado</th>
+                </tr>
+
+                <tr>
+                    <td>\(L\)</td>
+                    <td>Longitud total</td>
+                </tr>
+
+                <tr>
+                    <td>\(a,b\)</td>
+                    <td>Límites del intervalo</td>
+                </tr>
+
+                <tr>
+                    <td>\(\frac{dy}{dx}\)</td>
+                    <td>Derivada de la función</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Interpretación geométrica
+            </h2>
+
+            <p>
+                La derivada representa la pendiente de la curva.
+            </p>
+
+            <p>
+                Mientras más inclinada sea la curva:
+            </p>
+
+            <div class="formula">
+
+                \[
+                \left(
+                \frac{dy}{dx}
+                \right)^2
+                \]
+
+            </div>
+
+            <p>
+                será más grande.
+            </p>
+
+            <p>
+                Esto provoca que la longitud aumente.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Pasos para resolver ejercicios
+            </h2>
+
+            <ol style="margin-left:40px;">
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Identificar la función
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Calcular la derivada
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Elevar la derivada al cuadrado
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Sustituir en la fórmula
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Resolver la integral
+                </li>
+
+            </ol>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Ejemplo completo
+            </h2>
+
+            <p>
+                Encontrar la longitud de:
+            </p>
+
+            <div class="formula">
+
+                \[
+                y=\frac{x^2}{2}
+                \]
+
+            </div>
+
+            <p>
+                en:
+            </p>
+
+            <div class="formula">
+
+                \[
+                0\leq x\leq 2
+                \]
+
+            </div>
+
+            <h3>
+                Paso 1
+            </h3>
+
+            <p>
+                Derivar:
+            </p>
+
+            <div class="formula">
+
+                \[
+                y'=x
+                \]
+
+            </div>
+
+            <h3>
+                Paso 2
+            </h3>
+
+            <p>
+                Sustituir:
+            </p>
+
+            <div class="formula">
+
+                \[
+                L=
+                \int_0^2
+                \sqrt{1+x^2}
+                dx
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Longitud de arco respecto a y
+            </h2>
+
+            <p>
+                Algunas veces la función está expresada como:
+            </p>
+
+            <div class="formula">
+
+                \[
+                x=g(y)
+                \]
+
+            </div>
+
+            <p>
+                En ese caso:
+            </p>
+
+            <div class="formula">
+
+                \[
+                L=
+                \int_c^d
+                \sqrt{
+                1+
+                \left(
+                \frac{dx}{dy}
+                \right)^2
+                }
+                dy
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Casos donde las integrales se vuelven difíciles
+            </h2>
+
+            <p>
+                Muchas integrales de longitud de arco son extremadamente complicadas.
+            </p>
+
+            <p>
+                Algunas requieren:
+            </p>
+
+            <ul>
+
+                <li>Sustituciones trigonométricas</li>
+
+                <li>Identidades algebraicas</li>
+
+                <li>Funciones hiperbólicas</li>
+
+                <li>Métodos numéricos</li>
+
+            </ul>
+
+            <p>
+                Incluso existen curvas cuya longitud no puede expresarse con funciones elementales.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Interpretación física
+            </h2>
+
+            <p>
+                La longitud de arco tiene muchísimas aplicaciones reales.
+            </p>
+
+            <ul>
+
+                <li>Diseño de carreteras</li>
+
+                <li>Trayectorias de aviones</li>
+
+                <li>Construcción de puentes</li>
+
+                <li>Ingeniería mecánica</li>
+
+                <li>Animación digital</li>
+
+                <li>Diseño industrial</li>
+
+                <li>Modelado 3D</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Errores más comunes
+            </h2>
+
+            <div class="importante">
+
+                <ul>
+
+                    <li>Olvidar elevar la derivada al cuadrado</li>
+
+                    <li>Confundir dx con dy</li>
+
+                    <li>Derivar incorrectamente</li>
+
+                    <li>Olvidar la raíz cuadrada</li>
+
+                    <li>Usar límites incorrectos</li>
+
+                    <li>No simplificar antes de integrar</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Tips para resolver ejercicios
+            </h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Siempre simplifica el integrando antes de integrar</li>
+
+                    <li>Busca cuadrados perfectos</li>
+
+                    <li>Practica derivadas constantemente</li>
+
+                    <li>Dibuja la curva para visualizarla</li>
+
+                    <li>Identifica si conviene usar dx o dy</li>
+
+                    <li>Verifica unidades y resultados</li>
+
+                    <li>Comprueba si el resultado tiene sentido geométrico</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Relación con otros temas del cálculo
+            </h2>
+
+            <p>
+                La longitud de arco se relaciona directamente con:
+            </p>
+
+            <ul>
+
+                <li>Derivadas</li>
+
+                <li>Integrales definidas</li>
+
+                <li>Volúmenes de revolución</li>
+
+                <li>Curvas paramétricas</li>
+
+                <li>Cálculo vectorial</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Conclusión
+            </h2>
+
+            <p>
+                La longitud de arco es una herramienta fundamental del cálculo integral.
+            </p>
+
+            <p>
+                Permite medir trayectorias curvas con precisión matemática.
+            </p>
+
+            <p>
+                Aunque muchas integrales pueden ser difíciles, la idea central es sencilla:
+            </p>
+
+            <div class="formula">
+
+                \[
+                \text{Sumar infinitos segmentos pequeños}
+                \]
+
+            </div>
+
+            <p>
+                Comprender este concepto desarrolla enormemente la intuición geométrica y analítica.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

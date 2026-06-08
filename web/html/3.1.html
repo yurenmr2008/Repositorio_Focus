@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1 Integral Definida y Teorema Fundamental del Cálculo</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <link rel="stylesheet" href="../css/cajas.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 3 • Integral Definida y Teorema Fundamental del Cálculo
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            3.1 Integral Definida y Teorema Fundamental del Cálculo
+        </h1>
+
+        <p class="subtitulo">
+            Relación entre derivación e integración
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                La integral definida es uno de los conceptos más importantes del cálculo integral. Permite calcular áreas, acumulaciones, desplazamientos, trabajo, volumen y muchas otras aplicaciones físicas y matemáticas.
+            </p>
+
+            <p>
+                A diferencia de la integral indefinida, la integral definida sí produce un valor numérico.
+            </p>
+
+            <p>
+                El Teorema Fundamental del Cálculo conecta dos operaciones aparentemente opuestas:
+            </p>
+
+            <ul>
+
+                <li>La derivación</li>
+
+                <li>La integración</li>
+
+            </ul>
+
+            <p>
+                Este teorema demuestra que integrar y derivar son procesos inversos.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Qué es una integral definida?</h2>
+
+            <p>
+                Una integral definida representa el área bajo una curva dentro de un intervalo específico.
+            </p>
+
+            <div class="formula">
+                \[
+                \int_a^b f(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Donde:
+            </p>
+
+            <ul>
+
+                <li>\(f(x)\) es la función</li>
+
+                <li>\(a\) es el límite inferior</li>
+
+                <li>\(b\) es el límite superior</li>
+
+                <li>\(dx\) indica la variable de integración</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Interpretación geométrica</h2>
+
+            <p>
+                Geométricamente, la integral definida representa el área entre la gráfica de la función y el eje x.
+            </p>
+
+            <div class="formula">
+                \[
+                \text{Área}=
+                \int_a^b f(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Si la función está arriba del eje x, el área es positiva.
+            </p>
+
+            <p>
+                Si está debajo, el resultado es negativo.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Partes de una integral definida</h2>
+
+            <table>
+
+                <tr>
+                    <th>Elemento</th>
+                    <th>Significado</th>
+                </tr>
+
+                <tr>
+                    <td>\(\int\)</td>
+                    <td>Símbolo de integración</td>
+                </tr>
+
+                <tr>
+                    <td>\(a\)</td>
+                    <td>Límite inferior</td>
+                </tr>
+
+                <tr>
+                    <td>\(b\)</td>
+                    <td>Límite superior</td>
+                </tr>
+
+                <tr>
+                    <td>\(f(x)\)</td>
+                    <td>Función a integrar</td>
+                </tr>
+
+                <tr>
+                    <td>\(dx\)</td>
+                    <td>Variable de integración</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>La idea de suma de áreas</h2>
+
+            <p>
+                La integral definida nace de la suma de infinitos rectángulos pequeños.
+            </p>
+
+            <p>
+                Cada rectángulo tiene:
+            </p>
+
+            <ul>
+
+                <li>Base muy pequeña</li>
+
+                <li>Altura dada por la función</li>
+
+            </ul>
+
+            <p>
+                La suma total aproxima el área real.
+            </p>
+
+            <div class="formula">
+                \[
+                \sum f(x)\Delta x
+                \]
+            </div>
+
+            <p>
+                Cuando los rectángulos se hacen infinitamente pequeños aparece la integral.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>El Teorema Fundamental del Cálculo</h2>
+
+            <p>
+                Este teorema es el puente entre derivadas e integrales.
+            </p>
+
+            <h3>Primera Parte</h3>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}
+                \left(
+                \int_a^x f(t)\,dt
+                \right)
+                =
+                f(x)
+                \]
+            </div>
+
+            <p>
+                Esto significa que derivar una integral devuelve la función original.
+            </p>
+
+            <h3>Segunda Parte</h3>
+
+            <div class="formula">
+                \[
+                \int_a^b f(x)\,dx
+                =
+                F(b)-F(a)
+                \]
+            </div>
+
+            <p>
+                Donde:
+            </p>
+
+            <div class="formula">
+                \[
+                F'(x)=f(x)
+                \]
+            </div>
+
+            <p>
+                Es decir, \(F(x)\) es una antiderivada de \(f(x)\).
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Por qué es tan importante?</h2>
+
+            <p>
+                Antes del Teorema Fundamental del Cálculo, calcular áreas era extremadamente complicado.
+            </p>
+
+            <p>
+                Este teorema permitió calcular integrales usando antiderivadas.
+            </p>
+
+            <p>
+                Gracias a esto el cálculo moderno pudo desarrollarse.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cómo resolver una integral definida</h2>
+
+            <h3>Paso 1</h3>
+
+            <p>
+                Encontrar la integral indefinida.
+            </p>
+
+            <h3>Paso 2</h3>
+
+            <p>
+                Evaluar en el límite superior.
+            </p>
+
+            <h3>Paso 3</h3>
+
+            <p>
+                Evaluar en el límite inferior.
+            </p>
+
+            <h3>Paso 4</h3>
+
+            <p>
+                Restar los resultados.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Primer ejemplo completo</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int_1^3 2x\,dx
+                    \]
+                </div>
+
+                <h3>Paso 1 • Integrar</h3>
+
+                <div class="formula">
+                    \[
+                    \int 2x\,dx=x^2
+                    \]
+                </div>
+
+                <h3>Paso 2 • Aplicar límites</h3>
+
+                <div class="formula">
+                    \[
+                    x^2 \Big|_1^3
+                    \]
+                </div>
+
+                <h3>Paso 3 • Sustituir</h3>
+
+                <div class="formula">
+                    \[
+                    3^2-1^2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    9-1=8
+                    \]
+                </div>
+
+                <p>
+                    Resultado:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int_1^3 2x\,dx=8
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Segundo ejemplo</h2>
+
+            <div class="ejemplo">
+
+                <div class="formula">
+                    \[
+                    \int_0^2 (x^2+1)\,dx
+                    \]
+                </div>
+
+                <h3>Integrar</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{x^3}{3}+x
+                    \]
+                </div>
+
+                <h3>Evaluar</h3>
+
+                <div class="formula">
+                    \[
+                    \left(
+                    \frac{2^3}{3}+2
+                    \right)
+                    -
+                    \left(
+                    \frac{0^3}{3}+0
+                    \right)
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \frac{8}{3}+2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \frac{14}{3}
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Propiedades de la integral definida</h2>
+
+            <table>
+
+                <tr>
+                    <th>Propiedad</th>
+                    <th>Expresión</th>
+                </tr>
+
+                <tr>
+                    <td>Integral de cero</td>
+                    <td>\(\int_a^a f(x)\,dx=0\)</td>
+                </tr>
+
+                <tr>
+                    <td>Cambio de límites</td>
+                    <td>\(\int_a^b f(x)\,dx=-\int_b^a f(x)\,dx\)</td>
+                </tr>
+
+                <tr>
+                    <td>Suma</td>
+                    <td>\(\int(f+g)=\int f+\int g\)</td>
+                </tr>
+
+                <tr>
+                    <td>Constante</td>
+                    <td>\(\int kf(x)=k\int f(x)\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Interpretación física</h2>
+
+            <p>
+                En física la integral definida representa acumulaciones.
+            </p>
+
+            <p>
+                Ejemplos:
+            </p>
+
+            <ul>
+
+                <li>Desplazamiento</li>
+
+                <li>Trabajo</li>
+
+                <li>Velocidad acumulada</li>
+
+                <li>Carga eléctrica</li>
+
+                <li>Masa distribuida</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    Olvidar evaluar ambos límites.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Cambiar incorrectamente el signo.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    No usar paréntesis al sustituir.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    Confundir integral definida con indefinida.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tips importantes</h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Primero integra y después evalúa</li>
+
+                    <li>Usa paréntesis en sustituciones</li>
+
+                    <li>Verifica signos negativos</li>
+
+                    <li>Recuerda que el resultado es un número</li>
+
+                    <li>Practica propiedades básicas</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Relación entre derivada e integral</h2>
+
+            <p>
+                La derivada mide cambios instantáneos.
+            </p>
+
+            <p>
+                La integral mide acumulaciones.
+            </p>
+
+            <p>
+                El Teorema Fundamental del Cálculo demuestra que ambas operaciones son inversas.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}
+                \left(
+                \int f(x)\,dx
+                \right)
+                =
+                f(x)
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones reales</h2>
+
+            <ul>
+
+                <li>Ingeniería</li>
+
+                <li>Arquitectura</li>
+
+                <li>Economía</li>
+
+                <li>Física</li>
+
+                <li>Estadística</li>
+
+                <li>Electrónica</li>
+
+                <li>Mecánica</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integral definida es una herramienta fundamental para calcular acumulaciones y áreas.
+            </p>
+
+            <p>
+                El Teorema Fundamental del Cálculo conecta la derivación con la integración y simplifica enormemente el cálculo de integrales.
+            </p>
+
+            <p>
+                Comprender este tema es esencial para avanzar en cálculo integral, ecuaciones diferenciales, física y muchas áreas de ingeniería.
+            </p>
+
+            <p>
+                Dominar este concepto permite resolver problemas reales relacionados con movimiento, áreas, volumen y cambios acumulados.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

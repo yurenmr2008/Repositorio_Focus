@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        3.3 Cálculo del Volumen de Sólidos de Revolución
+    </title>
+
+  <link rel="stylesheet" href="../css/cajas.css">
+    <script>
+
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(','\\)']],
+                displayMath: [['\\[','\\]']]
+            }
+        };
+
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html" class="volver">
+            ←
+        </a>
+
+        <div class="titulo">
+            3.3 Cálculo del Volumen de Sólidos de Revolución
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <div class="seccion">
+
+            <h2>
+                Introducción
+            </h2>
+
+            <p>
+                El cálculo del volumen de sólidos de revolución es uno de los temas más importantes,
+                complejos y visuales del cálculo integral.
+            </p>
+
+            <p>
+                Este tema combina geometría, álgebra, análisis visual y cálculo integral para determinar
+                el volumen de objetos tridimensionales generados a partir del giro de una región plana.
+            </p>
+
+            <p>
+                Muchas veces los estudiantes tienen problemas en este tema porque no logran imaginar
+                correctamente qué sucede cuando una región gira alrededor de una recta.
+            </p>
+
+            <p>
+                Por ello, antes de aprender fórmulas, es fundamental comprender visualmente qué ocurre.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                ¿Qué es un sólido de revolución?
+            </h2>
+
+            <p>
+                Un sólido de revolución es una figura tridimensional que se forma cuando una región del plano
+                gira completamente alrededor de una recta.
+            </p>
+
+            <p>
+                Esa recta se denomina:
+            </p>
+
+            <div class="formula">
+
+                \[
+                \text{Eje de rotación}
+                \]
+
+            </div>
+
+            <p>
+                Cuando la figura gira:
+            </p>
+
+            <div class="formula">
+
+                \[
+                360^\circ
+                \]
+
+            </div>
+
+            <p>
+                cada punto recorre una trayectoria circular y se genera un volumen.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Ejemplos geométricos importantes
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Figura plana</th>
+                    <th>Al girar produce</th>
+                </tr>
+
+                <tr>
+                    <td>Rectángulo</td>
+                    <td>Cilindro</td>
+                </tr>
+
+                <tr>
+                    <td>Triángulo rectángulo</td>
+                    <td>Cono</td>
+                </tr>
+
+                <tr>
+                    <td>Semicírculo</td>
+                    <td>Esfera</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                La idea fundamental de este tema
+            </h2>
+
+            <p>
+                El cálculo integral divide el sólido en partes extremadamente pequeñas.
+            </p>
+
+            <p>
+                Luego suma infinitamente esas pequeñas partes para obtener el volumen total.
+            </p>
+
+            <p>
+                Dependiendo de la forma de esas pequeñas partes, aparecen distintos métodos:
+            </p>
+
+            <ul>
+
+                <li>Método de discos</li>
+
+                <li>Método de arandelas</li>
+
+                <li>Método de capas cilíndricas</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Cómo identificar el eje de rotación
+            </h2>
+
+            <p>
+                El eje de rotación es la recta alrededor de la cual gira la región.
+            </p>
+
+            <p>
+                Puede ser:
+            </p>
+
+            <ul>
+
+                <li>El eje x</li>
+
+                <li>El eje y</li>
+
+                <li>Una recta horizontal</li>
+
+                <li>Una recta vertical</li>
+
+            </ul>
+
+            <h3>
+                Casos comunes
+            </h3>
+
+            <table>
+
+                <tr>
+                    <th>Recta</th>
+                    <th>Interpretación</th>
+                </tr>
+
+                <tr>
+                    <td>\(y=0\)</td>
+                    <td>Eje x</td>
+                </tr>
+
+                <tr>
+                    <td>\(x=0\)</td>
+                    <td>Eje y</td>
+                </tr>
+
+                <tr>
+                    <td>\(y=3\)</td>
+                    <td>Recta horizontal</td>
+                </tr>
+
+                <tr>
+                    <td>\(x=-2\)</td>
+                    <td>Recta vertical</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Cómo elegir correctamente el método
+            </h2>
+
+            <p>
+                La selección del método es la parte más importante del problema.
+            </p>
+
+            <p>
+                Elegir mal el método puede volver el ejercicio muchísimo más difícil.
+            </p>
+
+            <p>
+                Para escoger correctamente debes observar:
+            </p>
+
+            <ul>
+
+                <li>La orientación de los cortes</li>
+
+                <li>Si existe hueco o no</li>
+
+                <li>La facilidad algebraica</li>
+
+                <li>El eje de rotación</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Método de discos
+            </h2>
+
+            <p>
+                El método de discos se utiliza cuando el sólido está completamente lleno.
+            </p>
+
+            <p>
+                No existe espacio vacío en el centro.
+            </p>
+
+            <p>
+                Cada corte transversal forma un círculo sólido.
+            </p>
+
+            <h3>
+                Idea visual
+            </h3>
+
+            <p>
+                Imagina apilar muchísimas monedas una sobre otra.
+            </p>
+
+            <p>
+                Cada moneda representa un disco infinitamente delgado.
+            </p>
+
+            <h3>
+                Fórmula general
+            </h3>
+
+            <div class="formula">
+
+                \[
+                V=\pi \int_a^b [R(x)]^2dx
+                \]
+
+            </div>
+
+            <h3>
+                Donde:
+            </h3>
+
+            <ul>
+
+                <li>\(R(x)\) es el radio</li>
+
+                <li>\(a\) y \(b\) son los límites</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Método de arandelas
+            </h2>
+
+            <p>
+                El método de arandelas se usa cuando el sólido tiene un hueco interior.
+            </p>
+
+            <p>
+                El corte transversal parece una dona o anillo.
+            </p>
+
+            <h3>
+                Idea visual
+            </h3>
+
+            <p>
+                Imagina una dona.
+            </p>
+
+            <p>
+                Existe un círculo exterior y un hueco interno.
+            </p>
+
+            <h3>
+                Fórmula general
+            </h3>
+
+            <div class="formula">
+
+                \[
+                V=
+                \pi
+                \int_a^b
+                \left[
+                R(x)^2-r(x)^2
+                \right]
+                dx
+                \]
+
+            </div>
+
+            <h3>
+                Donde:
+            </h3>
+
+            <ul>
+
+                <li>\(R(x)\) es el radio mayor</li>
+
+                <li>\(r(x)\) es el radio menor</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Método de capas cilíndricas
+            </h2>
+
+            <p>
+                Este método es probablemente el más difícil de visualizar.
+            </p>
+
+            <p>
+                Aquí no aparecen discos.
+            </p>
+
+            <p>
+                En lugar de eso aparecen cilindros huecos muy delgados.
+            </p>
+
+            <h3>
+                Idea visual
+            </h3>
+
+            <p>
+                Imagina enrollar hojas de papel una alrededor de otra.
+            </p>
+
+            <p>
+                Cada hoja representa una capa cilíndrica.
+            </p>
+
+            <h3>
+                Fórmula general
+            </h3>
+
+            <div class="formula">
+
+                \[
+                V=
+                2\pi
+                \int_a^b
+                r(x)h(x)
+                dx
+                \]
+
+            </div>
+
+            <h3>
+                Donde:
+            </h3>
+
+            <ul>
+
+                <li>\(r(x)\) es el radio</li>
+
+                <li>\(h(x)\) es la altura</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Regla de oro para elegir método
+            </h2>
+
+            <div class="formula">
+
+                \[
+                \text{Cortes perpendiculares}
+                \rightarrow
+                \text{Discos o arandelas}
+                \]
+
+            </div>
+
+            <div class="formula">
+
+                \[
+                \text{Cortes paralelos}
+                \rightarrow
+                \text{Capas cilíndricas}
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Cómo determinar el radio
+            </h2>
+
+            <p>
+                El radio siempre es la distancia entre la curva y el eje de rotación.
+            </p>
+
+            <h3>
+                Ejemplo
+            </h3>
+
+            <p>
+                Si:
+            </p>
+
+            <div class="formula">
+
+                \[
+                y=x^2
+                \]
+
+            </div>
+
+            <p>
+                gira alrededor del eje x:
+            </p>
+
+            <div class="formula">
+
+                \[
+                r=x^2
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Casos especiales con ejes desplazados
+            </h2>
+
+            <p>
+                Muchas veces el eje de rotación NO es el eje x ni el eje y.
+            </p>
+
+            <h3>
+                Ejemplo
+            </h3>
+
+            <div class="formula">
+
+                \[
+                y=3
+                \]
+
+            </div>
+
+            <p>
+                En ese caso el radio será:
+            </p>
+
+            <div class="formula">
+
+                \[
+                3-f(x)
+                \]
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Cómo saber si integrar respecto a x o y
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Tipo de corte</th>
+                    <th>Variable</th>
+                </tr>
+
+                <tr>
+                    <td>Vertical</td>
+                    <td>\(dx\)</td>
+                </tr>
+
+                <tr>
+                    <td>Horizontal</td>
+                    <td>\(dy\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Errores más comunes
+            </h2>
+
+            <div class="importante">
+
+                <ul>
+
+                    <li>No elevar el radio al cuadrado</li>
+
+                    <li>Confundir radio con altura</li>
+
+                    <li>Elegir el método incorrecto</li>
+
+                    <li>No identificar correctamente el eje</li>
+
+                    <li>Olvidar restar radios en arandelas</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>
+                Consejos para dominar el tema
+            </h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Siempre realiza un dibujo</li>
+
+                    <li>Marca claramente el eje de rotación</li>
+
+                    <li>Dibuja un corte transversal</li>
+
+                    <li>Identifica visualmente el radio</li>
+
+                    <li>Observa si existe hueco</li>
+
+                    <li>Piensa geométricamente antes de integrar</li>
+
+                    <li>Practica visualización espacial</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

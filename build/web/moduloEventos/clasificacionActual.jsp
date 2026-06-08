@@ -12,14 +12,24 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
+<%@ page import="clasesModuloEvento.*" %>
+
+<%@ include file="/jsp/seguridad.jsp" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>JSP Page</title>
+<link rel="stylesheet" href="infoCuestionarioEventos.css">
+
 </head>
 <body>
 <%
+    metodosEvento metodoEvento = new metodosEvento(); //Se inicializa la clase con los metodos del modulo Evento
+
+    
     //Datos para los registros y consultas en la base de datos
     String materiaEvento = request.getParameter("materiaEvento");
     int parcialEvento = Integer.parseInt(request.getParameter("parcialEvento"));
@@ -32,6 +42,15 @@
     String valorRespuesta = request.getParameter("valorRespuesta");
     int tiempoRespuesta = Integer.parseInt(request.getParameter("tiempoRespuesta"));
     int posicionPregunta = Integer.parseInt(request.getParameter("posicionPregunta"));
+    
+    
+    int lugarClasificacionPasado = 0;
+    int avanceClasificacion = 0;
+    if(posicionPregunta > 1){
+        lugarClasificacionPasado = Integer.parseInt(request.getParameter("lugarClasificacion"));
+    }
+    
+    
     int puntajePregunta = Integer.parseInt(request.getParameter("puntajePregunta"));
     
     int puntajeActualEst = 0;
@@ -150,18 +169,18 @@
 
         preparedStatement = conecta.prepareStatement(
         "SELECT * FROM (" +
-
         "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante "+
         "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
-        "WHERE Clasificacion.pun_cla > ? OR (pun_cla = ? AND tie_cla < ?) " +
+        "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+        "WHERE (Clasificacion.pun_cla > ? OR (pun_cla = ? AND tie_cla < ?)) AND " +
+        "Evento.id_eve = ? " +
         "ORDER BY Clasificacion.pun_cla ASC, Clasificacion.tie_cla DESC LIMIT 5 " +
 
         ") AS subconsulta ORDER BY subconsulta.pun_cla DESC, subconsulta.tie_cla ASC;");
-
-
         preparedStatement.setInt(1, puntajeActualEst);//modificar
         preparedStatement.setInt(2, puntajeActualEst); // modificar
         preparedStatement.setInt(3, tiempoActualEst);
+        preparedStatement.setInt(4, idEvento);
 
         ResultSet rs = preparedStatement.executeQuery();
 
@@ -215,7 +234,7 @@
             out.println("</td>");
 
             out.println("<td>");
-            out.println(tiempoParticipante);
+            out.println(metodoEvento.obtenerFormatoTiempo(tiempoParticipante));
             out.println("</td>");
 
             out.println("</tr>");
@@ -270,10 +289,14 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
 
-        preparedStatement = conecta.prepareStatement("SELECT COUNT(*) lugar_cla FROM Clasificacion WHERE pun_cla > ? OR (pun_cla = ? AND tie_cla < ?)");
+        preparedStatement = conecta.prepareStatement("SELECT COUNT(*) lugar_cla FROM Clasificacion "+
+        "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+        "WHERE (Clasificacion.pun_cla > ? OR (Clasificacion.pun_cla = ? AND Clasificacion.tie_cla < ?)) AND "+
+        "Evento.id_eve = ? ;");
         preparedStatement.setInt(1, puntajeActualEst);
         preparedStatement.setInt(2, puntajeActualEst);
         preparedStatement.setInt(3, tiempoActualEst);
+        preparedStatement.setInt(4, idEvento);
 
         rs = preparedStatement.executeQuery();
 
@@ -288,6 +311,7 @@
     }catch (Exception e){
         out.println("Error. " + e.getMessage());
     }
+    out.println("<tr class='filaClasificacionAlumno'>");  //se le agrega una clase para ponerle estilos mediante css
 
     out.println("<td>");
     out.println(posicionActual);
@@ -302,8 +326,38 @@
     out.println("</td>");
 
     out.println("<td>");
-    out.println(tiempoActualEst);
+    out.println(metodoEvento.obtenerFormatoTiempo(tiempoActualEst));
     out.println("</td>");
+ 
+    out.println("<td>");
+    avanceClasificacion = lugarClasificacionPasado - posicionActual ;
+    if(lugarClasificacionPasado == 0){
+        avanceClasificacion = 0;
+    }
+    
+    if(avanceClasificacion > 0){
+        out.println("<div class='textoVerde'>");
+        out.println("   ▲ +" + avanceClasificacion +" posiciones" );
+        out.println("</div>");
+    }
+    else{
+        if(avanceClasificacion < 0){
+            out.println("<div class='textoRojo'>");
+            out.println("   ▼ " + avanceClasificacion + " posiciones");
+            out.println("</div>");
+
+        }
+        else{
+            if(avanceClasificacion == 0){
+                out.println("<div class='textoAzul'>");
+                out.println("  ▲ ▼ " + avanceClasificacion);
+                out.println("</div>");
+            }
+        }
+    }
+    out.println("</td>");
+    
+    out.println("</tr>");
 
     //Despliege de los 5 estudiantes con un lugar más bajo al del usuario y más próximos a este mismo en la clasificación
     try{
@@ -314,16 +368,19 @@
         conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
 
         preparedStatement = conecta.prepareStatement(
-        "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante " +
-        "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
-        "WHERE Clasificacion.pun_cla < ? OR (pun_cla = ? AND tie_cla > ?) " +
-        "ORDER BY Clasificacion.pun_cla DESC, Clasificacion.tie_cla ASC LIMIT ?;");
-        
+       "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante " +
+       "INNER JOIN Clasificacion ON Estudiante.id_est = Clasificacion.id_est " +
+       "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
+       "WHERE (Clasificacion.pun_cla < ? OR (pun_cla = ? AND tie_cla > ?)) AND " +
+       "Evento.id_eve = ? " +
+       "ORDER BY Clasificacion.pun_cla DESC, Clasificacion.tie_cla ASC LIMIT ?;");
+       // LIMIT 5
 
-        preparedStatement.setInt(1, puntajeActualEst);
-        preparedStatement.setInt(2, puntajeActualEst);
-        preparedStatement.setInt(3, tiempoActualEst);
-        preparedStatement.setInt(4, lugaresTabla);
+       preparedStatement.setInt(1, puntajeActualEst);
+       preparedStatement.setInt(2, puntajeActualEst);
+       preparedStatement.setInt(3, tiempoActualEst);
+       preparedStatement.setInt(4, idEvento);
+       preparedStatement.setInt(5, lugaresTabla);
 
         ResultSet rs = preparedStatement.executeQuery();
 
@@ -374,7 +431,7 @@
             out.println("</td>");
 
             out.println("<td>");
-            out.println(tiempoParticipante);
+            out.println(metodoEvento.obtenerFormatoTiempo(tiempoParticipante));
             out.println("</td>");
 
             out.println("</tr>");
@@ -387,6 +444,49 @@
     }catch (Exception e){
         out.println("Error. " + e.getMessage());
     }
+    
+
+    // Registro de la respuesta del alumno de forma individual
+    
+
+    try{
+        String nombreAct = request.getParameter("nombreAct");
+        String descriptionAct = request.getParameter("descripcionAct");
+        String estadoAct = request.getParameter("estadoAct");
+        String prioridadAct = request.getParameter("prioridadAct");
+
+        Connection conecta;
+        PreparedStatement preparedStatement;
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root" , "n0m3l0");
+
+        preparedStatement = conecta.prepareStatement("INSERT INTO RespuestaAlumno (id_res, id_est, tie_RA) VALUES (?,?,?)");
+        preparedStatement.setInt(1, idRespuesta);
+        preparedStatement.setInt(2, idEstudiante);
+        preparedStatement.setInt(3, tiempoRespuesta);
+    
+
+        preparedStatement.executeUpdate();
+
+        System.out.println("Todo se ha registrado correctamente");
+        System.out.println("Se guardo la respuesta del alumno en la base de datos");
+
+        preparedStatement.close();
+        conecta.close();
+
+    } catch(Exception e){
+        System.out.println("Error." + e.getMessage());
+        System.out.println("No se logro guardar la respuesta del alumno en la base de datos");
+    }
+
+
+
+
+
+
+
+
 %>
 </table>
 
@@ -398,7 +498,9 @@
             out.println("<input type='hidden' name='parcialEvento' value='"+ parcialEvento +"'>");
             out.println("<input type='hidden' name='idEstudiante' value='" +idEstudiante +"'>");
             out.println("<input type='hidden' name='posicionPregunta' value='"+ posicionPregunta +"'>");
-            out.println("<input type='submit' name='Siguiente Pregunta'>");
+            out.println("<input type='hidden' name='lugarClasificacion' value='"+posicionActual+"'>");
+
+            out.println("<input type='submit' name='Siguiente Pregunta' value='Siguiente pregunta'>");
             out.println("</form>");
         }
         else{
@@ -407,9 +509,16 @@
             out.println("<input type='hidden' name='parcialEvento' value='"+ parcialEvento +"'>");
             out.println("<input type='hidden' name='idEstudiante' value='" +idEstudiante +"'>");
             out.println("<input type='hidden' name='posicionPregunta' value='"+ posicionPregunta +"'>");
-            out.println("<input type='submit' name='Ver resultados'>");
+            out.println("<input type='submit' name='Ver resultados' value='Ver resultados'>");
             out.println("</form>");
         }
+        
+
+
+
+
+
+
 
     %>
 

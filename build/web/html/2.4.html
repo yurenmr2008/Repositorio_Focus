@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4 Integración por Fracciones Parciales</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 2 • Integración por Fracciones Parciales
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            2.4 Integración por Fracciones Parciales
+        </h1>
+
+        <p class="subtitulo">
+            Método avanzado para integrar funciones racionales mediante descomposición algebraica
+        </p>
+
+        <div class="seccion">
+
+            <h2>¿Qué es la integración por fracciones parciales?</h2>
+
+            <p>
+                La integración por fracciones parciales es un método utilizado para integrar funciones racionales.
+            </p>
+
+            <p>
+                Una función racional es una fracción formada por polinomios.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{P(x)}{Q(x)}
+                \]
+            </div>
+
+            <p>
+                donde:
+            </p>
+
+            <ul>
+
+                <li>\(P(x)\) es un polinomio</li>
+
+                <li>\(Q(x)\) es un polinomio</li>
+
+            </ul>
+
+            <p>
+                La idea principal consiste en transformar una fracción complicada en varias fracciones más pequeñas y sencillas que puedan integrarse fácilmente.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Idea fundamental del método</h2>
+
+            <p>
+                Supongamos que queremos integrar:
+            </p>
+
+            <div class="formula">
+                \[
+                \int \frac{3x+5}{(x-1)(x+2)}dx
+                \]
+            </div>
+
+            <p>
+                Esta expresión puede separarse como:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{3x+5}{(x-1)(x+2)}
+                =
+                \frac{A}{x-1}
+                +
+                \frac{B}{x+2}
+                \]
+            </div>
+
+            <p>
+                Después se encuentran las constantes \(A\) y \(B\), y finalmente cada fracción se integra por separado.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Cuándo se utiliza?</h2>
+
+            <p>
+                Este método se usa cuando:
+            </p>
+
+            <ul>
+
+                <li>La integral contiene una fracción algebraica</li>
+
+                <li>El denominador puede factorizarse</li>
+
+                <li>La fracción no puede integrarse directamente</li>
+
+                <li>Existen productos de factores lineales o cuadráticos</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Condición importante</h2>
+
+            <p>
+                Antes de aplicar fracciones parciales, el grado del numerador debe ser menor que el grado del denominador.
+            </p>
+
+            <div class="formula">
+                \[
+                \deg(P(x)) < \deg(Q(x))
+                \]
+            </div>
+
+            <p>
+                Si esto no ocurre, primero se debe realizar división de polinomios.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tipos de factores del denominador</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tipo de factor</th>
+                    <th>Forma de fracción parcial</th>
+                </tr>
+
+                <tr>
+                    <td>Factor lineal simple</td>
+                    <td>\(\frac{A}{x-a}\)</td>
+                </tr>
+
+                <tr>
+                    <td>Factor lineal repetido</td>
+                    <td>\(\frac{A}{x-a}+\frac{B}{(x-a)^2}\)</td>
+                </tr>
+
+                <tr>
+                    <td>Factor cuadrático irreducible</td>
+                    <td>\(\frac{Ax+B}{x^2+1}\)</td>
+                </tr>
+
+                <tr>
+                    <td>Cuadrático repetido</td>
+                    <td>Varias fracciones con potencias</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Primer caso: Factores lineales simples</h2>
+
+            <p>
+                Este es el caso más sencillo.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{P(x)}{(x-a)(x-b)}
+                \]
+            </div>
+
+            <p>
+                Se descompone como:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{A}{x-a}+\frac{B}{x-b}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo completo paso a paso</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{5x+1}{(x-2)(x+3)}dx
+                    \]
+                </div>
+
+                <h3>Paso 1 • Descomposición</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{5x+1}{(x-2)(x+3)}
+                    =
+                    \frac{A}{x-2}
+                    +
+                    \frac{B}{x+3}
+                    \]
+                </div>
+
+                <h3>Paso 2 • Multiplicar por el denominador</h3>
+
+                <div class="formula">
+                    \[
+                    5x+1=A(x+3)+B(x-2)
+                    \]
+                </div>
+
+                <h3>Paso 3 • Expandir</h3>
+
+                <div class="formula">
+                    \[
+                    5x+1=Ax+3A+Bx-2B
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    5x+1=(A+B)x+(3A-2B)
+                    \]
+                </div>
+
+                <h3>Paso 4 • Comparar coeficientes</h3>
+
+                <div class="formula">
+                    \[
+                    A+B=5
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    3A-2B=1
+                    \]
+                </div>
+
+                <h3>Paso 5 • Resolver sistema</h3>
+
+                <div class="formula">
+                    \[
+                    A=\frac{11}{5}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    B=\frac{14}{5}
+                    \]
+                </div>
+
+                <h3>Paso 6 • Reemplazar</h3>
+
+                <div class="formula">
+                    \[
+                    \int
+                    \left(
+                    \frac{11/5}{x-2}
+                    +
+                    \frac{14/5}{x+3}
+                    \right)
+                    dx
+                    \]
+                </div>
+
+                <h3>Paso 7 • Integrar</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{11}{5}\ln|x-2|
+                    +
+                    \frac{14}{5}\ln|x+3|
+                    +C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Segundo caso: Factores lineales repetidos</h2>
+
+            <p>
+                Si un factor se repite:
+            </p>
+
+            <div class="formula">
+                \[
+                (x-a)^2
+                \]
+            </div>
+
+            <p>
+                entonces se necesita una fracción para cada potencia.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{P(x)}{(x-a)^2}
+                =
+                \frac{A}{x-a}
+                +
+                \frac{B}{(x-a)^2}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo con factor repetido</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{3x+7}{(x-1)^2}dx
+                    \]
+                </div>
+
+                <p>
+                    Descomposición:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{3x+7}{(x-1)^2}
+                    =
+                    \frac{A}{x-1}
+                    +
+                    \frac{B}{(x-1)^2}
+                    \]
+                </div>
+
+                <p>
+                    Después se determinan las constantes y se integran los términos.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tercer caso: Factores cuadráticos irreducibles</h2>
+
+            <p>
+                Algunos polinomios no pueden factorizarse en números reales.
+            </p>
+
+            <p>
+                Por ejemplo:
+            </p>
+
+            <div class="formula">
+                \[
+                x^2+1
+                \]
+            </div>
+
+            <p>
+                En este caso:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{P(x)}{x^2+1}
+                =
+                \frac{Ax+B}{x^2+1}
+                \]
+            </div>
+
+            <p>
+                El numerador debe ser lineal porque el denominador es cuadrático.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo con cuadrático irreducible</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 3</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{x+3}{x^2+1}dx
+                    \]
+                </div>
+
+                <p>
+                    Se separa:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int \frac{x}{x^2+1}dx
+                    +
+                    \int \frac{3}{x^2+1}dx
+                    \]
+                </div>
+
+                <p>
+                    La primera se resuelve con sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x^2+1
+                    \]
+                </div>
+
+                <p>
+                    La segunda:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{x^2+1}dx=\arctan(x)
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>División de polinomios</h2>
+
+            <p>
+                Si el numerador tiene grado mayor o igual al denominador, primero debe dividirse.
+            </p>
+
+            <h3>Ejemplo</h3>
+
+            <div class="formula">
+                \[
+                \frac{x^2+3x+1}{x+1}
+                \]
+            </div>
+
+            <p>
+                Se realiza división algebraica antes de usar fracciones parciales.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cómo reconocer el tipo de descomposición</h2>
+
+            <table>
+
+                <tr>
+                    <th>Denominador</th>
+                    <th>Descomposición</th>
+                </tr>
+
+                <tr>
+                    <td>\((x-1)(x+2)\)</td>
+                    <td>\(\frac{A}{x-1}+\frac{B}{x+2}\)</td>
+                </tr>
+
+                <tr>
+                    <td>\((x-1)^2\)</td>
+                    <td>\(\frac{A}{x-1}+\frac{B}{(x-1)^2}\)</td>
+                </tr>
+
+                <tr>
+                    <td>\(x^2+1\)</td>
+                    <td>\(\frac{Ax+B}{x^2+1}\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Patrones importantes</h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Si el factor es lineal → numerador constante</li>
+
+                    <li>Si el factor es cuadrático → numerador lineal</li>
+
+                    <li>Si el factor se repite → usar todas las potencias</li>
+
+                    <li>Siempre verificar el grado del numerador</li>
+
+                    <li>Factoriza completamente el denominador</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores más comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    No factorizar completamente el denominador.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Olvidar incluir potencias repetidas.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    Usar numeradores incorrectos.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    No hacer división de polinomios cuando es necesaria.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Por qué este método es tan importante?</h2>
+
+            <p>
+                Las fracciones parciales son fundamentales porque permiten resolver integrales racionales que aparecen constantemente en:
+            </p>
+
+            <ul>
+
+                <li>Ingeniería</li>
+
+                <li>Física</li>
+
+                <li>Ecuaciones diferenciales</li>
+
+                <li>Transformadas de Laplace</li>
+
+                <li>Análisis de circuitos eléctricos</li>
+
+                <li>Mecánica</li>
+
+            </ul>
+
+            <p>
+                Además, este método combina álgebra y cálculo, por lo que desarrolla habilidades matemáticas avanzadas.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Estrategia general para resolver ejercicios</h2>
+
+            <ol style="margin-left:35px;">
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Verificar grados
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Factorizar denominador
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Elegir forma correcta de fracciones parciales
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Multiplicar por el denominador común
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Encontrar constantes
+                </li>
+
+                <li style="font-size:23px; margin-bottom:15px;">
+                    Integrar cada término
+                </li>
+
+            </ol>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La integración por fracciones parciales es uno de los métodos más importantes y potentes del cálculo integral.
+            </p>
+
+            <p>
+                Aunque inicialmente parece complicado, todo el procedimiento sigue reglas claras y sistemáticas.
+            </p>
+
+            <p>
+                La clave para dominar este método es aprender a reconocer patrones y practicar cada tipo de descomposición.
+            </p>
+
+            <p>
+                Una vez comprendido, muchas integrales difíciles se vuelven problemas algebraicos organizados y manejables.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -14,6 +14,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 
+<%@ include file="/jsp/seguridad.jsp" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -35,6 +37,13 @@
         int parcialEvento = Integer.parseInt(request.getParameter("parcialEvento"));
         int idEstudiante = Integer.parseInt(request.getParameter("idEstudiante"));
         int posicionPregunta = Integer.parseInt(request.getParameter("posicionPregunta"));
+        
+        int lugarClasificacion = 0;
+        if(posicionPregunta > 1){
+            lugarClasificacion = Integer.parseInt(request.getParameter("lugarClasificacion"));
+
+        }
+        
 
 
 
@@ -180,13 +189,13 @@
                     <%--Datos obtenidos de la respuesta a la pregunta--%>
 
 
-                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[0]%>"> //idRespuesta 1
+                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[0]%>"> 
                     <input type="hidden" name="valorRespuesta" class="valorRes1" value="<%= valoresRespuestas[0]%>">
                     <input type="hidden" name="tiempoRespuesta" class="tiempoRespuesta1" value="">
                     <input type="hidden" name="posicionPregunta"  value="<%=posicionPregunta%>">
                     <input type="hidden" name="puntajePregunta"  value="<%=puntajePregunta%>">
-                    
-                    //Falta el puntaje
+                    <input type="hidden" name="lugarClasificacion" value="<%=lugarClasificacion%>">
+ 
 
 
                     <%--Datos para los registros y consultas en la base de datos--%>
@@ -197,10 +206,9 @@
                     <input type="hidden" name="numeroPreguntas" value="<%=numPreguntas%>">
 
 
-                    //Falta el id evento
 
 
-                    <input type="submit" name="Continuar">
+                    <input type="submit" name="Continuar" value="Continuar">
                 </form>
             </div>
                 
@@ -209,11 +217,12 @@
 
                     <%--Datos obtenidos de la respuesta a la pregunta--%>
 
-                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[1]%>"> //idRespuesta 2
+                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[1]%>"> 
                     <input type="hidden" name="valorRespuesta" class="valorRes2" value="<%= valoresRespuestas[1]%>">
                     <input type="hidden" name="tiempoRespuesta" class="tiempoRespuesta2" value="">
                     <input type="hidden" name="posicionPregunta"  value="<%=posicionPregunta%>">
                     <input type="hidden" name="puntajePregunta"  value="<%=puntajePregunta%>">
+                    <input type="hidden" name="lugarClasificacion" value="<%=lugarClasificacion%>">
 
 
                     <%--Datos para los registros y consultas en la base de datos--%>
@@ -225,7 +234,7 @@
 
 
 
-                    <input type="submit" name="Continuar">
+                    <input type="submit" name="Continuar" value="Continuar">
                 </form>   
             </div>
                 
@@ -234,11 +243,12 @@
 
                     <%--Datos obtenidos de la respuesta a la pregunta--%>
 
-                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[2]%>"> //idRespuesta 3
+                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[2]%>"> 
                     <input type="hidden" name="valorRespuesta" class="valorRes3" value="<%= valoresRespuestas[2]%>">
                     <input type="hidden" name="tiempoRespuesta" class="tiempoRespuesta3" value="">
                     <input type="hidden" name="posicionPregunta"  value="<%=posicionPregunta%>">
                     <input type="hidden" name="puntajePregunta"  value="<%=puntajePregunta%>">
+                    <input type="hidden" name="lugarClasificacion" value="<%=lugarClasificacion%>">
 
 
                     <%--Datos para los registros y consultas en la base de datos--%>
@@ -249,7 +259,7 @@
                     <input type="hidden" name="numeroPreguntas" value="<%=numPreguntas%>">
 
 
-                    <input type="submit" name="Continuar">
+                    <input type="submit" name="Continuar" value="Continuar">
                 </form>
             </div>
                     
@@ -257,12 +267,13 @@
                 <form style="display: none;" class="btn_continuar4"  action="clasificacionActual.jsp" method="POST">
                     
                     <%--Datos obtenidos de la respuesta a la pregunta--%>
-                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[3]%>"> //idRespuesta 4
+                    <input type="hidden" name="idRespuesta" value="<%= idRespuestas[3]%>"> 
                     <input type="hidden" name="valorRespuesta" class="valorRes4" value="<%= valoresRespuestas[3]%>">
                     <input type="hidden" name="tiempoRespuesta" class="tiempoRespuesta4" value="">
                     <input type="hidden" name="posicionPregunta"  value="<%=posicionPregunta%>">
                     <input type="hidden" name="puntajePregunta"  value="<%=puntajePregunta%>">
- 
+                    <input type="hidden" name="lugarClasificacion" value="<%=lugarClasificacion%>">
+
                     
                     <%--Datos para los registros y consultas en la base de datos--%>
                     <input type="hidden" name="materiaEvento" value="<%=materiaEvento%>">
@@ -272,7 +283,7 @@
                     <input type="hidden" name="numeroPreguntas" value="<%=numPreguntas%>">
 
 
-                    <input type="submit" name="Continuar">
+                    <input type="submit" name="Continuar" value="Continuar">
                 </form>  
             </div>
 

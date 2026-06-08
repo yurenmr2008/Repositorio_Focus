@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2 Cálculo del Área entre un Eje y una Curva</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 3 • Cálculo del Área entre un Eje y una Curva
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            3.2 Cálculo del Área entre un Eje y una Curva
+        </h1>
+
+        <p class="subtitulo">
+            Cálculo de áreas entre curvas mediante integración definida
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                Una de las aplicaciones más importantes de la integral definida es el cálculo de áreas.
+            </p>
+
+            <p>
+                El cálculo integral permite determinar el área exacta de regiones limitadas por curvas, rectas y ejes coordenados.
+            </p>
+
+            <p>
+                Antes de existir el cálculo integral, encontrar áreas de figuras irregulares era extremadamente complicado.
+            </p>
+
+            <p>
+                Gracias a las integrales definidas, ahora es posible calcular áreas con precisión incluso cuando la frontera es una curva compleja.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Idea geométrica del área</h2>
+
+            <p>
+                El área bajo una curva puede imaginarse como la suma de muchísimos rectángulos muy pequeños.
+            </p>
+
+            <p>
+                Cada rectángulo tiene:
+            </p>
+
+            <ul>
+
+                <li>Una base infinitamente pequeña</li>
+
+                <li>Una altura dada por la función</li>
+
+            </ul>
+
+            <p>
+                Sumando todos los rectángulos aparece la integral definida.
+            </p>
+
+            <div class="formula">
+                \[
+                \int_a^b f(x)\,dx
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Área entre una curva y el eje x</h2>
+
+            <p>
+                Cuando una función está arriba del eje x en un intervalo \([a,b]\), el área se calcula mediante:
+            </p>
+
+            <div class="formula">
+                \[
+                A=
+                \int_a^b f(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Donde:
+            </p>
+
+            <ul>
+
+                <li>\(A\) representa el área</li>
+
+                <li>\(f(x)\) es la función</li>
+
+                <li>\(a\) y \(b\) son los límites</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Primer ejemplo completo</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    y=x^2
+                    \]
+                </div>
+
+                <p>
+                    Calcular el área bajo la curva entre:
+                </p>
+
+                <div class="formula">
+                    \[
+                    x=0
+                    \quad \text{y} \quad
+                    x=2
+                    \]
+                </div>
+
+                <h3>Paso 1 • Construir la integral</h3>
+
+                <div class="formula">
+                    \[
+                    A=
+                    \int_0^2 x^2\,dx
+                    \]
+                </div>
+
+                <h3>Paso 2 • Integrar</h3>
+
+                <div class="formula">
+                    \[
+                    \int x^2\,dx=
+                    \frac{x^3}{3}
+                    \]
+                </div>
+
+                <h3>Paso 3 • Evaluar</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{x^3}{3}\Big|_0^2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \frac{2^3}{3}-\frac{0^3}{3}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \frac{8}{3}
+                    \]
+                </div>
+
+                <p>
+                    Resultado:
+                </p>
+
+                <div class="formula">
+                    \[
+                    A=\frac{8}{3}
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Qué ocurre si la función está debajo del eje x?</h2>
+
+            <p>
+                Cuando la función está debajo del eje x, la integral produce un valor negativo.
+            </p>
+
+            <p>
+                Sin embargo, el área nunca puede ser negativa.
+            </p>
+
+            <p>
+                Por ello se utiliza valor absoluto.
+            </p>
+
+            <div class="formula">
+                \[
+                A=
+                \left|
+                \int_a^b f(x)\,dx
+                \right|
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo con área negativa</h2>
+
+            <div class="ejemplo">
+
+                <div class="formula">
+                    \[
+                    y=-x
+                    \]
+                </div>
+
+                <p>
+                    En el intervalo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    [0,2]
+                    \]
+                </div>
+
+                <h3>Integral</h3>
+
+                <div class="formula">
+                    \[
+                    \int_0^2 -x\,dx
+                    \]
+                </div>
+
+                <h3>Integrar</h3>
+
+                <div class="formula">
+                    \[
+                    -\frac{x^2}{2}
+                    \]
+                </div>
+
+                <h3>Evaluar</h3>
+
+                <div class="formula">
+                    \[
+                    -\frac{2^2}{2}
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    -2
+                    \]
+                </div>
+
+                <p>
+                    El área real es:
+                </p>
+
+                <div class="formula">
+                    \[
+                    A=2
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Área entre dos curvas</h2>
+
+            <p>
+                En muchos problemas el área está limitada por dos funciones.
+            </p>
+
+            <p>
+                En esos casos:
+            </p>
+
+            <div class="formula">
+                \[
+                A=
+                \int_a^b
+                [f(x)-g(x)]dx
+                \]
+            </div>
+
+            <p>
+                Donde:
+            </p>
+
+            <ul>
+
+                <li>\(f(x)\) es la curva superior</li>
+
+                <li>\(g(x)\) es la curva inferior</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Cómo identificar cuál función va arriba</h2>
+
+            <p>
+                Este es uno de los puntos más importantes.
+            </p>
+
+            <p>
+                Siempre debes:
+            </p>
+
+            <ul>
+
+                <li>Graficar mentalmente o en papel</li>
+
+                <li>Evaluar puntos</li>
+
+                <li>Ver cuál función tiene mayor valor</li>
+
+            </ul>
+
+            <p>
+                El orden correcto es:
+            </p>
+
+            <div class="formula">
+                \[
+                \text{Superior}-
+                \text{Inferior}
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplo completo entre curvas</h2>
+
+            <div class="ejemplo">
+
+                <h3>Calcular el área entre:</h3>
+
+                <div class="formula">
+                    \[
+                    y=x
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    y=x^2
+                    \]
+                </div>
+
+                <h3>Paso 1 • Encontrar intersecciones</h3>
+
+                <div class="formula">
+                    \[
+                    x=x^2
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    x^2-x=0
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    x(x-1)=0
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    x=0
+                    \quad \text{y} \quad
+                    x=1
+                    \]
+                </div>
+
+                <h3>Paso 2 • Identificar curva superior</h3>
+
+                <p>
+                    En el intervalo \([0,1]\):
+                </p>
+
+                <div class="formula">
+                    \[
+                    x>x^2
+                    \]
+                </div>
+
+                <p>
+                    Entonces:
+                </p>
+
+                <div class="formula">
+                    \[
+                    A=
+                    \int_0^1 (x-x^2)\,dx
+                    \]
+                </div>
+
+                <h3>Paso 3 • Integrar</h3>
+
+                <div class="formula">
+                    \[
+                    \frac{x^2}{2}-\frac{x^3}{3}
+                    \]
+                </div>
+
+                <h3>Paso 4 • Evaluar</h3>
+
+                <div class="formula">
+                    \[
+                    \left(
+                    \frac{1}{2}-\frac{1}{3}
+                    \right)
+                    -
+                    0
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    \frac{1}{6}
+                    \]
+                </div>
+
+                <p>
+                    Resultado final:
+                </p>
+
+                <div class="formula">
+                    \[
+                    A=\frac{1}{6}
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Áreas con varias regiones</h2>
+
+            <p>
+                Algunas funciones cruzan el eje x o se cruzan varias veces entre sí.
+            </p>
+
+            <p>
+                En esos casos es necesario dividir el problema en varias integrales.
+            </p>
+
+            <p>
+                Cada región debe calcularse por separado.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores más comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    Restar las funciones en orden incorrecto.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    No encontrar correctamente los puntos de intersección.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 3</h3>
+
+                <p>
+                    Olvidar el valor absoluto cuando la función está bajo el eje x.
+                </p>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 4</h3>
+
+                <p>
+                    No dividir regiones cuando cambia la posición de las curvas.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Patrones importantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Situación</th>
+                    <th>Integral</th>
+                </tr>
+
+                <tr>
+                    <td>Área bajo una curva</td>
+                    <td>\(\int_a^b f(x)\,dx\)</td>
+                </tr>
+
+                <tr>
+                    <td>Área entre curvas</td>
+                    <td>\(\int_a^b [f(x)-g(x)]dx\)</td>
+                </tr>
+
+                <tr>
+                    <td>Área bajo el eje x</td>
+                    <td>\(\left|\int_a^b f(x)\,dx\right|\)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Tips importantes</h2>
+
+            <div class="tip">
+
+                <ul>
+
+                    <li>Haz siempre un bosquejo de la gráfica</li>
+
+                    <li>Identifica claramente la curva superior</li>
+
+                    <li>Encuentra correctamente intersecciones</li>
+
+                    <li>Usa paréntesis al restar funciones</li>
+
+                    <li>Divide regiones complejas</li>
+
+                    <li>Verifica signos negativos</li>
+
+                    <li>Comprueba si el resultado tiene sentido geométrico</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones reales</h2>
+
+            <p>
+                El cálculo de áreas tiene muchísimas aplicaciones:
+            </p>
+
+            <ul>
+
+                <li>Ingeniería civil</li>
+
+                <li>Arquitectura</li>
+
+                <li>Diseño mecánico</li>
+
+                <li>Física</li>
+
+                <li>Economía</li>
+
+                <li>Electrónica</li>
+
+                <li>Modelado matemático</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Relación con otras aplicaciones</h2>
+
+            <p>
+                El cálculo de áreas es la base para:
+            </p>
+
+            <ul>
+
+                <li>Cálculo de volumen</li>
+
+                <li>Longitud de arco</li>
+
+                <li>Centro de masa</li>
+
+                <li>Trabajo mecánico</li>
+
+                <li>Probabilidad continua</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                El cálculo de áreas mediante integrales definidas es una de las aplicaciones más importantes del cálculo integral.
+            </p>
+
+            <p>
+                Permite encontrar áreas exactas de regiones limitadas por curvas, algo imposible con geometría elemental.
+            </p>
+
+            <p>
+                Comprender cómo identificar curvas superiores, puntos de intersección y regiones es esencial para resolver correctamente estos problemas.
+            </p>
+
+            <p>
+                Dominar este tema es fundamental para avanzar hacia aplicaciones más complejas como volumen de sólidos, centros de masa y ecuaciones diferenciales.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>

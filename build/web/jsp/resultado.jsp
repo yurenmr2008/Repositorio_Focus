@@ -40,7 +40,7 @@
     <div class="nav-item">
       <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
       <div class="submenu" id="menuRecursos">
-        <a href="#">Contenido de apoyo</a>
+        <a href="#">../html/recursosAcademicos.html</a>
       </div>
     </div>
 

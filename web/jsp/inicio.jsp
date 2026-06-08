@@ -1,17 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    
-    String nombreEstudiante = (String) session.getAttribute("nombreEstudiante");
-    
-    if (nombreEstudiante == null) {
-       
-        response.sendRedirect("iniciar.jsp");
-        return; 
-    }
-    
-    
-    String nombreAMostrar = nombreEstudiante.split(" ")[0]; 
-%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,6 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/estilos_general.css">
 </head>
+
+<%@ include file="seguridad.jsp" %>
+
+<%
+    
+    String nombreEstudiante = (String) session.getAttribute("nombreEstudiante");
+    int idEstudiante = (int) session.getAttribute("idEstudiante");
+    
+    if (nombreEstudiante == null) {
+       
+        response.sendRedirect("iniciar.jsp");
+        return; 
+    }
+    String nombreAMostrar = nombreEstudiante.split(" ")[0];
+    
+%>
+
 <body>
 
 <header>
@@ -35,26 +40,28 @@
     
     <div class="nav-item">
       <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
-      <div class="submenu" id="menuEstudia">
-        <a href="../html/cuestionarios.html">Cuestionarios</a>
-        <a href="#">Matemáticas interactivas</a>
-        <a href="../html/modoConcentracion.html"> Modo concentración</a>
-      </div>
+      <!-- Reemplaza o pega este bloque en inicio.jsp dentro del nav Estudia -->
+<div class="submenu" id="menuEstudia">
+  <a href="../moduloCuestionarios/index.jsp" target="ventana">Cuestionarios</a>
+  <a href="../moduloMatematicasInteractivas/matematicas_interactivas.jsp" target="ventana">Matemáticas interactivas</a>
+  <a href="../html/modoConcentracion.html" target="ventana">Modo concentración</a>
+</div>
+
+
     </div>
 
-    <div class="nav-item">
+   <div class="nav-item">
       <div class="nav-boton" onclick="abrirMenu('menuRecursos')">Recursos académicos</div>
       <div class="submenu" id="menuRecursos">
-        <a href="#">Contenido de apoyo</a>
+        <a href="../html/recursosAcademicos.html" target="ventana">Contenido de apoyo</a>
       </div>
     </div>
 
     <div class="nav-item">
       <div class="nav-boton" onclick="abrirMenu('menuComunidad')">Comunidad</div>
       <div class="submenu" id="menuComunidad">
-        <a href="#">Apoyo entre estudiantes</a>
-        <a href="../moduloEventos/seccionEventos.jsp">Eventos</a>
-        <a href="#">Proyectos estudiantiles</a>
+        <a href="../chat/Chat.jsp?idEstudiante=<%=idEstudiante%>" target="ventana">Apoyo entre estudiantes</a>
+        <a href="../moduloEventos/seccionEventos.jsp?idEstudiante=<%=idEstudiante%>" target="ventana">Eventos</a>
       </div>
     </div>
 
@@ -62,8 +69,8 @@
       <div class="nav-boton" onclick="abrirMenu('menuProgreso')">Mi progreso</div>
       <div class="submenu" id="menuProgreso">
         
-        <a href="../moduloCalendario/CalendarioGeneral.jsp">Calendario</a>
-        <a href="#">Panel de progreso</a>
+        <a href="../moduloCalendario/CalendarioGeneral.jsp?idEstudiante=<%=idEstudiante%>" target="ventana">Calendario</a>
+        <a href="../PanelProgreso/PanelProgreso.jsp?idEstudiante=<%=idEstudiante%>" target="ventana">Panel de progreso</a>
       </div>
     </div>
 
@@ -74,47 +81,15 @@
     <div class="submenu-cuenta" id="menuCuenta">
       <a href="#">Mi cuenta</a>
       <a href="#">Ayuda</a>
-      <a href="#">Cerrar sesión</a>
+      <a href="../index.html">Cerrar sesión</a>
     </div>
   </div>
 </header>
 
 <main class="principal">
 
-  <section class="bienvenida">
-        <h1>Bienvenido de nuevo, <span id="nombreUsuario"><%= nombreAMostrar %></span></h1>
-    <p>Descubre lo nuevo del día</p>
-  <!-- </section>
+    <iframe src="../jsp/bienvenidaMenu.jsp?nombreUsuario=<%=nombreAMostrar%>" width="100%" height="900" frameborder="0" name="ventana"></iframe>
 
-  <section class="contenedor-secciones">
-
-    <div class="tarjeta">
-      <h2>Avisos</h2>
-      <img src="imagen1.png" style="width:100%;border-radius:14px;">
-    </div>
-
-    <div class="tarjeta">
-      <h2>Actividades pendientes</h2>
-      <table class="tabla">
-        <thead>
-          <tr><th>Actividad</th><th>Estado</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Actividad 1</td><td>🕑 Pendiente</td></tr>
-          <tr><td>Actividad 2</td><td>🕑 Pendiente</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tarjeta">
-      <h2>Dato del día</h2>
-      <div class="dato-del-dia" id="datoDelDia">
-         Aquí irá el dato dinámico
-      </div>
-    </div>
-
-  </section>
- -->
 </main>
 
 <script>

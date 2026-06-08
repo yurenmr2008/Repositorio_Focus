@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.3 Constante de Integración y Aplicaciones</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/cajas.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="volver" onclick="window.history.back()">
+            ←
+        </div>
+
+        <div class="titulo-header">
+            Unidad 1 • Constante de Integración y Aplicaciones
+        </div>
+
+    </header>
+
+    <div class="contenedor">
+
+        <h1 class="titulo-principal">
+            1.3 Constante de Integración y Aplicaciones
+        </h1>
+
+        <p class="subtitulo">
+            Importancia de la constante de integración y aplicaciones fundamentales del cálculo integral
+        </p>
+
+        <div class="seccion">
+
+            <h2>Introducción</h2>
+
+            <p>
+                En cálculo integral, uno de los conceptos más importantes es la constante de integración.
+                Cada vez que se realiza una integral indefinida, se obtiene una familia infinita de funciones
+                y no solamente una única respuesta.
+            </p>
+
+            <p>
+                Esto ocurre porque al derivar una constante el resultado siempre es cero, por lo que cualquier
+                constante desaparece durante el proceso de derivación.
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(5)=0
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(-12)=0
+                \]
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Qué es la constante de integración?</h2>
+
+            <p>
+                La constante de integración es un número arbitrario que se agrega al resultado
+                de una integral indefinida.
+            </p>
+
+            <div class="formula">
+                \[
+                \int f(x)\,dx=F(x)+C
+                \]
+            </div>
+
+            <p>
+                La letra \(C\) representa cualquier número real.
+            </p>
+
+            <p>
+                Debido a que la derivada de una constante es cero, diferentes funciones pueden
+                tener exactamente la misma derivada.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>¿Por qué aparece la constante de integración?</h2>
+
+            <p>
+                Supongamos las siguientes funciones:
+            </p>
+
+            <div class="formula">
+                \[
+                f(x)=x^2
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                g(x)=x^2+7
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                h(x)=x^2-15
+                \]
+            </div>
+
+            <p>
+                Si derivamos cada una:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(x^2)=2x
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(x^2+7)=2x
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}(x^2-15)=2x
+                \]
+            </div>
+
+            <p>
+                Todas producen exactamente la misma derivada.
+            </p>
+
+            <p>
+                Por esta razón, al integrar no es posible conocer cuál constante tenía originalmente
+                la función, por lo que se agrega \(C\).
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Ejemplos básicos</h2>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 1</h3>
+
+                <div class="formula">
+                    \[
+                    \int 3x^2\,dx
+                    \]
+                </div>
+
+                <p>
+                    Aplicando la regla de potencias:
+                </p>
+
+                <div class="formula">
+                    \[
+                    =x^3+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 2</h3>
+
+                <div class="formula">
+                    \[
+                    \int \cos(x)\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\sin(x)+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo 3</h3>
+
+                <div class="formula">
+                    \[
+                    \int \frac{1}{x}\,dx
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    =\ln|x|+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Comprobación mediante derivación</h2>
+
+            <p>
+                Para verificar una integral, se deriva el resultado obtenido.
+            </p>
+
+            <div class="formula">
+                \[
+                \int x^4\,dx=\frac{x^5}{5}+C
+                \]
+            </div>
+
+            <p>
+                Derivando:
+            </p>
+
+            <div class="formula">
+                \[
+                \frac{d}{dx}\left(\frac{x^5}{5}+C\right)
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =x^4+0
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                =x^4
+                \]
+            </div>
+
+            <p>
+                La constante desaparece porque su derivada es cero.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Constante de integración en cambio de variable</h2>
+
+            <p>
+                La constante de integración también debe aparecer cuando se utiliza sustitución.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <div class="formula">
+                    \[
+                    \int 2x(x^2+1)^3\,dx
+                    \]
+                </div>
+
+                <p>
+                    Sustitución:
+                </p>
+
+                <div class="formula">
+                    \[
+                    u=x^2+1
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    du=2xdx
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int u^3\,du
+                    \]
+                </div>
+
+                <p>
+                    Integrando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{u^4}{4}+C
+                    \]
+                </div>
+
+                <p>
+                    Regresando a x:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{(x^2+1)^4}{4}+C
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Aplicaciones de la integral</h2>
+
+            <p>
+                El cálculo integral tiene numerosas aplicaciones en matemáticas,
+                física, ingeniería y ciencias.
+            </p>
+
+            <h3>1. Cálculo de áreas</h3>
+
+            <p>
+                La integral permite calcular áreas bajo curvas.
+            </p>
+
+            <div class="formula">
+                \[
+                A=\int_a^b f(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Esta aplicación es fundamental en geometría y física.
+            </p>
+
+            <h3>2. Movimiento y velocidad</h3>
+
+            <p>
+                Si se conoce la velocidad de un objeto, la integral permite encontrar
+                su posición.
+            </p>
+
+            <div class="formula">
+                \[
+                v(t)=\frac{ds}{dt}
+                \]
+            </div>
+
+            <div class="formula">
+                \[
+                s(t)=\int v(t)\,dt
+                \]
+            </div>
+
+            <h3>3. Crecimiento poblacional</h3>
+
+            <p>
+                Muchas funciones de crecimiento utilizan integrales exponenciales.
+            </p>
+
+            <h3>4. Física</h3>
+
+            <ul>
+
+                <li>Cálculo de trabajo</li>
+
+                <li>Movimiento de partículas</li>
+
+                <li>Electricidad y magnetismo</li>
+
+                <li>Ondas y vibraciones</li>
+
+            </ul>
+
+            <h3>5. Ingeniería</h3>
+
+            <ul>
+
+                <li>Análisis estructural</li>
+
+                <li>Flujo de líquidos</li>
+
+                <li>Transferencia de calor</li>
+
+                <li>Procesamiento de señales</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Problemas con condiciones iniciales</h2>
+
+            <p>
+                En algunos ejercicios es posible encontrar el valor exacto de la constante
+                usando información adicional.
+            </p>
+
+            <div class="ejemplo">
+
+                <h3>Ejemplo</h3>
+
+                <p>
+                    Resolver:
+                </p>
+
+                <div class="formula">
+                    \[
+                    \frac{dy}{dx}=2x
+                    \]
+                </div>
+
+                <p>
+                    Sabiendo que:
+                </p>
+
+                <div class="formula">
+                    \[
+                    y(1)=5
+                    \]
+                </div>
+
+                <p>
+                    Integrando:
+                </p>
+
+                <div class="formula">
+                    \[
+                    y=x^2+C
+                    \]
+                </div>
+
+                <p>
+                    Sustituyendo el dato:
+                </p>
+
+                <div class="formula">
+                    \[
+                    5=(1)^2+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    5=1+C
+                    \]
+                </div>
+
+                <div class="formula">
+                    \[
+                    C=4
+                    \]
+                </div>
+
+                <p>
+                    Entonces:
+                </p>
+
+                <div class="formula">
+                    \[
+                    y=x^2+4
+                    \]
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Errores comunes</h2>
+
+            <div class="importante">
+
+                <h3>Error 1</h3>
+
+                <p>
+                    Olvidar la constante de integración.
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^2dx=\frac{x^3}{3}
+                    \]
+                </div>
+
+                <p>
+                    Incorrecto.
+                </p>
+
+                <div class="formula">
+                    \[
+                    \int x^2dx=\frac{x^3}{3}+C
+                    \]
+                </div>
+
+            </div>
+
+            <div class="importante">
+
+                <h3>Error 2</h3>
+
+                <p>
+                    Pensar que la constante siempre vale cero.
+                </p>
+
+                <p>
+                    La constante puede ser cualquier número real.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Consejos importantes</h2>
+
+            <ul>
+
+                <li>Siempre agrega \(+C\) en integrales indefinidas</li>
+
+                <li>Verifica derivando el resultado</li>
+
+                <li>Recuerda que distintas funciones pueden tener la misma derivada</li>
+
+                <li>Utiliza condiciones iniciales para encontrar el valor de \(C\)</li>
+
+                <li>No confundas integrales definidas con indefinidas</li>
+
+            </ul>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Diferencia entre integral definida e indefinida</h2>
+
+            <h3>Integral indefinida</h3>
+
+            <div class="formula">
+                \[
+                \int f(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Produce una familia de funciones y necesita constante de integración.
+            </p>
+
+            <h3>Integral definida</h3>
+
+            <div class="formula">
+                \[
+                \int_a^b f(x)\,dx
+                \]
+            </div>
+
+            <p>
+                Produce un valor numérico y no utiliza constante de integración en el resultado final.
+            </p>
+
+        </div>
+
+        <div class="seccion">
+
+            <h2>Conclusión</h2>
+
+            <p>
+                La constante de integración es una parte esencial del cálculo integral.
+                Representa todas las posibles funciones que tienen la misma derivada.
+            </p>
+
+            <p>
+                Comprender este concepto es fundamental para resolver correctamente integrales,
+                ecuaciones diferenciales y aplicaciones reales en física, ingeniería y matemáticas.
+            </p>
+
+            <p>
+                Las aplicaciones del cálculo integral permiten modelar fenómenos naturales,
+                calcular áreas, estudiar movimiento y resolver múltiples problemas científicos.
+            </p>
+
+        </div>
+
+        <footer>
+            Recursos Académicos • Cálculo Integral
+        </footer>
+
+    </div>
+
+</body>
+</html>
