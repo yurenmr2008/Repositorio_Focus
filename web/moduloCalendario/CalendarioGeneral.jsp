@@ -14,7 +14,7 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="estilosCalendario1.css">
+<link rel="stylesheet" href="estilosCalendario.css">
 <link rel="stylesheet" href="css/estilos_general.css">
 <link rel="stylesheet" href="css/semestres.css">
 <link rel="stylesheet" href="css/calculoDiferencial.css">
