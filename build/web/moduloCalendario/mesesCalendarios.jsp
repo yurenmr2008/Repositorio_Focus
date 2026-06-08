@@ -23,10 +23,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="estilosCalendario1.css">
-        <link rel="stylesheet" href="css/estilos_general.css">
-        <link rel="stylesheet" href="css/semestres.css">
-        <link rel="stylesheet" href="css/calculoDiferencial.css">
+        <link rel="stylesheet" href="estilosCalendario.css">
+
         <link rel="stylesheet" href="../css/estilos_general.css">
 
     </head>
