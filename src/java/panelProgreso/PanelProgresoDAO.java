@@ -15,10 +15,10 @@ public class PanelProgresoDAO {
 public List<Progreso> obtenerProgreso(int idEstudiante) {
     List<Progreso> lista = new ArrayList<>();
     String query = "SELECT c.dif_cue, m.nom_mat, ca.id_cal, ca.cal " +
-                   "FROM cuestionario c " +
-                   "JOIN tema t ON c.id_tem = t.id_tem " +
-                   "JOIN materia m ON t.id_mat = m.id_mat " +
-                   "JOIN calificacion ca ON ca.id_cue = c.id_cue " +
+                   "FROM Cuestionario c " +
+                   "JOIN Tema t ON c.id_tem = t.id_tem " +
+                   "JOIN Materia m ON t.id_mat = m.id_mat " +
+                   "JOIN Calificacion ca ON ca.id_cue = c.id_cue " +
                    "WHERE ca.id_est = ?";
 
     try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -46,9 +46,9 @@ public List<Progreso> obtenerProgreso(int idEstudiante) {
 public List<Meta> obtenerMetasPendientes(int idEst) {
     List<Meta> metas = new ArrayList<>();
     String query = "SELECT m.id_met, m.nom_met, m.des_met " +
-                   "FROM metas m " +
+                   "FROM Metas m " +
                    "WHERE m.id_est = ? " +
-                   "AND m.id_met NOT IN (SELECT id_met FROM metas_completadas WHERE id_est = ?)";
+                   "AND m.id_met NOT IN (SELECT id_met FROM Metas_completadas WHERE id_est = ?)";
 
     try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
          PreparedStatement ps = conn.prepareStatement(query)) {
@@ -73,10 +73,10 @@ public List<Meta> obtenerMetasPendientes(int idEst) {
 public Map<String, Double> obtenerPromediosGlobales() {
     Map<String, Double> promedios = new HashMap<>();
     String query = "SELECT m.nom_mat, AVG(ca.cal) AS promedio " +
-                   "FROM cuestionario c " +
-                   "JOIN tema t ON c.id_tem = t.id_tem " +
-                   "JOIN materia m ON t.id_mat = m.id_mat " +
-                   "JOIN calificacion ca ON ca.id_cue = c.id_cue " +
+                   "FROM Cuestionario c " +
+                   "JOIN Tema t ON c.id_tem = t.id_tem " +
+                   "JOIN Materia m ON t.id_mat = m.id_mat " +
+                   "JOIN Calificacion ca ON ca.id_cue = c.id_cue " +
                    "GROUP BY m.nom_mat";
 
     try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -93,7 +93,7 @@ public Map<String, Double> obtenerPromediosGlobales() {
 }
 
 public void insertarMetaCompletada(int idEst, int idMet) {
-        String sql = "INSERT INTO metas_completadas (id_est, id_met) VALUES (?, ?)";
+        String sql = "INSERT INTO Metas_completadas (id_est, id_met) VALUES (?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -110,7 +110,7 @@ public void insertarMetaCompletada(int idEst, int idMet) {
     }
 
 public void eliminarMetaCompletada(int idEst, int idMet) {
-        String sql = "DELETE FROM metas_completadas WHERE id_est = ? AND id_met = ?";
+        String sql = "DELETE FROM Metas_completadas WHERE id_est = ? AND id_met = ?";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -130,8 +130,8 @@ public void eliminarMetaCompletada(int idEst, int idMet) {
 public List<Meta> obtenerMetasCompletadas(int idEst) {
     List<Meta> metas = new ArrayList<>();
     String query = "SELECT m.id_met, m.nom_met, m.des_met " +
-                   "FROM metas_completadas mc " +
-                   "JOIN metas m ON mc.id_met = m.id_met " +
+                   "FROM Metas_completadas mc " +
+                   "JOIN Metas m ON mc.id_met = m.id_met " +
                    "WHERE mc.id_est = ?";
 
     try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -153,7 +153,7 @@ public List<Meta> obtenerMetasCompletadas(int idEst) {
     return metas;
 }
 public void insertarMeta(int idEst, String nomMet, String desMet) {
-        String query = "INSERT INTO metas (id_est, nom_met, des_met) VALUES (?, ?, ?)";
+        String query = "INSERT INTO Metas (id_est, nom_met, des_met) VALUES (?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
              PreparedStatement ps = conn.prepareStatement(query)) {
