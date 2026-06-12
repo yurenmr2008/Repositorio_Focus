@@ -70,7 +70,7 @@
             PreparedStatement preparedStatement;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
             preparedStatement = conecta.prepareStatement("SELECT Evento.id_eve, Evento.pre_eve, Evento.tie_eve, Pregunta.id_pre, Pregunta.tex_pre, Pregunta.pun_pre FROM Evento INNER JOIN Pregunta ON Evento.id_eve = Pregunta.id_eve"
             + " WHERE Evento.mat_eve=? AND Evento.par_eve=? AND Pregunta.pos_pre=?");
@@ -111,7 +111,7 @@
             PreparedStatement preparedStatement;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
             preparedStatement = conecta.prepareStatement("SELECT Respuesta.id_res, Respuesta.tex_res, Respuesta.val_res FROM Evento INNER JOIN Pregunta ON Evento.id_eve = Pregunta.id_eve INNER JOIN Respuesta ON Pregunta.id_pre = Respuesta.id_pre "
             + "WHERE Respuesta.id_pre=? ");

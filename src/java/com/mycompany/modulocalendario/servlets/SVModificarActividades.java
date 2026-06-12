@@ -70,7 +70,7 @@ public class SVModificarActividades extends HttpServlet {
                 Connection conecta;
                 PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root" , "n0m3l0");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root" , "n0m3l0");
                 st = conecta.prepareStatement("UPDATE Actividad SET nom_act=?, des_act=?, est_act=?, pri_act=?  WHERE id_act=?;");
                 st.setString(1,nombreAct);
                 st.setString(2,descriptionAct);
@@ -94,7 +94,7 @@ public class SVModificarActividades extends HttpServlet {
                 Connection conecta;
                 PreparedStatement st;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root" , "n0m3l0");
+                conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root" , "n0m3l0");
                 st = conecta.prepareStatement("DELETE FROM Actividad WHERE id_act=?;");
                 st.setString(1,id_act);
 

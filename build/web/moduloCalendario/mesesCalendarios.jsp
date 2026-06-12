@@ -86,7 +86,7 @@
             Connection conecta;
             PreparedStatement st;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root" , "n0m3l0");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root" , "n0m3l0");
 
 
             st = conecta.prepareStatement("INSERT INTO Calendario(id_est, mes_cal, año_cal)  SELECT ?,?,?  WHERE NOT EXISTS(SELECT 1 FROM Calendario WHERE id_est=? AND mes_cal=? AND año_cal =?);");
@@ -116,7 +116,7 @@
             PreparedStatement preparedStatement;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
             preparedStatement = conecta.prepareStatement("SELECT id_cal FROM Calendario WHERE id_est='"+idEstudiante+"' AND mes_cal='"+numMes+"' AND año_cal = '"+year+"'");
             
@@ -202,7 +202,7 @@
                             PreparedStatement preparedStatement;
 
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                             preparedStatement = conecta.prepareStatement("SELECT Actividad.est_act FROM Estudiante "
                             + "INNER JOIN Calendario ON Estudiante.id_est=Calendario.id_est INNER JOIN Actividad ON Calendario.id_cal=Actividad.id_cal "
@@ -329,7 +329,7 @@
                     PreparedStatement preparedStatement;
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                     preparedStatement = conecta.prepareStatement("SELECT Actividad.est_act FROM Estudiante "
 

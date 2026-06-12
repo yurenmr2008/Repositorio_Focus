@@ -22,7 +22,7 @@
         PreparedStatement preparedStatement;
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
         preparedStatement = conecta.prepareStatement("SELECT correo_est FROM Estudiante ");
 
@@ -52,7 +52,7 @@
             try{
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/focus?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
+                    "jdbc:mysql://localhost:3306/Focus?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
                     "root",
                     "n0m3l0"
                 );

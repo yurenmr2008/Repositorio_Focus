@@ -91,7 +91,7 @@
                             PreparedStatement preparedStatement;
 
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                             preparedStatement = conecta.prepareStatement("SELECT Actividad.id_act, Actividad.nom_act, Actividad.des_act, Actividad.est_act, Actividad.pri_act, Actividad.pos_act FROM Estudiante INNER JOIN Calendario ON Estudiante.id_est=Calendario.id_est INNER JOIN Actividad ON Calendario.id_cal=Actividad.id_cal WHERE Actividad.id_dia='"+id_dia+"' AND Actividad.id_cal='"+id_cal+"' AND Estudiante.id_est='"+id_est+"'  ");
                             ResultSet rs = preparedStatement.executeQuery();

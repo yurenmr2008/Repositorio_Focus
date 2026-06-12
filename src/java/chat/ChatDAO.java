@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 public class ChatDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/focus";
+    private static final String URL = "jdbc:mysql://localhost:3306/Focus";
     private static final String USER = "root";
     private static final String PASS = "n0m3l0";
 

@@ -15,7 +15,7 @@
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/focus?useSSL=false&serverTimezone=UTC",
+                "jdbc:mysql://localhost:3306/Focus?useSSL=false&serverTimezone=UTC",
                 "root",
                 "n0m3l0" 
             );

@@ -49,7 +49,7 @@
             PreparedStatement preparedStatement;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
             preparedStatement = conecta.prepareStatement("SELECT id_eve, pre_eve, tie_eve FROM Evento"
             + " WHERE Evento.mat_eve=? AND Evento.par_eve=?");
@@ -85,7 +85,7 @@
             PreparedStatement preparedStatement;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+            conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
             preparedStatement = conecta.prepareStatement("SELECT pun_cla, tie_cla FROM Clasificacion WHERE id_est=? AND id_eve=?");
             preparedStatement.setInt(1, idEstudiante);
@@ -151,7 +151,7 @@
                     PreparedStatement preparedStatement;
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                     preparedStatement = conecta.prepareStatement(                    
                     "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante "+
@@ -245,7 +245,7 @@
                     PreparedStatement preparedStatement;
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                     preparedStatement = conecta.prepareStatement(
                     "SELECT * FROM (" +
@@ -344,7 +344,7 @@
                     ResultSet rs;
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                     preparedStatement = conecta.prepareStatement("SELECT nom_est FROM Estudiante WHERE id_est=?");
                     preparedStatement.setInt(1, idEstudiante);
@@ -370,7 +370,7 @@
                     ResultSet rs;
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                     preparedStatement = conecta.prepareStatement("SELECT COUNT(*) lugar_cla FROM Clasificacion "+
                     "INNER JOIN Evento ON Clasificacion.id_eve = Evento.id_eve " +
@@ -425,7 +425,7 @@
                     PreparedStatement preparedStatement;
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                    conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                     preparedStatement = conecta.prepareStatement(
                     "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante " +
@@ -516,7 +516,7 @@
                         PreparedStatement preparedStatement;
 
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                         preparedStatement = conecta.prepareStatement(
                         "SELECT Estudiante.nom_est, Clasificacion.pun_cla, Clasificacion.tie_cla FROM Estudiante " +
@@ -618,7 +618,7 @@
                         PreparedStatement preparedStatement;
 
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/focus", "root", "n0m3l0");
+                        conecta = DriverManager.getConnection("jdbc:mysql://localhost:3306/Focus", "root", "n0m3l0");
 
                         preparedStatement = conecta.prepareStatement(                    
                         "SELECT Pregunta.id_pre, Pregunta.tex_pre, Pregunta.pun_pre, Pregunta.tem_pre, Respuesta.tex_res, Respuesta.val_res, RespuestaAlumno.tie_RA FROM RespuestaAlumno "+
