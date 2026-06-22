@@ -1,5 +1,5 @@
 body {
-  background-color: #fdf6ec; /* beige claro */
+  background-color: #FCEFD2; /* beige claro */
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -54,7 +54,7 @@ button.secondary:hover {
 
 
 .panel-progreso {
-  background: #fdf6ec; /* beige claro */
+  background: #FCEFD2; /* beige claro */
   padding: 20px;
 }
 .panel-progreso h2 {

@@ -89,10 +89,10 @@
       <input class="secondary" type="submit"  value="Ver Metas completadas">
 </form>
 
-
+<!-- 
 <form action="PanelProgresoGlobal.jsp" method="get">
         <button type="submit">Panel de Progreso Global</button>
     </form>
-
+ -->
  
 </section>

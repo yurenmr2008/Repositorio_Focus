@@ -40,10 +40,9 @@
     
     <div class="nav-item">
       <div class="nav-boton" onclick="abrirMenu('menuEstudia')">Estudia</div>
-      <!-- Reemplaza o pega este bloque en inicio.jsp dentro del nav Estudia -->
 <div class="submenu" id="menuEstudia">
   <a href="../moduloCuestionarios/index.jsp" target="ventana">Cuestionarios</a>
-  <a href="../moduloMatematicasInteractivas/matematicas_interactivas.jsp" target="ventana">Matemáticas interactivas</a>
+  <!--   <a href="../moduloMatematicasInteractivas/matematicas_interactivas.jsp" target="ventana">Matemáticas interactivas</a> -->
   <a href="../html/modoConcentracion.html" target="ventana">Modo concentración</a>
 </div>
 

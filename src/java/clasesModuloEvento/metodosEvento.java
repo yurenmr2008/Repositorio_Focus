@@ -26,9 +26,12 @@ public class metodosEvento {
         
         
         tiempoMostrado = tiempoMilisegundos/1000; //Elimina los milisegundos para solo mostrar el tiempo en horas, minutos y segundos
+        
+        
+        
         System.out.println("tiempoMostrado:" + tiempoMostrado);
-        horas = tiempoMostrado / 360;
-        minutos = (tiempoMostrado % 360)/60;
+        horas = tiempoMostrado / 3600;                
+        minutos = (tiempoMostrado % 3600) / 60; 
         System.out.println("minutos:"+  minutos);
         segundos = tiempoMostrado % 60;
 
